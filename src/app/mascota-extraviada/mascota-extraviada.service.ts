@@ -28,4 +28,8 @@ export class MascotaExtraviadaService {
     return this.http.get<MascotaExtraviada[]>(API_URL);
 
   }
+
+  getMascotaExtraviadaDetail(procesoId: number): Observable<MascotaExtraviada>{
+    return this.http.get<MascotaExtraviada>(`${API_URL}/${procesoId}`)
+  }
 }
