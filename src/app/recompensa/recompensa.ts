@@ -14,6 +14,11 @@ export enum estado{
 export interface Recompensa{
 
     /**
+     * El identificador de la recompensa
+     */
+    id: number
+
+    /**
      * Representa el medio de pago por el cuál se pagará la
      * recompensa a una mascota extraviada
      */
@@ -30,4 +35,6 @@ export interface Recompensa{
      * valores únicamente: 'PENDIENTE' o 'PAGADO'
      */
     estado: estado
+
+    
 }

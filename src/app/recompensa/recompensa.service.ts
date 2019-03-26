@@ -26,4 +26,12 @@ export class RecompensaService {
   getRecompensas(): Observable<Recompensa[]>{
     return this.http.get<Recompensa[]>(API_URL)
   }
+
+  /**
+   * Retorna el detalle de los datos de la recompensa
+   * @param procesoId - El id del proceso
+   */
+  getRecompensaDetail(recompensaId: number): Observable<Recompensa>{
+    return this.http.get<Recompensa>(`${API_URL}/${recompensaId}`)
+  }
 }

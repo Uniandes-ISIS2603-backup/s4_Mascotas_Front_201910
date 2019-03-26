@@ -37,7 +37,7 @@ export class MascotaExtraviadaDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    const procesoId = parseInt(this.route.snapshot.paramMap.get('id'));
+    const procesoId = parseInt(this.route.snapshot.paramMap.get('id'))
     if(procesoId){
       this.getMascotaExtraviadaDetail(procesoId)
     }
