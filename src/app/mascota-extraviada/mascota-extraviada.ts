@@ -1,7 +1,7 @@
 /**
  * Los estados que puede tener el atributo estado
  */
-enum estado {
+export enum estado {
     PENDIENTE = 'PENDIENTE',
     ENCONTRADO = 'ENCONTRADO'
 }

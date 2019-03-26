@@ -1,6 +1,7 @@
-<div *ngFor="let mascotaExtraviada of mascotasExtraviadas">
-  <div>Ciudad: {{mascotaExtraviada.ciudad}}</div>
-  <div>Dirección: {{mascotaExtraviada.direccion}}</div>
-  <div>Estado: {{mascotaExtraviada.estado}}</div>
-  <div>id: {{mascotaExtraviada.id}}</div>
-</div>
+<ul>
+  <li *ngFor="let mascotaExtraviada of mascotasExtraviadas">
+    <a href="/mascotas-extraviadas/{{mascotaExtraviada.id}}">
+      Lugar: {{mascotaExtraviada.ciudad}}/{{mascotaExtraviada.direccion}}
+    </a>
+  </li>
+</ul>
