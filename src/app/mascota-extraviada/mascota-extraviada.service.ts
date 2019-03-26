@@ -29,6 +29,10 @@ export class MascotaExtraviadaService {
 
   }
 
+  /**
+   * Retorna el detalle de los datos del proceso
+   * @param procesoId - El id del proceso
+   */
   getMascotaExtraviadaDetail(procesoId: number): Observable<MascotaExtraviada>{
     return this.http.get<MascotaExtraviada>(`${API_URL}/${procesoId}`)
   }

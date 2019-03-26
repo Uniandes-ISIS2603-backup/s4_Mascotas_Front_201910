@@ -14,10 +14,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { MascotaExtraviadaModule } from './mascota-extraviada/mascota-extraviada.module';
-
-
-
-
+import { RecompensaModule } from './recompensa/recompensa.module';
 
 
 @NgModule({
@@ -40,7 +37,8 @@ import { MascotaExtraviadaModule } from './mascota-extraviada/mascota-extraviada
         NgxPaginationModule,
         NgxPermissionsModule.forRoot(),
         NgbModule,
-        MascotaExtraviadaModule
+        MascotaExtraviadaModule,
+        RecompensaModule
     ],
     bootstrap: [AppComponent],
     providers: [

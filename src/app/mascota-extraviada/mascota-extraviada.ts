@@ -7,7 +7,7 @@ export enum estado {
 }
 
 /**
- * Clase que representa un proceso de mascota extraviada.
+ * Interface que representa un proceso de mascota extraviada.
  * Contiene la información relevante al proceso
  * @author Sebastián Lemus Cadena
  */
