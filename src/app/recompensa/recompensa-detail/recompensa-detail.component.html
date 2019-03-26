@@ -1,3 +1,6 @@
-<p>
-  recompensa-detail works!
-</p>
+<div *ngIf="recompensa"> 
+  <div>Id: {{recompensa.id}}</div>
+  <div>Estado: {{recompensa.estado}}</div>
+  <div>Medio de Pago: {{recompensa.medioDePago}}</div>
+  <div>Valor: {{recompensa.valor}}</div>
+</div>

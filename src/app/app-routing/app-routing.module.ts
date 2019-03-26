@@ -8,6 +8,7 @@ import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component
 import { MascotaExtraviadaListComponent } from '../mascota-extraviada/mascota-extraviada-list/mascota-extraviada-list.component';
 import { MascotaExtraviadaDetailComponent } from '../mascota-extraviada/mascota-extraviada-detail/mascota-extraviada-detail.component';
 import { RecompensaListComponent } from '../recompensa/recompensa-list/recompensa-list.component';
+import { RecompensaDetailComponent } from '../recompensa/recompensa-detail/recompensa-detail.component';
 
 const routes: Routes = [
 
@@ -62,10 +63,10 @@ const routes: Routes = [
                 path: 'list',
                 component: RecompensaListComponent
             },
-            // {
-            //     path: ':id',
-            //     component: MascotaExtraviadaDetailComponent
-            // }
+            {
+                path: ':id',
+                component: RecompensaDetailComponent
+            }
 
         ]
         
