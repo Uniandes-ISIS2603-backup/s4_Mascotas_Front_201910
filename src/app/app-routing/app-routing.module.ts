@@ -46,6 +46,14 @@ const routes: Routes = [
         component: AuthLoginComponent
     },
     {
+        path : 'login',
+        component : AuthLoginComponent
+    },
+    {
+        path : 'signup',
+        component : AuthSignUpComponent
+    },
+    {
         path: 'mascotas-extraviadas',
         children: [
             {
