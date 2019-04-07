@@ -9,9 +9,10 @@ import { MascotaExtraviadaListComponent } from '../mascota-extraviada/mascota-ex
 import { MascotaExtraviadaDetailComponent } from '../mascota-extraviada/mascota-extraviada-detail/mascota-extraviada-detail.component';
 import { RecompensaListComponent } from '../recompensa/recompensa-list/recompensa-list.component';
 import { RecompensaDetailComponent } from '../recompensa/recompensa-detail/recompensa-detail.component';
+import { MascotaAdopcionListComponent } from '../mascota-adopcion/mascota-adopcion-list/mascota-adopcion-list.component';
 
 const routes: Routes = [
-
+    
      {
         path: 'auth',
         children: [
@@ -55,6 +56,15 @@ const routes: Routes = [
 
         ]
         
+    },{
+        path: 'mascotas-adopcion',
+        children:[
+            {
+                path:'list',
+                component: MascotaAdopcionListComponent
+            }
+        ]
+
     },
     {
         path: 'recompensas',

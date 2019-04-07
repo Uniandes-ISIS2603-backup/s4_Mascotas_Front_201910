@@ -15,6 +15,7 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { MascotaExtraviadaModule } from './mascota-extraviada/mascota-extraviada.module';
 import { RecompensaModule } from './recompensa/recompensa.module';
+import { MascotaAdopcionModule } from './mascota-adopcion/mascota-adopcion.module';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { RecompensaModule } from './recompensa/recompensa.module';
         NgxPermissionsModule.forRoot(),
         NgbModule,
         MascotaExtraviadaModule,
+        MascotaAdopcionModule,
         RecompensaModule
     ],
     bootstrap: [AppComponent],
