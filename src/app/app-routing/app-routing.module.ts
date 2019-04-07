@@ -11,9 +11,11 @@ import { RecompensaListComponent } from '../recompensa/recompensa-list/recompens
 import { RecompensaDetailComponent } from '../recompensa/recompensa-detail/recompensa-detail.component';
 import { MascotaListComponent } from '../mascota/mascota-list/mascota-list.component';
 import { MascotaDetailComponent } from '../mascota/mascota-detail/mascota-detail.component';
+import { MascotaAdopcionListComponent } from '../mascota-adopcion/mascota-adopcion-list/mascota-adopcion-list.component';
+import { MascotaAdopcionDetailComponent } from '../mascota-adopcion/mascota-adopcion-detail/mascota-adopcion-detail.component';
 
 const routes: Routes = [
-
+    
      {
         path: 'auth',
         children: [
@@ -57,6 +59,18 @@ const routes: Routes = [
 
         ]
         
+    },{
+        path: 'mascotas-adopcion',
+        children:[
+            {
+                path:'list',
+                component: MascotaAdopcionListComponent
+            },{
+                path: 'id',
+                component: MascotaAdopcionDetailComponent
+            }
+        ]
+
     },
     {
         path: 'recompensas',

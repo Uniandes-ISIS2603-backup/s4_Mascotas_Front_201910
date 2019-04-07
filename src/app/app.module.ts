@@ -15,7 +15,12 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { MascotaExtraviadaModule } from './mascota-extraviada/mascota-extraviada.module';
 import { RecompensaModule } from './recompensa/recompensa.module';
+<<<<<<< HEAD
 import {MascotaModule} from './mascota/mascota.module';
+=======
+import { MascotaAdopcionModule } from './mascota-adopcion/mascota-adopcion.module';
+
+>>>>>>> ef27e8548337914ad771e05f2d2ebf875ad0bd63
 
 @NgModule({
     declarations: [
@@ -38,8 +43,13 @@ import {MascotaModule} from './mascota/mascota.module';
         NgxPermissionsModule.forRoot(),
         NgbModule,
         MascotaExtraviadaModule,
+<<<<<<< HEAD
         RecompensaModule,
         MascotaModule
+=======
+        MascotaAdopcionModule,
+        RecompensaModule
+>>>>>>> ef27e8548337914ad771e05f2d2ebf875ad0bd63
     ],
     bootstrap: [AppComponent],
     providers: [
