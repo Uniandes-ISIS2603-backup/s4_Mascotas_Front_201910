@@ -23,11 +23,19 @@ export class MascotaAdopcionService {
 
   /**
    * Retorna el Observable que contiene la lista de procesos de mascota
-   * extraviada
+   * en adopción
    */
   getMascotasEnAdopcion () : Observable<MascotaEnAdopcion[]>{
     return this.httpClient.get<MascotaEnAdopcion[]>(API_URL + procesos);
   }
 
-  //falta el detail!
+  /**
+   * retorna el observable de la mascota en adopcion con el id dado
+   * @param id del proceso
+   */
+  getMascotaEnAdopcionDetail (id : number) : Observable<MascotaEnAdopcion>{
+    return this.httpClient.get<MascotaEnAdopcion>(API_URL + procesos + '/' + id);
+  }
+
+  
 }

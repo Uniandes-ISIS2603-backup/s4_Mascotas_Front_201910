@@ -10,6 +10,7 @@ import { MascotaExtraviadaDetailComponent } from '../mascota-extraviada/mascota-
 import { RecompensaListComponent } from '../recompensa/recompensa-list/recompensa-list.component';
 import { RecompensaDetailComponent } from '../recompensa/recompensa-detail/recompensa-detail.component';
 import { MascotaAdopcionListComponent } from '../mascota-adopcion/mascota-adopcion-list/mascota-adopcion-list.component';
+import { MascotaAdopcionDetailComponent } from '../mascota-adopcion/mascota-adopcion-detail/mascota-adopcion-detail.component';
 
 const routes: Routes = [
     
@@ -62,6 +63,9 @@ const routes: Routes = [
             {
                 path:'list',
                 component: MascotaAdopcionListComponent
+            },{
+                path: 'id',
+                component: MascotaAdopcionDetailComponent
             }
         ]
 
