@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Mascota} from './mascota';
+import { MascotaDetail } from './mascota-detail/mascota-detail';
 
 const API_URL = "http://localhost:8080/s4_mascotas-api/api/mascotas";
 
@@ -25,4 +26,8 @@ export class MascotaService
     return this.http.get<Mascota[]>(API_URL);
   }
   
+  getMascotaDetail(id:number) : Observable<MascotaDetail>
+  {
+    return this.http.get<MascotaDetail>(`${API_URL}/${id}`);
+  }
 }

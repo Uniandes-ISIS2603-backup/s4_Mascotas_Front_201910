@@ -11,4 +11,9 @@ export class MascotaDetail extends Mascota
      * Fotos de la mascota
      */
     fotos:Array<string>;
+
+    /**
+     * Identificador del proceso asociado a la mascota
+     */
+    procesoId:number;
 }

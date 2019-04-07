@@ -89,6 +89,9 @@ const routes: Routes = [
                 component:MascotaDetailComponent
             }
         ]
+    },
+    {
+        path : 'mascotas-encontradas'
     }
 
 ];
