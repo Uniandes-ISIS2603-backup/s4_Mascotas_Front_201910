@@ -40,13 +40,10 @@ import { MascotaAdopcionModule } from './mascota-adopcion/mascota-adopcion.modul
         NgxPermissionsModule.forRoot(),
         NgbModule,
         MascotaExtraviadaModule,
-<<<<<<< HEAD
         RecompensaModule,
-        MascotaModule
-=======
+        MascotaModule,
         MascotaAdopcionModule,
         RecompensaModule
->>>>>>> ef27e8548337914ad771e05f2d2ebf875ad0bd63
     ],
     bootstrap: [AppComponent],
     providers: [
