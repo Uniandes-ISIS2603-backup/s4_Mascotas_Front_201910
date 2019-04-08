@@ -2,7 +2,7 @@
     <br>
     <div class="card">
         <div class="card-body">
-            <h3 class="card-title">Cuéntanos un poco sobre tu mascota</h3>
+            <h4 class="card-title">Cuéntanos un poco sobre tu mascota</h4>
             <br>
             <form (ngSubmit)="crearMascota()" #forma="ngForm">
                 <div class=" form-group">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Adjunta una foto</label>
-                    <input [(ngModel)]="mascota.foto" type="file" id="" class="form-control-file" required>
+                    <input [(ngModel)]="mascota.foto" type="file" id="foto" class="form-control-file" required>
                 </div>
                 <div class="row text-right">
                     <div class="col-md-10">
