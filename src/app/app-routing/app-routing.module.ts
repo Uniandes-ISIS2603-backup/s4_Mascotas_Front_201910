@@ -101,20 +101,13 @@ const routes: Routes = [
                 component: MascotaListComponent
             },
             {
-                path: ':param',
-                component:MascotaDetailComponent
+                path : 'nueva',
+                component: MascotaCreateComponent
             },
             {
-                path : 'nueva',
-                component: MascotaCreateComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['CLIENT']
-                    }
-                }
+                path: ':param',
+                component:MascotaDetailComponent
             }
-            
         ]
     },
     {
