@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+p {
+    font-family: Lato;
+}
 
 .navbar-custom {
     background-image: linear-gradient( to right, #7c2ae8, #00c4cc);

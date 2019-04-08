@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="row">
+            <div class="col-md-6">
+                <img class="img-responsive col-md-6 " width="100%" src=a.myurl=n ew URL({{mascotaDetail.foto}})>
+            </div>
+
+            <table class="table table-borderless col-md-6 text-center">
+                <tbody>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>{{mascotaDetail.nombre}}</th>
+                    </tr>
+                    <tr>
+                        <th>Tipo</th>
+                        <td>{{mascotaDetail.tipo}}</td>
+                    </tr>
+                    <tr>
+                        <th>Estado</th>
+                        <td>{{mascotaDetail.estado}}</td>
+                    </tr>
+                    <tr>
+                        <th>Raza</th>
+                        <td>{{mascotaDetail.raza}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Descripción</h3>
+            </div>
+            <div class="col-md-9">
+                {{mascotaDetail.descripcion}}
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <button class="btn btn-outline-info" type="button" name="button">Detalles proceso</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

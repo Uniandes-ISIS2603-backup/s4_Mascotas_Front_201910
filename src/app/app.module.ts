@@ -15,12 +15,15 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { MascotaExtraviadaModule } from './mascota-extraviada/mascota-extraviada.module';
 import { RecompensaModule } from './recompensa/recompensa.module';
+import {MascotaModule} from './mascota/mascota.module';
 import { MascotaAdopcionModule } from './mascota-adopcion/mascota-adopcion.module';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,
@@ -39,6 +42,8 @@ import { MascotaAdopcionModule } from './mascota-adopcion/mascota-adopcion.modul
         NgxPermissionsModule.forRoot(),
         NgbModule,
         MascotaExtraviadaModule,
+        RecompensaModule,
+        MascotaModule,
         MascotaAdopcionModule,
         RecompensaModule
     ],

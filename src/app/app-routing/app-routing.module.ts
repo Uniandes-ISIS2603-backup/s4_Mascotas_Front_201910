@@ -9,6 +9,8 @@ import { MascotaExtraviadaListComponent } from '../mascota-extraviada/mascota-ex
 import { MascotaExtraviadaDetailComponent } from '../mascota-extraviada/mascota-extraviada-detail/mascota-extraviada-detail.component';
 import { RecompensaListComponent } from '../recompensa/recompensa-list/recompensa-list.component';
 import { RecompensaDetailComponent } from '../recompensa/recompensa-detail/recompensa-detail.component';
+import { MascotaListComponent } from '../mascota/mascota-list/mascota-list.component';
+import { MascotaDetailComponent } from '../mascota/mascota-detail/mascota-detail.component';
 import { MascotaAdopcionListComponent } from '../mascota-adopcion/mascota-adopcion-list/mascota-adopcion-list.component';
 import { MascotaAdopcionDetailComponent } from '../mascota-adopcion/mascota-adopcion-detail/mascota-adopcion-detail.component';
 
@@ -42,6 +44,10 @@ const routes: Routes = [
     {
         path: 'home',
         component: AuthLoginComponent
+    },
+    {
+        path : 'login',
+        component : AuthLoginComponent
     },
     {
         path: 'mascotas-extraviadas',
@@ -88,8 +94,20 @@ const routes: Routes = [
     {
         path: '**',
         redirectTo: 'home',
-    }
-
+    },
+    {
+        path : 'mascotas',
+        children: [
+            {
+                path: 'list',
+                component: MascotaListComponent
+            },
+            {
+                path: ':param',
+                component:MascotaDetailComponent
+            }
+        ]
+    },
 ];
 
 @NgModule({
