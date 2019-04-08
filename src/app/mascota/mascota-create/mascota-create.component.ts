@@ -38,6 +38,7 @@ export class MascotaCreateComponent implements OnInit
             this.create.emit();
             this.toastrService.success("La mascota ha sido creada", "Mascota Creada");
         });
+        console.log(this.mascota);
         return this.mascota;
     }
 
