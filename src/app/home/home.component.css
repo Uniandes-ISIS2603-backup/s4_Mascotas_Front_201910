@@ -3,10 +3,16 @@
     color: antiquewhite;
 }
 
-container-fluid {
+.bg-img {
     background-image: url('../../assets/Home.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+}
+
+body {
+    min-height: 75vh;
+    height: auto;
+    margin: 0;
 }
