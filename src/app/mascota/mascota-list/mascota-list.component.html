@@ -1,0 +1,23 @@
+<div id="carouselControls" class="carousel slide carousel-multi-item" data-ride="carousel">
+    <div class="carousel-inner" role="listbox" *ngFor="let mascota of mascotas">
+        <div class="col-md-4">
+            <div class="card mb-2">
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">{{mascota.nombre}}</h4>
+                    <p class="card-text">{{mascota.estado}}</p>
+                    <a class="btn btn-info">Más información</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

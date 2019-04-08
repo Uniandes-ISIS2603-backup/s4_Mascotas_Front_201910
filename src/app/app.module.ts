@@ -9,7 +9,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import { ModalDialogModule } from 'ngx-modal-dialog';
-
+import { RouterModule, Router } from '@angular/router';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
@@ -45,7 +45,7 @@ import { HomeComponent } from './home/home.component';
         RecompensaModule,
         MascotaModule,
         MascotaAdopcionModule,
-        RecompensaModule
+        RecompensaModule,
     ],
     bootstrap: [AppComponent],
     providers: [
