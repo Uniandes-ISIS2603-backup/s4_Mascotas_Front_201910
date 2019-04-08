@@ -27,8 +27,11 @@
         <input type="file" id="" class="form-control-file">
     </div>
     <div class="row text-right">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <button class="btn btn-outline-success">Enviar</button>
+        </div>
+        <div class="col-md-6">
+            <button [routerLink]="['mascotas']" class="btn btn-outline-danger">Cancelar</button>
         </div>
     </div>
 </form>

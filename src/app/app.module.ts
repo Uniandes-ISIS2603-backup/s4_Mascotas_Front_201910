@@ -17,11 +17,13 @@ import { MascotaExtraviadaModule } from './mascota-extraviada/mascota-extraviada
 import { RecompensaModule } from './recompensa/recompensa.module';
 import {MascotaModule} from './mascota/mascota.module';
 import { MascotaAdopcionModule } from './mascota-adopcion/mascota-adopcion.module';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,

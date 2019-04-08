@@ -30,4 +30,9 @@ export class MascotaService
   {
     return this.http.get<MascotaDetail>(`${API_URL}/${id}`);
   }
+
+  crearMascota(mascota:MascotaDetail) : Observable<MascotaDetail>
+  {
+    return this.http.post<MascotaDetail>(API_URL, mascota)
+  }
 }

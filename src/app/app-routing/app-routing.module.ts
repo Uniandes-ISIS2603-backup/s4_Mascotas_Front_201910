@@ -50,10 +50,6 @@ const routes: Routes = [
         component : AuthLoginComponent
     },
     {
-        path : 'signup',
-        component : AuthSignUpComponent
-    },
-    {
         path: 'mascotas-extraviadas',
         children: [
             {
@@ -112,10 +108,6 @@ const routes: Routes = [
             }
         ]
     },
-    {
-        path : 'mascotas-encontradas'
-    }
-
 ];
 
 @NgModule({
