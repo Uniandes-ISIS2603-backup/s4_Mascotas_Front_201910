@@ -29,7 +29,7 @@ describe('AppComponent', () => {
         expect(component).toBeTruthy();
     }));
 
-    it(`should have as title 's4_mascotas-Front'`, async(() => {
+    it(`should have as title 'HELPET'`, async(() => {
         const app = fixture.debugElement.componentInstance;
         expect(app.title).toEqual(component.title);
     }));

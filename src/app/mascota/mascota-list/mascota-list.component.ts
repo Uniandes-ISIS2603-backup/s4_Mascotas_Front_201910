@@ -9,9 +9,24 @@ import { Mascota } from '../mascota';
 })
 export class MascotaListComponent implements OnInit 
 {
-    ngOnInit()
-    {
-        
-    }
+
+  /**
+   * Constructor
+   * @param mascotaService 
+   */
+  constructor(private mascotaService:MascotaService){}
+  /**
+   * Lista de mascotas a desplegar
+   */
+  mascotas:Mascota[];
+
+  getMascotas():void{
+  this.mascotaService.getMascotas().subscribe(ms =>{this.mascotas = ms});
+  }
+
+  ngOnInit()
+  {
+      this.getMascotas();
+  }
 
 }
