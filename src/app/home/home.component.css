@@ -1,6 +1,12 @@
 .btn-custom {
     background: #671dc8;
     color: antiquewhite;
+    border-radius: 40px;
+}
+
+.bton-custom:hover {
+    background: #00c4cc;
+    color: #343434;
 }
 
 .bg-img {
