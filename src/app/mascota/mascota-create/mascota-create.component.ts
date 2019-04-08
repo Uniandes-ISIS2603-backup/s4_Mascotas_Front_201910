@@ -7,7 +7,8 @@ import {APP_BASE_HREF} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {ToastrService} from 'ngx-toastr';
 import { Mascota } from '../mascota';
-import {MascotaDetail} from '../mascota-detail/mascota-detail'
+import {MascotaDetail} from '../mascota-detail/mascota-detail';
+import {NgForm} from '@angular/forms';
 
 @Component({
     selector: 'app-mascota-create',
@@ -17,9 +18,7 @@ import {MascotaDetail} from '../mascota-detail/mascota-detail'
 export class MascotaCreateComponent implements OnInit 
 {
     constructor(private route:ActivatedRoute, private mascotaService:MascotaService, private toastrService: ToastrService)
-    {
-
-    }
+    { }
 
     /**
      * Nueva mascota a crear

@@ -14,6 +14,7 @@ import { MascotaDetailComponent } from '../mascota/mascota-detail/mascota-detail
 import { MascotaAdopcionListComponent } from '../mascota-adopcion/mascota-adopcion-list/mascota-adopcion-list.component';
 import { MascotaAdopcionDetailComponent } from '../mascota-adopcion/mascota-adopcion-detail/mascota-adopcion-detail.component';
 import {HomeComponent} from '../home/home.component';
+import {MascotaCreateComponent} from '../mascota/mascota-create/mascota-create.component';
 
 const routes: Routes = [
     
@@ -106,6 +107,10 @@ const routes: Routes = [
             {
                 path: ':param',
                 component:MascotaDetailComponent
+            },
+            {
+                path : 'nueva',
+                component: MascotaCreateComponent
             }
         ]
     },
