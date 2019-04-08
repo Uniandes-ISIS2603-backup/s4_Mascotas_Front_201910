@@ -13,6 +13,7 @@ import { MascotaListComponent } from '../mascota/mascota-list/mascota-list.compo
 import { MascotaDetailComponent } from '../mascota/mascota-detail/mascota-detail.component';
 import { MascotaAdopcionListComponent } from '../mascota-adopcion/mascota-adopcion-list/mascota-adopcion-list.component';
 import { MascotaAdopcionDetailComponent } from '../mascota-adopcion/mascota-adopcion-detail/mascota-adopcion-detail.component';
+import {HomeComponent} from '../home/home.component';
 
 const routes: Routes = [
     
@@ -43,7 +44,7 @@ const routes: Routes = [
     },
     {
         path: 'home',
-        component: AuthLoginComponent
+        component: HomeComponent
     },
     {
         path : 'login',
