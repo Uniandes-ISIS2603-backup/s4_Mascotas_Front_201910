@@ -110,8 +110,15 @@ const routes: Routes = [
             },
             {
                 path : 'nueva',
-                component: MascotaCreateComponent
+                component: MascotaCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['CLIENT']
+                    }
+                }
             }
+            
         ]
     },
 ];
