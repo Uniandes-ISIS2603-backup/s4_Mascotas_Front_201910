@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <h4 class="card-title">{{mascota.nombre}}</h4>
                         <p class="card-text">{{mascota.estado}}</p>
-                        <a class="btn btn-info" name="masInfo" [routerLink]="['/mascotas',mascota.id]">Más información</a>
+                        <a class="btn btn-info" name="masInfo" routerLink="/mascotas/{{mascota.id}}">Más información</a>
                     </div>
                 </div>
             </div>

@@ -60,9 +60,11 @@ import {MascotaService } from '../mascota.service';
     ngOnInit()
     {
       const procesoId = parseInt(this.route.snapshot.paramMap.get('id'))
-      if(procesoId)
+      console.log(procesoId);
+      if(procesoId!=null)
       {
         this.getMascotaDetail(procesoId);
+        console.log(this.mascotaDetail);
         this.getPath();
       }
     }

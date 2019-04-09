@@ -105,7 +105,7 @@ const routes: Routes = [
                 component: MascotaCreateComponent
             },
             {
-                path: ':param',
+                path: ':id',
                 component:MascotaDetailComponent
             }
         ]
