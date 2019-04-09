@@ -7,7 +7,7 @@
             <form (ngSubmit)="crearMascota()" #forma="ngForm">
                 <div class=" form-group">
                     <label for="Nombre ">Nombre</label>
-                    <input [(ngModel)]="mascota.nombre" type="text " name="nombre" id="name" class="form-control " placeholder="Nombre de la mascota">
+                    <input [(ngModel)]="mascota.nombre" type="text" name="nombre" class="form-control " placeholder="Nombre de la mascota">
                 </div>
                 <div class="form-group">
                     <label for="Tipo">Tipo</label>
@@ -26,7 +26,10 @@
                 </div>
                 <div class="form-group">
                     <label for="Raza">Raza</label>
-                    <input [(ngModel)]="mascota.raza" type="text" name="raza" id="" class="form-control" placeholder="Raza de la mascota. NA si no aplica" required>
+                    <input [(ngModel)]="mascota.raza" #raza="ngModel" type="text" name="raza" id="" class="form-control" placeholder="Raza de la mascota. NA si no aplica" required>
+                    <div [hidden]="raza.valid || raza.pristine" class="alert alert-danger">
+                        Por favor inserte la raza. Si no aplica escriba 'NA'
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="">Adjunta una foto</label>

@@ -28,12 +28,12 @@ export class MascotaCreateComponent implements OnInit
     /**
      * Imagen de la mascota
      */
-    imagen:
+    imagen;
 
     /**
     * Output que le dice al componente que el usuario ha creado una nueva mascota
     */
-    @Output() create = new EventEmitter();
+   @Output() create = new EventEmitter();
 
 
     /**
