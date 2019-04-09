@@ -6,20 +6,24 @@
             <div class="col-md-6">
                 <img class="img-responsive mw-100 col-md-6 " src="{{mascotaDetail.fotos}}">
             </div>
-
-            <table class="table table-borderless col-md-6 text-center">
-                <tbody>
+            <table class="table table-borderless col-md-5 text-center">
+                <thead class="thead-dark">
                     <tr>
                         <th>Nombre</th>
                         <th>{{mascotaDetail.nombre}}</th>
                     </tr>
+                </thead>
+                <tbody>
                     <tr>
                         <th>Tipo</th>
                         <td>{{mascotaDetail.tipo}}</td>
                     </tr>
                     <tr>
                         <th>Estado</th>
-                        <td>{{mascotaDetail.estado}}</td>
+                        <td *ngIf="mascotaDetail.estado == 'EXTRAVIADO'" class="table-danger">{{mascotaDetail.estado}}</td>
+                        <td *ngIf="mascotaDetail.estado == 'ENCONTRADO'" class="table-success">{{mascotaDetail.estado}}</td>
+                        <td *ngIf="mascotaDetail.estado == 'ADOPTADO'" class="table-success">{{mascotaDetail.estado}}</td>
+                        <td *ngIf="mascotaDetail.estado == 'EN_ADOPCION'" class="table-warning">{{mascotaDetail.estado}}</td>
                     </tr>
                     <tr>
                         <th>Raza</th>
@@ -38,9 +42,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col md-10"> </div>
+            <div class="col md-8"> </div>
             <div class="col-md-2">
                 <button class="btn btn-info" routerLink="{{rutaProceso}}" type="button" name="button">Detalles proceso</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-danger" routerLink="/mascotas/list" type="button" name="volver">Volver</button>
             </div>
         </div>
     </div>
