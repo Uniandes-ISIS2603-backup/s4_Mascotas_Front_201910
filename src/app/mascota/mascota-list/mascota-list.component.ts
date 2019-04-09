@@ -19,6 +19,10 @@ export class MascotaListComponent implements OnInit
    * Lista de mascotas a desplegar
    */
   mascotas:Mascota[];
+  /**
+   * Slide activo del carrusel
+   */
+  activeSlide:number;
 
   path:number;
 
@@ -31,5 +35,17 @@ export class MascotaListComponent implements OnInit
   {
       this.getMascotas();
   }
+
+  get activeSlideIndex(): number {
+    return this.activeSlide;
+  };
+  
+  set activeSlideIndex(newIndex: number) {
+    if(this.activeSlide !== newIndex) {
+      console.log('Active slider index would be changed!');
+      // here's the place for your "slide.bs.carousel" logic
+    }
+    this.activeSlide = newIndex;
+  };
 
 }
