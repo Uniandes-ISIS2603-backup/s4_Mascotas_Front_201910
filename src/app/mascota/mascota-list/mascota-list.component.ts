@@ -20,8 +20,9 @@ export class MascotaListComponent implements OnInit
    */
   mascotas:Mascota[];
 
-  getMascotas():void{
-  this.mascotaService.getMascotas().subscribe(ms =>{this.mascotas = ms});
+  getMascotas():void
+  {
+    this.mascotaService.getMascotas().subscribe(ms =>{this.mascotas = ms});
   }
 
   ngOnInit()

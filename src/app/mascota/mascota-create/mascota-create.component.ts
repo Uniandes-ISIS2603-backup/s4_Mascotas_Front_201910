@@ -7,7 +7,6 @@ import {APP_BASE_HREF} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {ToastrService} from 'ngx-toastr';
 import { Mascota } from '../mascota';
-import {MascotaDetail} from '../mascota-detail/mascota-detail';
 import {NgForm} from '@angular/forms';
 
 @Component({
@@ -23,7 +22,7 @@ export class MascotaCreateComponent implements OnInit
     /**
      * Nueva mascota a crear
      */
-    mascota : MascotaDetail;
+    mascota : Mascota;
 
     /**
      * Imagen de la mascota
@@ -41,7 +40,7 @@ export class MascotaCreateComponent implements OnInit
      */
     @Output() cancel = new EventEmitter();
 
-    crearMascota() : MascotaDetail
+    crearMascota() : Mascota
     {
         this.mascotaService.crearMascota(this.mascota).subscribe((m)=>{
             this.mascota = m;
@@ -71,7 +70,7 @@ export class MascotaCreateComponent implements OnInit
         {
             this.imagen = myReader.result;
             console.log(myReader.result);
-            this.mascota.foto = this.imagen;
+            this.mascota.fotos = this.imagen;
         }
     
         myReader.readAsDataURL(file);
@@ -79,6 +78,6 @@ export class MascotaCreateComponent implements OnInit
 
     ngOnInit(): void 
     { 
-        this.mascota = new MascotaDetail();
+        this.mascota = new Mascota();
     }
 }

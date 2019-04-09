@@ -24,11 +24,21 @@ export class Mascota
     /**
      * Foto de presentación de la mascota
      */
-    foto:string;
+    fotos:string;
 
     /**
      * Raza de la mascota
      */
     raza :string;
+
+    /**
+     * Descripción de la mascota
+     */
+    descripcion:string;
+
+    /**
+     * Identificador del proceso asociado a la mascota
+     */
+    procesoId:number;
 
 }

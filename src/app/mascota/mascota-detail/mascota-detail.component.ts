@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {MascotaDetail} from './mascota-detail';
+import {Mascota} from '../mascota';
 import {MascotaService } from '../mascota.service';
 
 @Component({
@@ -18,7 +18,7 @@ import {MascotaService } from '../mascota.service';
     /**
      * Detalle de la mascota
      */
-    mascotaDetail : MascotaDetail;
+    mascotaDetail : Mascota;
 
     /**
      * Id de la mascota
@@ -49,11 +49,11 @@ import {MascotaService } from '../mascota.service';
       }
       else if(this.mascotaDetail.estado == 'EXTRAVIADO')
       {
-        this.rutaProceso = "/mascotas-extraviadas"+this.mascotaDetail.procesoId;
+        this.rutaProceso = "/mascotas-extraviadas/"+this.mascotaDetail.procesoId;
       }
       else if(this.mascotaDetail.estado=='ENCONTRADO')
       {
-        this.rutaProceso = "/mascotas-encontradas"+this.mascotaDetail.procesoId;
+        this.rutaProceso = "/mascotas-encontradas/"+this.mascotaDetail.procesoId;
       }
     }
 
