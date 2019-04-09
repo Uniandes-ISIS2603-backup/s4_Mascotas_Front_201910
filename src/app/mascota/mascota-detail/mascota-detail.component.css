@@ -2,37 +2,24 @@ p {
     font-family: Lato;
 }
 
-.navbar-custom {
-    background-image: linear-gradient( to right, #7c2ae8, #00c4cc);
+.btn {
+    border-radius: 40px;
 }
 
-
-/* change the brand and text color */
-
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
-    color: rgba(255, 255, 255, .8);
+.row {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
-
-/* change the link color */
-
-.navbar-custom .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, .5);
+.container img.wide {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
 }
 
-
-/* change the color of active or hovered links */
-
-.navbar-custom .nav-item.active .nav-link,
-.navbar-custom .nav-item:hover .nav-link {
-    color: #ffffff;
-}
-
-.fa-search {
-    color: #ffffff;
-}
-
-.fa-user {
-    color: #ffffff;
+.container img.tall {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
 }
