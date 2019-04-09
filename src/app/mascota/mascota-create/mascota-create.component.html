@@ -11,7 +11,7 @@
                 </div>
                 <div class="form-group">
                     <label for="Tipo">Tipo</label>
-                    <select class="form-control" id="tipoMascotaSelect">
+                    <select [(ngModel)]="mascota.tipo" class="form-control" id="tipoMascotaSelect">
                     <option value = "PERRO">Perro</option>
                     <option value = "GATO">Gato</option>
                 </select>
@@ -24,6 +24,16 @@
                         <option value="EN_ADOPCION">En adopción</option>
                     </select>
                 </div>
+                <div class = "form-group">
+                    <label>Descripción</label>
+                    <textarea [(ngModel)]="mascota.descripcion" #descripcion="ngModel" type="text" name = "descripcion" class = "form-control" required>
+                    </textarea>
+                    <div *ngIf="descripcion.errors && (descripcion.dirty || descripcion.touched)">
+                        <div [hidden]="!descripcion.errors.required" class="alert alert-danger form-alert">
+                            Por favor llene este campo.
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="Raza">Raza</label>
                     <input [(ngModel)]="mascota.raza" #raza="ngModel" type="text" name="raza" id="" class="form-control" placeholder="Raza de la mascota. NA si no aplica" required>
@@ -35,7 +45,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Adjunta una foto</label>
-                    <input [(ngModel)]="mascota.foto" type="file" id="foto" name="foto" class="form-control-file" required>
+                    <input [(ngModel)]="mascota.fotos" type="file" id="fotos" name="fotos" class="form-control-file" required>
                 </div>
                 <div class="row text-right">
                     <div class="col-md-9">
