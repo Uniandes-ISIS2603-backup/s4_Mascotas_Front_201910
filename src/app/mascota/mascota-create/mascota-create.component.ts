@@ -70,8 +70,7 @@ export class MascotaCreateComponent implements OnInit
         {
             this.imagen = myReader.result;
             console.log(myReader.result);
-            this.mascota.fotos = new Array<string>();
-            this.mascota.fotos.push(this.imagen);
+            this.mascota.fotos[0]=(this.imagen);
         }
     
         myReader.readAsDataURL(file);
