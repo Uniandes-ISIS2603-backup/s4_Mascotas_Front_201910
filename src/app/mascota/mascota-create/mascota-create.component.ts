@@ -26,10 +26,20 @@ export class MascotaCreateComponent implements OnInit
     mascota : MascotaDetail;
 
     /**
-    * The output which tells the parent component
-    * that the user created a new author
+     * Imagen de la mascota
+     */
+    imagen;
+
+    /**
+    * Output que le dice al componente que el usuario ha creado una nueva mascota
     */
-    @Output() create = new EventEmitter();
+   @Output() create = new EventEmitter();
+
+
+    /**
+     * Output que le dice al componente que el usuario no desea continuar creando una mascota nueva
+     */
+    @Output() cancel = new EventEmitter();
 
     crearMascota() : MascotaDetail
     {
@@ -40,6 +50,31 @@ export class MascotaCreateComponent implements OnInit
         });
         console.log(this.mascota);
         return this.mascota;
+    }
+
+    cancelCreation() : void
+    {
+        this.cancel.emit();
+    }
+
+    changeListener($event) : void 
+    {
+        this.readThis($event.target);
+    }
+
+    readThis(inputValue: any): void 
+    {
+        var file:File = inputValue.files[0];
+        var myReader:FileReader = new FileReader();
+        
+        myReader.onloadend = (e) => 
+        {
+            this.imagen = myReader.result;
+            console.log(myReader.result);
+            this.mascota.foto = this.imagen;
+        }
+    
+        myReader.readAsDataURL(file);
     }
 
     ngOnInit(): void 

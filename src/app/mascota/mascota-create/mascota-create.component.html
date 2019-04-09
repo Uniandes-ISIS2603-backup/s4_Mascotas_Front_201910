@@ -2,45 +2,50 @@
     <br>
     <div class="card">
         <div class="card-body">
-            <h3 class="card-title">Cuéntanos un poco sobre tu mascota</h3>
+            <h4 class="card-title">Cuéntanos un poco sobre tu mascota</h4>
             <br>
             <form (ngSubmit)="crearMascota()" #forma="ngForm">
                 <div class=" form-group">
                     <label for="Nombre ">Nombre</label>
-                    <input [(ngModel)]="mascota.nombre" type="text " name="nombre" id=" " class="form-control " placeholder="Nombre de la mascota " required>
+                    <input [(ngModel)]="mascota.nombre" name="nombre" type="text" class="form-control " placeholder="Nombre de la mascota">
                 </div>
                 <div class="form-group">
                     <label for="Tipo">Tipo</label>
                     <select class="form-control" id="tipoMascotaSelect">
-            <option>Perro</option>
-            <option>Gato</option>
-        </select>
+                    <option>Perro</option>
+                    <option>Gato</option>
+                </select>
                 </div>
                 <div class="form-group">
                     <label for="Estado">Estado</label>
-                    <select [(ngModel)]="mascota.estado" class="form-control" id="estadoMascotaSelect">
-            <option value="EXTRAVIADO">Extraviado</option>
-            <option value="ENCONTRADO">Encontrado</option>
-            <option value="EN_ADOPCION">En adopción</option>
-        </select>
+                    <select [(ngModel)]="mascota.estado" name="estadoMascota" class="form-control" id="estadoMascotaSelect">
+                        <option value="EXTRAVIADO">Extraviado</option>
+                        <option value="ENCONTRADO">Encontrado</option>
+                        <option value="EN_ADOPCION">En adopción</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="Raza">Raza</label>
-                    <input [(ngModel)]="mascota.raza" type="text" name="raza" id="" class="form-control" placeholder="Raza de la mascota. NA si no aplica" required>
+                    <input [(ngModel)]="mascota.raza" #raza="ngModel" type="text" name="raza" id="" class="form-control" placeholder="Raza de la mascota. NA si no aplica" required>
+                    <div *ngIf="raza.errors && (raza.dirty || raza.touched)">
+                        <div [hidden]="!raza.errors.required" class="alert alert-danger form-alert">
+                            Por favor llene este campo. Si no aplica escriba 'NA'
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="">Adjunta una foto</label>
-                    <input [(ngModel)]="mascota.foto" type="file" id="" class="form-control-file" required>
+                    <input [(ngModel)]="mascota.foto" type="file" id="foto" name="foto" class="form-control-file" required>
                 </div>
                 <div class="row text-right">
-                    <div class="col-md-10">
+                    <div class="col-md-9">
 
                     </div>
                     <div class="col-md-1">
-                        <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-success">Enviar</button>
+                        <button [disabled]="!forma.valid" type="submit" class="btn btn-success">Enviar</button>
                     </div>
-                    <div class="col-md-1">
-                        <button [routerLink]="['/mascotas','list']" class="btn btn-outline-danger">Cancelar</button>
+                    <div class="col-md-2">
+                        <button [routerLink]="['/mascotas','list']" class="btn btn-danger">Cancelar</button>
                     </div>
                 </div>
             </form>
