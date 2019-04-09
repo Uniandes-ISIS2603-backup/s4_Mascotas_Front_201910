@@ -8,6 +8,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {ToastrService} from 'ngx-toastr';
 import { Mascota } from '../mascota';
 import {NgForm} from '@angular/forms';
+import {Subject} from 'rxjs';
+import {debounceTime} from 'rxjs/operators';
 
 @Component({
     selector: 'app-mascota-create',

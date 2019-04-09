@@ -24,9 +24,9 @@
                         <option value="EN_ADOPCION">En adopción</option>
                     </select>
                 </div>
-                <div class = "form-group">
+                <div class="form-group">
                     <label>Descripción</label>
-                    <textarea [(ngModel)]="mascota.descripcion" #descripcion="ngModel" type="text" name = "descripcion" class = "form-control" required>
+                    <textarea [(ngModel)]="mascota.descripcion" #descripcion="ngModel" type="text" name="descripcion" class="form-control" required>
                     </textarea>
                     <div *ngIf="descripcion.errors && (descripcion.dirty || descripcion.touched)">
                         <div [hidden]="!descripcion.errors.required" class="alert alert-danger form-alert">
@@ -55,6 +55,7 @@
                         <button [disabled]="!forma.valid" type="submit" class="btn btn-success">Enviar</button>
                     </div>
                     <div class="col-md-2">
+                        <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">La mascota ha sido creada con éxito</ngb-alert>
                         <button [routerLink]="['/mascotas','list']" class="btn btn-danger">Cancelar</button>
                     </div>
                 </div>
