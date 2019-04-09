@@ -12,23 +12,25 @@
                 <div class="form-group">
                     <label for="Tipo">Tipo</label>
                     <select class="form-control" id="tipoMascotaSelect">
-            <option>Perro</option>
-            <option>Gato</option>
-        </select>
+                    <option>Perro</option>
+                    <option>Gato</option>
+                </select>
                 </div>
                 <div class="form-group">
                     <label for="Estado">Estado</label>
                     <select [(ngModel)]="mascota.estado" class="form-control" id="estadoMascotaSelect">
-            <option value="EXTRAVIADO">Extraviado</option>
-            <option value="ENCONTRADO">Encontrado</option>
-            <option value="EN_ADOPCION">En adopción</option>
-        </select>
+                        <option value="EXTRAVIADO">Extraviado</option>
+                        <option value="ENCONTRADO">Encontrado</option>
+                        <option value="EN_ADOPCION">En adopción</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="Raza">Raza</label>
                     <input [(ngModel)]="mascota.raza" #raza="ngModel" type="text" name="raza" id="" class="form-control" placeholder="Raza de la mascota. NA si no aplica" required>
-                    <div [hidden]="raza.valid || raza.pristine" class="alert alert-danger">
-                        Por favor inserte la raza. Si no aplica escriba 'NA'
+                    <div *ngIf="raza.errors && (raza.dirty || raza.touched)">
+                        <div [hidden]="!name.errors.required" class="alert alert-danger form-alert">
+                            Por favor llene este campo. Si no aplica escriba 'NA'
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
