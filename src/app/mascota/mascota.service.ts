@@ -56,6 +56,7 @@ export class MascotaService
    */
   filtrarPorTipo(tipo:string):Observable<Mascota[]>
   {
+    console.log('Tipo ='+  tipo);
     return this.http.get<Mascota[]>(`${API_URL}/tipo/${tipo}`);
   }
 }

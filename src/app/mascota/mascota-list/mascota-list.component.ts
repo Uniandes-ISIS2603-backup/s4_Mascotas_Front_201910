@@ -23,6 +23,14 @@ export class MascotaListComponent implements OnInit
    * Slide activo del carrusel
    */
   activeSlide:number;
+  /**
+   * Tipo para realizar la búsqueda
+   */
+  tipo:string;
+  /**
+   * Contador para la verificación del tipo
+   */
+  contador:number = 0;
 
   /**
    * Despliega todas las mascotas del sistema en el carrusel
