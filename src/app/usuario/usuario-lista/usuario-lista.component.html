@@ -1,7 +1,11 @@
 <ul>
   <li *ngFor="let usuario of usuarios">
-    <a href="/mascotas-extraviadas/{{mascotaExtraviada.id}}">
+    <a routerLink="/usuario/{{usuario.id}}">
        {{usuario.nombre}}/{{usuario.usuario}}
     </a>
   </li>
 </ul>
+<p>Usuario Lista Funciona</p>
+<div>
+    <router-outlet></router-outlet>
+</div>

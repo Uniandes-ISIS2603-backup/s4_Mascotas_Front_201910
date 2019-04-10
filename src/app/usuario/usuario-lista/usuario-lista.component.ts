@@ -31,7 +31,6 @@ export class UsuarioListaComponent implements OnInit {
 
 
 
-
   ngOnInit() {
     this.getUsuarios();
   }
