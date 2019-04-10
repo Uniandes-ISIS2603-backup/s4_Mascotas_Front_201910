@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MascotaExtraviadaListComponent } from './mascota-extraviada-list/mascota-extraviada-list.component';
-import { MascotaExtraviadaDetailComponent } from './mascota-extraviada-detail/mascota-extraviada-detail.component';
+import { MascotaEncontradaListComponent } from './mascota-encontrada-list/mascota-encontrada-list.component';
+import { MascotaEncontradaDetailComponent } from './mascota-encontrada-detail/mascota-encontrada-detail.component';
 import { MascotaEncontradaService } from './mascota-encontrada.service';
 
 @NgModule({
@@ -10,6 +10,7 @@ import { MascotaEncontradaService } from './mascota-encontrada.service';
   ],
   declarations: [MascotaEncontradaListComponent, MascotaEncontradaDetailComponent],
   bootstrap: [MascotaEncontradaListComponent],
-  providers: [MascotaEncontradaService]
+  providers: [MascotaEncontradaService],
+  exports : [MascotaEncontradaDetailComponent, MascotaEncontradaListComponent]
 })
 export class MascotaEncontradaModule { }

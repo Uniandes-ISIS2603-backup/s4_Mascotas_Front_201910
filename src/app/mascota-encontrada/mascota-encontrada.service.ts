@@ -9,9 +9,7 @@ const API_URL = "http://localhost:8080/s4_mascotas-api/api/procesosMascotaEncont
  * El proveedor de servicios de todo lo relacionado
  * con los procesos de mascota encontrada
  */
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MascotaEncontradaService 
 {
 
