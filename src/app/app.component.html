@@ -1,12 +1,32 @@
 <nav class="navbar navbar-expand-lg navbar-custom">
     <a class="navbar-brand" href="#">
         <div class="form-inline">
-            <h2 class="mainTitle">s4_mascotas-Front</h2>
+            <h2 class="mainTitle">HELPET</h2>
         </div>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+    <a class="navbar-item ">
+        <div class="nav-link" [routerLink]="['/mascotas/list']" routerLinkActive="active">
+            <p>Mascotas</p>
+        </div>
+    </a>
+    <a class="navbar-item nav-link" href="#">
+        <div class="form-inline">
+            <p>Eventos</p>
+        </div>
+    </a>
+    <a class="navbar-item nav-link" href="#">
+        <div class="form-inline">
+            <p>Clasificados</p>
+        </div>
+    </a>
+    <a class="navbar-item nav-link" href="#">
+        <div class="form-inline">
+            <p>Blog</p>
+        </div>
+    </a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="navbar-nav mr-auto mt-0">
 
@@ -30,15 +50,13 @@
 
 <div>
     <router-outlet></router-outlet>
-    <!-- <app-mascota-extraviada-list></app-mascota-extraviada-list> -->
-    <br>
-    <br>
 </div>
-<footer class="footer bg-light" id="footer">
+<footer class="footer special-color-dark" id="footer">
     <div class="container">
         <p class="navbar-text text-center">
             <img src="../assets/uniandes.png" alt="logo" width="8%" /><span id="footer-text"></span>
-            <a routerLink="/home"> s4_mascotas-Front</a>
+            <a routerLink="/home"> HELPET</a>
+            <a> © Uniandes 2019. Desarrollo de Software en Equipos</a>
         </p>
     </div>
 </footer>

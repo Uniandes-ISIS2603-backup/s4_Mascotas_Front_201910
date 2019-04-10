@@ -1,0 +1,28 @@
+.btn-custom {
+    background: #671dc8;
+    color: antiquewhite;
+    border-radius: 40px;
+}
+
+.fas {
+    color: #fffc03;
+}
+
+.btn-custom:hover {
+    background: #00c4cc;
+    color: #343434;
+}
+
+.bg-img {
+    background-image: url('../../assets/Home.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+body {
+    min-height: 75vh;
+    height: auto;
+    margin: 0;
+}

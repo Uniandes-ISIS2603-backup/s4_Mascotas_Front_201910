@@ -1,0 +1,13 @@
+.special-color-dark {
+    color: ivory;
+    background: #273746;
+}
+
+.nav-link {
+    color: ivory;
+    opacity: 0.7;
+}
+
+.nav-link:hover {
+    color: lightskyblue;
+}

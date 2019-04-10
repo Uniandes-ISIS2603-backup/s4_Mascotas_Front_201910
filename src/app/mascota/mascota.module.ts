@@ -8,10 +8,12 @@ import {MascotaCreateComponent} from './mascota-create/mascota-create.component'
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
 import {FormsModule} from '@angular/forms';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     imports: [
-      CommonModule, HttpClientModule, AppRoutingModule, FormsModule
+      CommonModule, HttpClientModule, AppRoutingModule, FormsModule, CarouselModule.forRoot(), NgbModule
     ],
     declarations: [MascotaDetailComponent, MascotaCreateComponent, MascotaListComponent],
     bootstrap: [MascotaListComponent],
