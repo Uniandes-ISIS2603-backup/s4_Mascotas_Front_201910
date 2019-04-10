@@ -9,7 +9,7 @@ import {MascotaEnAdopcion} from './mascota-adopcion';
  * constantes para definir la ruta
  */
 const API_URL = environment.apiURL;
-const procesos = './procesosMascotaEnAdopcion';
+const procesos = '/procesosMascotaEnAdopcion';
 
 @Injectable(//{ providedIn: 'root'}
 )

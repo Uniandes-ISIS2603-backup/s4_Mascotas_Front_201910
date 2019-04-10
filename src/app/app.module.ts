@@ -18,6 +18,7 @@ import {MascotaModule} from './mascota/mascota.module';
 import { MascotaAdopcionModule } from './mascota-adopcion/mascota-adopcion.module';
 import { HomeComponent } from './home/home.component';
 import {MascotaEncontradaModule} from './mascota-encontrada/mascota-encontrada.module';
+import {CalificacionModule} from  './calificacion/calificacion.module';
 
 import {UsuarioModule} from './usuario/usuario.module'
 @NgModule({
@@ -47,7 +48,8 @@ import {UsuarioModule} from './usuario/usuario.module'
         MascotaAdopcionModule,
         RecompensaModule,
         MascotaEncontradaModule,
-        UsuarioModule
+        UsuarioModule,
+        CalificacionModule
     ],
     bootstrap: [AppComponent],
     providers: [
