@@ -17,7 +17,7 @@ export class MascotaAdopcionService {
 
   /**
    * Constructor del servicio
-   * @param http - HttpClient necesario para ejecutar los pedidos
+   * @param http - HttpClient necesario para ejecutar los procesos
    */
   constructor(private httpClient : HttpClient) { }
 
