@@ -1,4 +1,43 @@
 <div class="container-fluid">
+    <nav class="navbar navbar-dark bg-primary text-left rounded">
+        <a class="navbar-brand"><i class="fas fa-filter"></i>Filtrar</a>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only"></span>Tipo de Mascota </button>
+            <form class="dropdown-menu p-4">
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                        <label class="form-check-label" for="dropdownCheck2">
+                                <i class="fas fa-dog"></i> Perro
+                            </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                        <label class="form-check-label" for="dropdownCheck2">
+                                <i class="fas fa-cat"></i>  Gato
+                            </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success" name="filtrarTipo">
+                    Aplicar
+                </button>
+            </form>
+        </div>
+        <div class="btn-group dropleft">
+            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only"></span> Estado </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button">En adopción</button>
+                <button class="dropdown-item" type="button">Extraviado</button>
+                <button class="dropdown-item" type="button">Encontrado</button>
+                <button class="dropdown-item" type="button">Adoptado</button>
+            </div>
+        </div>
+    </nav>
+
     <carousel [(activeSlide)]="activeSlide">
         <slide *ngFor="let mascota of mascotas">
             <div class="card mb-2">

@@ -55,7 +55,6 @@
                         <button [disabled]="!forma.valid" type="submit" class="btn btn-success">Enviar</button>
                     </div>
                     <div class="col-md-2">
-                        <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">La mascota ha sido creada con éxito</ngb-alert>
                         <button [routerLink]="['/mascotas','list']" class="btn btn-danger">Cancelar</button>
                     </div>
                 </div>

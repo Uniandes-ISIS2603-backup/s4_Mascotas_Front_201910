@@ -63,6 +63,10 @@ export class MascotaCreateComponent implements OnInit
         this.readThis($event.target);
     }
 
+    /**
+     * Lee el archivo pasado por parámetro 
+     * @param inputValue 
+     */
     readThis(inputValue: any): void 
     {
         var file:File = inputValue.files[0];
