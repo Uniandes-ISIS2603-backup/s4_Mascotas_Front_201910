@@ -15,4 +15,23 @@ const API_URL = "http://localhost:8080/s4_mascotas-api/api/procesosMascotaEncont
 export class MascotaEncontradaService 
 {
 
+/**
+   * Constructor del servicio
+   * @param http - HttpClient necesario para ejecutar los pedidos
+   */
+  constructor(private http: HttpClient) { }
+
+  /**
+   * Retorna la lista con todos los procesos de mascotas encontradas
+   */
+  getMascotasEncontradas():Observable<MascotaEncontrada[]>
+  {
+      return this.http.get<MascotaEncontrada[]>(API_URL);
+  }
+
+  getDetail(id:number):Observable<MascotaEncontrada>
+  {
+      return this.http.get<MascotaEncontrada>(`${API_URL}/${id}`)
+  }
+
 }

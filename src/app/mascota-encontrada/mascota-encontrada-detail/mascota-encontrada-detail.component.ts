@@ -10,7 +10,23 @@ import { MascotaEncontrada} from '../mascota-encontrada';
 })
 export class MascotaEncontradaDetailComponent implements OnInit 
 {
-    ngOnInit(){
-        
+    /**
+   * Constructor del componente
+   * @param route 
+   * @param mascotaExtraviadaService 
+   */
+  constructor(
+    private route: ActivatedRoute,
+    private mascotaExtraviadaService: MascotaEncontradaService
+  ) { }
+
+  /**
+   * Proceso cuyo detalle se va a desplegar
+   */
+  mascotaEncontrada : MascotaEncontrada;
+
+    ngOnInit()
+    {
+        this.mascotaEncontrada = new MascotaEncontrada( );
     }
 }

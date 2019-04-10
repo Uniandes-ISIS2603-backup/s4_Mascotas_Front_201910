@@ -15,6 +15,8 @@ import { MascotaAdopcionListComponent } from '../mascota-adopcion/mascota-adopci
 import { MascotaAdopcionDetailComponent } from '../mascota-adopcion/mascota-adopcion-detail/mascota-adopcion-detail.component';
 import {HomeComponent} from '../home/home.component';
 import {MascotaCreateComponent} from '../mascota/mascota-create/mascota-create.component';
+import {MascotaEncontradaListComponent} from '../mascota-encontrada/mascota-encontrada-list/mascota-encontrada-list.component';
+import {MascotaEncontradaDetailComponent} from '../mascota-encontrada/mascota-encontrada-detail/mascota-encontrada-detail.component';
 
 const routes: Routes = [
     
@@ -107,6 +109,19 @@ const routes: Routes = [
             {
                 path: ':id',
                 component:MascotaDetailComponent
+            }
+        ]
+    },
+    {
+        path : 'mascotas-encontradas',
+        children : [
+            {
+                path : 'list',
+                component : MascotaEncontradaListComponent
+            },
+            {
+                path : ':id',
+                component : MascotaEncontradaDetailComponent
             }
         ]
     },
