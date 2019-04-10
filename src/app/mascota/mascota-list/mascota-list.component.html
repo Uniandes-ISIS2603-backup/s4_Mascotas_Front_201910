@@ -1,30 +1,13 @@
 <div class="container-fluid">
     <nav class="navbar navbar-dark bg-primary text-left rounded">
-        <a class="navbar-brand"><i class="fas fa-filter"></i>Filtrar</a>
+        <a class="navbar-brand"><i class="fas fa-filter"></i>Filtrar por</a>
         <div class="btn-group">
             <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="sr-only"></span>Tipo de Mascota </button>
-            <form class="dropdown-menu p-4">
-                <div class="form-group">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-                        <label class="form-check-label" for="dropdownCheck2">
-                                <i class="fas fa-dog"></i> Perro
-                            </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-                        <label class="form-check-label" for="dropdownCheck2">
-                                <i class="fas fa-cat"></i>  Gato
-                            </label>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-success" name="filtrarTipo">
-                    Aplicar
-                </button>
-            </form>
+                <span class="sr-only"></span>Tipo de Mascota </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <button (click)="filtrarPorTipo('PERRO')" name="BtnPerro" class="dropdown-item" type="button"><i class="fas fa-dog"></i> Perro</button>
+                <button (click)="filtrarPorTipo('GATO')" name="BtnGato" class="dropdown-item" type="button"><i class="fas fa-cat"></i>  Gato</button>
+            </div>
         </div>
         <div class="btn-group dropleft">
             <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,7 +21,7 @@
         </div>
     </nav>
 
-    <carousel [(activeSlide)]="activeSlide">
+    <carousel *ngIf="mascotas.length>0" [(activeSlide)]="activeSlide">
         <slide *ngFor="let mascota of mascotas">
             <div class="card mb-2">
                 <img class="card-img-top" src="{{mascota.fotos}}" alt="Card image cap">
@@ -50,7 +33,10 @@
                     </div>
                     <div class="row text-center">
                         <div class="col-md-6">
-                            <p class="card-text">{{mascota.estado}}</p>
+                            <h5 *ngIf="mascota.estado=='ADOPTADO'" class="card-text text-success">{{mascota.estado}}</h5>
+                            <h5 *ngIf="mascota.estado=='ENCONTRADO'" class="card-text text-success">{{mascota.estado}}</h5>
+                            <h5 *ngIf="mascota.estado=='EN_ADOPCION'" class="card-text text-warning">EN ADOPCIÓN</h5>
+                            <h5 *ngIf="mascota.estado=='EXTRAVIADO'" class="card-text text-danger">{{mascota.estado}}</h5>
                         </div>
                         <div class="col-md-6">
                             <a class="btn btn-info" name="masInfo" routerLink="/mascotas/{{mascota.id}}">Más información</a>
@@ -60,4 +46,10 @@
             </div>
         </slide>
     </carousel>
+
+    <br>
+    <br>
+    <h1 *ngIf="mascotas.length == 0" class="text-center">Whoops... Parece que ninguna mascota coincide con tus criterios de búsqueda</h1>
+    <br>
+    <br>
 </div>

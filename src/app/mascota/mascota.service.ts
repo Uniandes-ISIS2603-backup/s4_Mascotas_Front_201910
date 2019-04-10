@@ -25,18 +25,38 @@ export class MascotaService
     return this.http.get<Mascota[]>(API_URL);
   }
   
+  /**
+   * Retorna una mascota dado su id
+   * @param id 
+   */
   getMascotaDetail(id:number) : Observable<Mascota>
   {
     return this.http.get<Mascota>(`${API_URL}/${id}`);
   }
 
+  /**
+   * Crea una nueva mascota
+   * @param mascota 
+   */
   crearMascota(mascota:Mascota) : Observable<Mascota>
   {
     return this.http.post<Mascota>(API_URL, mascota);
   }
 
+  /**
+   * Filtra las mascotas del sistema por su estado
+   */
   filtrarPorEstado(estado:string):Observable<Mascota[]>
   {
     return this.http.get<Mascota[]>(`${API_URL}/estado/${estado}`);
+  }
+
+  /**
+   * Filtra las mascotas del sistema por su tipo
+   */
+  filtrarPorTipo(tipo:string):Observable<Mascota[]>
+  {
+    console.log('Tipo ='+  tipo);
+    return this.http.get<Mascota[]>(`${API_URL}/tipo/${tipo}`);
   }
 }
