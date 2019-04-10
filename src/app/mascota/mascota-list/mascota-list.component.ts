@@ -24,8 +24,6 @@ export class MascotaListComponent implements OnInit
    */
   activeSlide:number;
 
-  path:number;
-
   getMascotas():void
   {
     this.mascotaService.getMascotas().subscribe(ms =>{this.mascotas = ms});
@@ -40,12 +38,18 @@ export class MascotaListComponent implements OnInit
     return this.activeSlide;
   };
   
-  set activeSlideIndex(newIndex: number) {
+  set activeSlideIndex(newIndex: number) 
+  {
     if(this.activeSlide !== newIndex) {
       console.log('Active slider index would be changed!');
       // here's the place for your "slide.bs.carousel" logic
     }
     this.activeSlide = newIndex;
   };
+
+  filtrarPorEstado(estado:string):void
+  {
+    this.mascotaService.filtrarPorEstado(estado).subscribe(ms=>{this.mascotas=ms});
+  }
 
 }

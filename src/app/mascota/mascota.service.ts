@@ -32,6 +32,11 @@ export class MascotaService
 
   crearMascota(mascota:Mascota) : Observable<Mascota>
   {
-    return this.http.post<Mascota>(API_URL, mascota)
+    return this.http.post<Mascota>(API_URL, mascota);
+  }
+
+  filtrarPorEstado(estado:string):Observable<Mascota[]>
+  {
+    return this.http.get<Mascota[]>(`${API_URL}/estado/${estado}`);
   }
 }

@@ -30,10 +30,10 @@
             <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only"></span> Estado </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" type="button">En adopción</button>
-                <button class="dropdown-item" type="button">Extraviado</button>
-                <button class="dropdown-item" type="button">Encontrado</button>
-                <button class="dropdown-item" type="button">Adoptado</button>
+                <button (click)="filtrarPorEstado('EN_ADOPCION')" name="EnAdopcion" class="dropdown-item" type="button">En adopción</button>
+                <button (click)="filtrarPorEstado('EXTRAVIADO')" name="Extraviado" class="dropdown-item" type="button">Extraviado</button>
+                <button (click)="filtrarPorEstado('ENCONTRADO')" name="Encontrado" class="dropdown-item" type="button">Encontrado</button>
+                <button (click)="filtrarPorEstado('ADOPTADO')" name="Adoptado" class="dropdown-item" type="button">Adoptado</button>
             </div>
         </div>
     </nav>
