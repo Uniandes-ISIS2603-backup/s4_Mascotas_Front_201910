@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col md-8"> </div>
             <div class="col-md-2">
-                <button class="btn btn-info" routerLink="{{rutaProceso}}" type="button" name="button">Detalles proceso</button>
+                <button *ngIf="mascotaDetail.estado!='ADOPTADO'" class="btn btn-info" routerLink="{{rutaProceso}}" type="button" name="button">Detalles proceso</button>
             </div>
             <div class="col-md-2">
                 <button class="btn btn-danger" routerLink="/mascotas/list" type="button" name="volver">Volver</button>
