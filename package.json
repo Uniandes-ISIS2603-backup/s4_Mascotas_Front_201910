@@ -25,7 +25,11 @@
         "@angular/router": "^6.0.0",
         "@compodoc/compodoc": "^1.1.3",
         "@ng-bootstrap/ng-bootstrap": "^3.3.1",
+<<<<<<< HEAD
         "angular-bootstrap-datetimepicker": "^3.0.0",
+=======
+        "@types/jest": "^24.0.11",
+>>>>>>> 470c3777ae1c583038e47ed8bff83a50e7cf05eb
         "angular-dual-listbox": "^4.7.0",
         "angular-font-awesome": "^3.1.2",
         "angular2-fontawesome": "^5.2.1",
@@ -52,13 +56,13 @@
         "primeng": "^6.0.0",
         "rxjs": "^6.0.0",
         "rxjs-compat": "^6.2.2",
-        "typescript": "^2.7.2",
+        "typescript": "^2.9.2",
         "zone.js": "^0.8.26"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "^0.7.5",
         "@angular/cli": "^6.2.9",
-        "@angular/compiler-cli": "^6.0.0",
+        "@angular/compiler-cli": "^6.1.10",
         "@angular/language-service": "^6.0.0",
         "@types/jasmine": "~2.8.3",
         "@types/jasminewd2": "~2.0.2",

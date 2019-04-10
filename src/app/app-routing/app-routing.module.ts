@@ -18,6 +18,12 @@ import {MascotaCreateComponent} from '../mascota/mascota-create/mascota-create.c
 import {MascotaEncontradaListComponent} from '../mascota-encontrada/mascota-encontrada-list/mascota-encontrada-list.component';
 import {MascotaEncontradaDetailComponent} from '../mascota-encontrada/mascota-encontrada-detail/mascota-encontrada-detail.component';
 import {MascotaEncontradaCreateComponent} from '../mascota-encontrada/mascota-encontrada-create/mascota-encontrada-create.component';
+import { MascotaAdopcionCreateComponent } from '../mascota-adopcion/mascota-adopcion-create/mascota-adopcion-create.component';
+
+
+import {UsuarioListaComponent} from '../usuario/usuario-lista/usuario-lista.component';
+import {UsuarioDetalleComponent} from '../usuario/usuario-detalle/usuario-detalle.component';
+import { CalificacionCreateComponent } from '../calificacion/calificacion-create/calificacion-create.component';
 
 const routes: Routes = [
     
@@ -75,9 +81,27 @@ const routes: Routes = [
                 path:'list',
                 component: MascotaAdopcionListComponent
             },{
-                path: 'id',
-                component: MascotaAdopcionDetailComponent
+                path: ':id',
+                component: MascotaAdopcionDetailComponent,
+                children:[
+                    {
+                    path: 'create-calificacion',
+                    component: CalificacionCreateComponent
+                    }
+                    
+                ]
+            },{
+                path: 'nueva',
+                component: MascotaAdopcionCreateComponent,
+                children:[
+                    {
+                    path: 'nueva-mascota',
+                    component: MascotaCreateComponent
+                    }
+                    
+                ]
             }
+
         ]
 
     },
@@ -129,6 +153,20 @@ const routes: Routes = [
                 component : MascotaEncontradaDetailComponent
             } 
         ]
+    },
+    {
+        path:'usuario',
+        children:[
+            {
+                path:'list',
+                component: UsuarioListaComponent
+            },
+            {
+                path:':id',
+                component: UsuarioDetalleComponent
+            }
+        ]
+
     },
     {
         path: '**',
