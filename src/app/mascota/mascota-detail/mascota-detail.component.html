@@ -2,24 +2,31 @@
     <br>
     <br>
     <div class="card">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-md-6">
-                <img class="img-responsive col-md-6 " width="100%" src="">
+                <img class="img-responsive mw-100 col-md-6 " src="{{mascotaDetail.fotos}}">
             </div>
-
-            <table class="table table-borderless col-md-6 text-center">
-                <tbody>
+            <table class="table table-borderless col-md-5 text-center">
+                <thead class="thead-dark">
                     <tr>
                         <th>Nombre</th>
                         <th>{{mascotaDetail.nombre}}</th>
                     </tr>
+                </thead>
+                <tbody>
                     <tr>
                         <th>Tipo</th>
-                        <td>{{mascotaDetail.tipo}}</td>
+                        <td>
+                            <i *ngIf="mascotaDetail.tipo=='PERRO'" class="fas fa-dog"></i>
+                            <i *ngIf="mascotaDetail.tipo=='GATO'" class="fas fa-cat"></i> {{mascotaDetail.tipo}}
+                        </td>
                     </tr>
                     <tr>
                         <th>Estado</th>
-                        <td>{{mascotaDetail.estado}}</td>
+                        <td *ngIf="mascotaDetail.estado == 'EXTRAVIADO'" class="table-danger">EXTRAVIADO</td>
+                        <td *ngIf="mascotaDetail.estado == 'ENCONTRADO'" class="table-success">ENCONTRADO</td>
+                        <td *ngIf="mascotaDetail.estado == 'ADOPTADO'" class="table-success">ADOPTADO</td>
+                        <td *ngIf="mascotaDetail.estado == 'EN_ADOPCION'" class="table-warning">EN ADOPCIÓN</td>
                     </tr>
                     <tr>
                         <th>Raza</th>
@@ -31,18 +38,19 @@
         </div>
         <div class="row">
             <div class="col-md-3">
-                <h3>Descripción</h3>
+                <h5>Descripción</h5>
             </div>
             <div class="col-md-9">
                 {{mascotaDetail.descripcion}}
             </div>
-            <div class="row">
-                <div class="col md-10">
-
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-outline-info" type="button" name="button">Detalles proceso</button>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col md-8"> </div>
+            <div class="col-md-2">
+                <button *ngIf="mascotaDetail.estado!='ADOPTADO'" class="btn btn-info" routerLink="{{rutaProceso}}" type="button" name="button">Detalles proceso</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-danger" routerLink="/mascotas/list" type="button" name="volver">Volver</button>
             </div>
         </div>
     </div>

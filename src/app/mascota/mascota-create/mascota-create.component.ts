@@ -8,6 +8,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {ToastrService} from 'ngx-toastr';
 import { Mascota } from '../mascota';
 import {NgForm} from '@angular/forms';
+import {Subject} from 'rxjs';
+import {debounceTime} from 'rxjs/operators';
 
 @Component({
     selector: 'app-mascota-create',
@@ -61,6 +63,10 @@ export class MascotaCreateComponent implements OnInit
         this.readThis($event.target);
     }
 
+    /**
+     * Lee el archivo pasado por parámetro 
+     * @param inputValue 
+     */
     readThis(inputValue: any): void 
     {
         var file:File = inputValue.files[0];
@@ -70,7 +76,8 @@ export class MascotaCreateComponent implements OnInit
         {
             this.imagen = myReader.result;
             console.log(myReader.result);
-            this.mascota.fotos = this.imagen;
+            this.mascota.fotos = new Array<string>();
+            this.mascota.fotos.push(this.imagen);
         }
     
         myReader.readAsDataURL(file);

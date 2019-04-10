@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MascotaAdopcionListComponent } from './mascota-adopcion-list/mascota-adopcion-list.component';
 import { MascotaAdopcionService } from './mascota-adopcion-service.service';
 import { MascotaAdopcionDetailComponent } from './mascota-adopcion-detail/mascota-adopcion-detail.component';
+import { MascotaAdopcionCreateComponent } from './mascota-adopcion-create/mascota-adopcion-create.component';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { MascotaAdopcionDetailComponent } from './mascota-adopcion-detail/mascot
     FormsModule,
     BrowserModule
   ],
-  declarations: [MascotaAdopcionListComponent, MascotaAdopcionDetailComponent],
+  declarations: [MascotaAdopcionListComponent, MascotaAdopcionDetailComponent, MascotaAdopcionCreateComponent],
   providers: [MascotaAdopcionService],
   exports: [MascotaAdopcionListComponent, MascotaAdopcionDetailComponent]
 })

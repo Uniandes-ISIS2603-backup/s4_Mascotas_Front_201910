@@ -24,7 +24,7 @@ export class Mascota
     /**
      * Foto de presentación de la mascota
      */
-    fotos:string;
+    fotos:string[];
 
     /**
      * Raza de la mascota

@@ -9,7 +9,7 @@ import {MascotaEnAdopcion} from './mascota-adopcion';
  * constantes para definir la ruta
  */
 const API_URL = environment.apiURL;
-const procesos = './procesosMascotaEnAdopcion';
+const procesos = '/procesosMascotaEnAdopcion';
 
 @Injectable(//{ providedIn: 'root'}
 )
@@ -17,7 +17,7 @@ export class MascotaAdopcionService {
 
   /**
    * Constructor del servicio
-   * @param http - HttpClient necesario para ejecutar los pedidos
+   * @param http - HttpClient necesario para ejecutar los procesos
    */
   constructor(private httpClient : HttpClient) { }
 
