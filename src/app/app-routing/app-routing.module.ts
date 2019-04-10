@@ -17,6 +17,7 @@ import {HomeComponent} from '../home/home.component';
 import {MascotaCreateComponent} from '../mascota/mascota-create/mascota-create.component';
 import {MascotaEncontradaListComponent} from '../mascota-encontrada/mascota-encontrada-list/mascota-encontrada-list.component';
 import {MascotaEncontradaDetailComponent} from '../mascota-encontrada/mascota-encontrada-detail/mascota-encontrada-detail.component';
+import {MascotaEncontradaCreateComponent} from '../mascota-encontrada/mascota-encontrada-create/mascota-encontrada-create.component';
 
 const routes: Routes = [
     
@@ -120,9 +121,13 @@ const routes: Routes = [
                 component : MascotaEncontradaListComponent
             },
             {
+                path: 'nuevo',
+                component : MascotaEncontradaCreateComponent
+            },
+            {
                 path : ':id',
                 component : MascotaEncontradaDetailComponent
-            }
+            } 
         ]
     },
     {
