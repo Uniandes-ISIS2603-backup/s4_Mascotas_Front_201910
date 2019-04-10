@@ -38,7 +38,7 @@
         </div>
     </nav>
 
-    <carousel [(activeSlide)]="activeSlide">
+    <carousel *ngIf="mascotas.length>0" [(activeSlide)]="activeSlide">
         <slide *ngFor="let mascota of mascotas">
             <div class="card mb-2">
                 <img class="card-img-top" src="{{mascota.fotos}}" alt="Card image cap">
@@ -50,7 +50,10 @@
                     </div>
                     <div class="row text-center">
                         <div class="col-md-6">
-                            <p class="card-text">{{mascota.estado}}</p>
+                            <p *ngIf="mascota.estado=='ADOPTADO'" class="card-text text-success">{{mascota.estado}}</p>
+                            <p *ngIf="mascota.estado=='ENCONTRADO'" class="card-text text-success">{{mascota.estado}}</p>
+                            <p *ngIf="mascota.estado=='EN_ADOPCION'" class="card-text text-warning">EN ADOPCIÓN</p>
+                            <p *ngIf="mascota.estado=='EXTRAVIADO'" class="card-text text-danger">{{mascota.estado}}</p>
                         </div>
                         <div class="col-md-6">
                             <a class="btn btn-info" name="masInfo" routerLink="/mascotas/{{mascota.id}}">Más información</a>
@@ -60,4 +63,11 @@
             </div>
         </slide>
     </carousel>
+
+    <br>
+    <br>
+    <h1 *ngIf="mascotas.length == 0" class="text-center">Whoops... Parece que ninguna mascota coincide con tus criterios de búsqueda</h1>
+    <br>
+    <br>
+
 </div>
