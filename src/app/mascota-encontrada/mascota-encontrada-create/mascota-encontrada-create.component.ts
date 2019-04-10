@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MascotaEncontradaService } from '../mascota-encontrada.service';
 import { MascotaEncontrada} from '../mascota-encontrada';
+import {ActivatedRoute, convertToParamMap} from '@angular/router';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-mascota-encontrada-create',
