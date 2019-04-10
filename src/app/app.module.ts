@@ -17,6 +17,8 @@ import { RecompensaModule } from './recompensa/recompensa.module';
 import {MascotaModule} from './mascota/mascota.module';
 import { MascotaAdopcionModule } from './mascota-adopcion/mascota-adopcion.module';
 import { HomeComponent } from './home/home.component';
+import { ArticuloModule } from './articulo/articulo.module';
+import { EventoModule } from './evento/evento.module';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { HomeComponent } from './home/home.component';
         MascotaModule,
         MascotaAdopcionModule,
         RecompensaModule,
+        ArticuloModule,
+        EventoModule
     ],
     bootstrap: [AppComponent],
     providers: [
