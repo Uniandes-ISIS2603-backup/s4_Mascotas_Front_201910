@@ -7,6 +7,7 @@ import { CalificacionDetailComponent } from './calificacion-detail/calificacion-
   imports: [
     CommonModule
   ],
-  declarations: [CalificacionCreateComponent, CalificacionDetailComponent]
+  declarations: [CalificacionCreateComponent, CalificacionDetailComponent],
+  exports: [CalificacionModule]
 })
 export class CalificacionModule { }
