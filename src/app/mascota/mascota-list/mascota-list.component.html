@@ -33,10 +33,10 @@
                     </div>
                     <div class="row text-center">
                         <div class="col-md-6">
-                            <p *ngIf="mascota.estado=='ADOPTADO'" class="card-text text-success">{{mascota.estado}}</p>
-                            <p *ngIf="mascota.estado=='ENCONTRADO'" class="card-text text-success">{{mascota.estado}}</p>
-                            <p *ngIf="mascota.estado=='EN_ADOPCION'" class="card-text text-warning">EN ADOPCIÓN</p>
-                            <p *ngIf="mascota.estado=='EXTRAVIADO'" class="card-text text-danger">{{mascota.estado}}</p>
+                            <h5 *ngIf="mascota.estado=='ADOPTADO'" class="card-text text-success">{{mascota.estado}}</h5>
+                            <h5 *ngIf="mascota.estado=='ENCONTRADO'" class="card-text text-success">{{mascota.estado}}</h5>
+                            <h5 *ngIf="mascota.estado=='EN_ADOPCION'" class="card-text text-warning">EN ADOPCIÓN</h5>
+                            <h5 *ngIf="mascota.estado=='EXTRAVIADO'" class="card-text text-danger">{{mascota.estado}}</h5>
                         </div>
                         <div class="col-md-6">
                             <a class="btn btn-info" name="masInfo" routerLink="/mascotas/{{mascota.id}}">Más información</a>
