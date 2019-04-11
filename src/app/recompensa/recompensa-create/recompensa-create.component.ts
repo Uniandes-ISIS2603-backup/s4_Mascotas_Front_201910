@@ -1,40 +1,39 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {ToastrService} from 'ngx-toastr'
-import { MascotaExtraviadaService } from '../mascota-extraviada.service';
-import { MascotaExtraviada } from '../mascota-extraviada';
-
+import { Recompensa } from '../recompensa';
+import { RecompensaService } from '../recompensa.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-mascota-extraviada-create',
-  templateUrl: './mascota-extraviada-create.component.html',
-  styleUrls: ['./mascota-extraviada-create.component.css']
+  selector: 'app-recompensa-create',
+  templateUrl: './recompensa-create.component.html',
+  styleUrls: ['./recompensa-create.component.css']
 })
-export class MascotaExtraviadaCreateComponent implements OnInit {
+export class RecompensaCreateComponent implements OnInit {
 
   /**
    * Constructor del componente
-   * @param procesoService - El proveedor de servicios para los proceso de mascota extraviada
+   * @param recompensaService - El proveedor de servicios para los proceso de mascota extraviada
    * @param troastrService - Elemento para mostrar mensajes al usuario
    */
   constructor(
-    private procesoService: MascotaExtraviadaService,
+    private recompensaService: RecompensaService,
     private troastrService: ToastrService
   ) { }
 
   /**
-   * El proceso nuevo
+   * La recompensa nueva
    */
-  procesoMascotaExtraviada: MascotaExtraviada
+  procesoMascotaExtraviada: Recompensa
 
   /**
    * Output que informa al componente padre
-   * que el usuario ya no quiere crear un proceso
+   * que el usuario ya no quiere crear una recompensa
    */
   @Output() cancel = new EventEmitter()
 
   /**
    * Output que informa al componente padre
-   * que el usuario creó un nuevo proceso
+   * que el usuario creó una nueva recompensa
    */
   @Output() create = new EventEmitter()
 
@@ -50,9 +49,9 @@ export class MascotaExtraviadaCreateComponent implements OnInit {
    * Función que crea un nuevo proceso
    * de mascota extraviada
    */
-  createMascotaExtraviada(): MascotaExtraviada{
+  createMascotaExtraviada(): Recompensa{
     console.log(this.procesoMascotaExtraviada)
-    this.procesoService.createMascotaExtraviada(this.procesoMascotaExtraviada)
+    this.recompensaService.createMascotaExtraviada(this.procesoMascotaExtraviada)
         .subscribe((p) => {
           this.procesoMascotaExtraviada = p
           this.create.emit()
@@ -65,7 +64,7 @@ export class MascotaExtraviadaCreateComponent implements OnInit {
    * Función de inicialización
    */
   ngOnInit() {
-    this.procesoMascotaExtraviada = new MascotaExtraviada()
+    this.procesoMascotaExtraviada = new Recompensa()
   }
 
 }

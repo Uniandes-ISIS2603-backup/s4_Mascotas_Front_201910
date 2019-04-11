@@ -11,7 +11,7 @@ export enum estado{
  * Contiene la información relevante a la recompensa del proceso.
  * @author Sebastián Lemus Cadena
  */
-export interface Recompensa{
+export class Recompensa{
 
     /**
      * El identificador de la recompensa
