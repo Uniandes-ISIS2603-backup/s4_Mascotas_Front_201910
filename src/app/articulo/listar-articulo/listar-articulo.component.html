@@ -1,4 +1,18 @@
 <div class="container-fluid">
+        <nav class="navbar navbar-dark bg-primary text-left rounded">
+                <a class="navbar-brand"><i class="fas fa-filter"></i>Filtrar por</a>
+                <div class="btn-group dropleft">
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only"></span>Tema</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <button (click)="filtrarPorTema('SALUD')" name="BtnSalud" class="dropdown-item" type="button">Salud</button>
+                        <button (click)="filtrarPorTema('CUIDADO')" name="BtnCuidado" class="dropdown-item" type="button">Cuidado</button>
+                        <button (click)="filtrarPorTema('ENTRENAMIENTO')" name="BtnEntrenamiento" class="dropdown-item" type="button">Entrenamiento</button>
+                        <button (click)="filtrarPorTema('TENENCIA_RESPONSABLE')" name="BtnTenencia" class="dropdown-item" type="button">Tenencia responsable</button>
+                    </div>
+                </div>
+            </nav>
+
 <br>
 <br>
 <div *ngFor = "let articulo of articulos" class="jumbotron">
