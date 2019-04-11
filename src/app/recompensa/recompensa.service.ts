@@ -41,7 +41,7 @@ export class RecompensaService {
    * mascota extraviada recuperados del API
    * @param recompensa 
    */
-  createMascotaExtraviada(recompensa): Observable<Recompensa>{
+  createRecompensa(recompensa): Observable<Recompensa>{
     return this.http.post<Recompensa>(API_URL, recompensa)
   }
 

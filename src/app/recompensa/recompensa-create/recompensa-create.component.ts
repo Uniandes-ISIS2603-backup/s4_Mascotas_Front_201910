@@ -48,9 +48,9 @@ export class RecompensaCreateComponent implements OnInit {
   /**
    * Función que crea una nueva recompensa
    */
-  createMascotaExtraviada(): Recompensa{
+  createRecompensa(): Recompensa{
     console.log(this.recompensa)
-    this.recompensaService.createMascotaExtraviada(this.recompensa)
+    this.recompensaService.createRecompensa(this.recompensa)
         .subscribe((r) => {
           this.recompensa = r
           this.create.emit()
