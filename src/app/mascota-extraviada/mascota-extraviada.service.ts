@@ -36,4 +36,30 @@ export class MascotaExtraviadaService {
   getMascotaExtraviadaDetail(procesoId: number): Observable<MascotaExtraviada>{
     return this.http.get<MascotaExtraviada>(`${API_URL}/${procesoId}`)
   }
+
+  /**
+   * Retorna el Observable con los datos del proceso de 
+   * mascota extraviada recuperados del API
+   * @param proceso - El proceso de mascota extraviada
+   */
+  createMascotaExtraviada(proceso): Observable<MascotaExtraviada>{
+    return this.http.post<MascotaExtraviada>(API_URL, proceso)
+  }
+
+  /**
+   * Actualiza los datos de un proceso
+   * @param proceso - Los nuevos datos del proceso a actualizar
+   */
+  updateMascotaExtraviada(proceso): Observable<MascotaExtraviada>{
+    return this.http.put<MascotaExtraviada>(`${API_URL}/${proceso.id}`, proceso)
+  }
+
+  /**
+   * Elimina el proceso de mascota extraviada
+   * @param procesoId - El id del proceso a eliminar
+   */
+  deleteMascotaExtraviada(procesoId): Observable<boolean>{
+    return this.http.delete<boolean>(`${API_URL}/${procesoId}`)
+  }
+
 }

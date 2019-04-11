@@ -29,9 +29,37 @@ export class RecompensaService {
 
   /**
    * Retorna el detalle de los datos de la recompensa
-   * @param procesoId - El id del proceso
+   * @param recompensaId - El id del proceso
    */
   getRecompensaDetail(recompensaId: number): Observable<Recompensa>{
     return this.http.get<Recompensa>(`${API_URL}/${recompensaId}`)
   }
+
+
+    /**
+   * Retorna el Observable con los datos de la recompensa de un proceso de 
+   * mascota extraviada recuperados del API
+   * @param recompensa 
+   */
+  createMascotaExtraviada(recompensa): Observable<Recompensa>{
+    return this.http.post<Recompensa>(API_URL, recompensa)
+  }
+
+  /**
+   * Actualiza los datos de una recompensa
+   * @param proceso - Los nuevos datos de la recompensa a actualizar
+   */
+  updateMascotaExtraviada(recompensa): Observable<Recompensa>{
+    return this.http.put<Recompensa>(`${API_URL}/${recompensa.id}`, recompensa)
+  }
+
+  /**
+   * Elimina la recompensa de un proceso de mascota extraviada
+   * @param recompensaId - El id de la recompensa a eliminar
+   */
+  deleteMascotaExtraviada(recompensaId): Observable<boolean>{
+    return this.http.delete<boolean>(`${API_URL}/${recompensaId}`)
+  }
+
+
 }
