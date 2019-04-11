@@ -11,7 +11,7 @@ export enum estado {
  * Contiene la información relevante al proceso
  * @author Sebastián Lemus Cadena
  */
-export interface MascotaExtraviada{
+export class MascotaExtraviada{
 
     /**
      * El identificador del proceso
