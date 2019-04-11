@@ -51,13 +51,14 @@ export class MascotaExtraviadaCreateComponent implements OnInit {
    * de mascota extraviada
    */
   createMascotaExtraviada(): MascotaExtraviada{
-    console.log(this.procesoMascotaExtraviada)
+    
     this.procesoService.createMascotaExtraviada(this.procesoMascotaExtraviada)
         .subscribe((p) => {
           this.procesoMascotaExtraviada = p
           this.create.emit()
           this.troastrService.success("El proceso de mascota extraviada fue creado", "Creación del Proceso")
         })
+    console.log(this.procesoMascotaExtraviada)
     return this.procesoMascotaExtraviada
   }
 

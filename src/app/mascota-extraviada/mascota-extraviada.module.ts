@@ -12,6 +12,7 @@ import { MascotaExtraviadaEditComponent } from './mascota-extraviada-edit/mascot
   ],
   declarations: [MascotaExtraviadaListComponent, MascotaExtraviadaDetailComponent, MascotaExtraviadaCreateComponent, MascotaExtraviadaEditComponent],
   bootstrap: [MascotaExtraviadaListComponent],
-  providers: [MascotaExtraviadaService]
+  providers: [MascotaExtraviadaService],
+  exports: [MascotaExtraviadaListComponent, MascotaExtraviadaDetailComponent, MascotaExtraviadaCreateComponent]
 })
 export class MascotaExtraviadaModule { }

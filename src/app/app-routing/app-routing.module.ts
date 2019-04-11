@@ -30,6 +30,7 @@ import { MascotaAdopcionCreateComponent } from '../mascota-adopcion/mascota-adop
 import {UsuarioListaComponent} from '../usuario/usuario-lista/usuario-lista.component';
 import {UsuarioDetalleComponent} from '../usuario/usuario-detalle/usuario-detalle.component';
 import { CalificacionCreateComponent } from '../calificacion/calificacion-create/calificacion-create.component';
+import { MascotaExtraviadaCreateComponent } from '../mascota-extraviada/mascota-extraviada-create/mascota-extraviada-create.component';
 
 const routes: Routes = [
     
@@ -72,6 +73,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: MascotaExtraviadaListComponent
+            },
+            {
+                path: 'nuevo',
+                component: MascotaExtraviadaCreateComponent
             },
             {
                 path: ':id',
