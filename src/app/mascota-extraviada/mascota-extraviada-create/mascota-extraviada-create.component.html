@@ -1,9 +1,9 @@
-<!-- <div class="container-fluid">
+<div class="container-fluid">
     <br>
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Dónde perdiste a tu mascota ?</h4>
-            <form name="proceso" (ngSubmit)="f.form.valid && createMascotaExtraviada()" #f="ngForm" novalidate>
+            <!-- <form name="proceso" (ngSubmit)="f.form.valid && createMascotaExtraviada()" #f="ngForm" novalidate>
                 <div class="form-group">
                     <label for="ciudad">Ciudad</label>
                     <input type="text" name="ciudad" class="form-control" id="ciudad" [(ngModel)]="procesoMascotaExtraviada.ciudad"
@@ -12,19 +12,38 @@
                         <div>No se ingresó la ciudad</div>
                     </div>
                 </div>
-            </form>
+            </form> -->
+            <form name="proceso" (ngSubmit)="createMascotaExtraviada()" #f="ngForm">
+              <div class="form-group">
+                  <label for="ciudad">Ciudad</label>
+                  <input type="text" name="ciudad" class="form-control" id="ciudad" #ciudad="ngModel" [(ngModel)]="procesoMascotaExtraviada.ciudad"
+                  [ngClass]="{ 'is-invalid': f.submitted && ciudad.invalid }" required>
+                  <div class="invalid-feedback">
+                      <div>No se ingresó la ciudad</div>
+                  </div>
+              </div>
+              
+              <div class="form-group">
+                  <label for="direccion">Dirección</label>
+                  <input type="text" name="direccion" class="form-control" id="direccion" #direccion="ngModel" [(ngModel)]="procesoMascotaExtraviada.direccion"
+                  [ngClass]="{ 'is-invalid': f.submitted && direccion.invalid }" required>
+                  <div class="invalid-feedback">
+                      <div>No se ingresó la direccion</div>
+                  </div>
+              </div>
 
-            <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary">Create</button>
-                <div class="divider"></div>
-                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
-            </div>
+              <div class="row form-inline justify-content-center align-self-center">
+                  <button type="submit" class="btn btn-primary">Create</button>
+                  <div class="divider"></div>
+                  <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+              </div>
+            </form>
         </div>
     </div>
     <br>
-</div> -->
+</div>
 
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <br>
     <div class="card">
         <div class="card-body">
@@ -292,4 +311,4 @@
             <br>
         </div>
         <p></p>
-    </div>
+    </div> -->

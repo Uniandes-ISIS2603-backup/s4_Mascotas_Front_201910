@@ -5,10 +5,12 @@ import { MascotaExtraviadaDetailComponent } from './mascota-extraviada-detail/ma
 import { MascotaExtraviadaService } from './mascota-extraviada.service';
 import { MascotaExtraviadaCreateComponent } from './mascota-extraviada-create/mascota-extraviada-create.component';
 import { MascotaExtraviadaEditComponent } from './mascota-extraviada-edit/mascota-extraviada-edit.component';
+import {FormsModule} from '@angular/forms';
+
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule, FormsModule
   ],
   declarations: [MascotaExtraviadaListComponent, MascotaExtraviadaDetailComponent, MascotaExtraviadaCreateComponent, MascotaExtraviadaEditComponent],
   bootstrap: [MascotaExtraviadaListComponent],
