@@ -1,3 +1,5 @@
+import { MascotaExtraviada } from "../mascota-extraviada/mascota-extraviada";
+
 /**
  * Los estados que puede tener el atributo estado
  */
@@ -36,5 +38,8 @@ export class Recompensa{
      */
     estado: estado
 
-    
+    /**
+     * Representa el proceso de mascota extraviada asociado a la recompensa
+     */
+    procesoMascotaExtraviada: MascotaExtraviada
 }
