@@ -177,7 +177,7 @@ const routes: Routes = [
                 component: CrearEventoComponent
             },
             {
-                path: 'id',
+                path: ':id',
                 component: EventoDetailComponent
             }
         ]
