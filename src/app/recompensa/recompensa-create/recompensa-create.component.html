@@ -1,3 +1,35 @@
-<p>
-  recompensa-create works!
-</p>
+<div class="container-fluid">
+  <br>
+  <div class="card">
+      <div class="card-body">
+          <h4 class="card-title">Creación de la recompensa</h4>
+            <form name="recompensa" (ngSubmit)="f.form.valid && createRecompensa()" #f="ngForm" novalidate>
+              <div class="form-group">
+                  <label for="medioDePago">Medio de Pago</label>
+                  <input type="text" name="medioDePago" class="form-control" id="medioDePago" [(ngModel)]="recompensa.medioDePago"
+                  #medioDePago="ngModel" [ngClass]="{ 'is-invalid': f.submitted && medioDePago.invalid }" required>
+                  <div class="invalid-feedback">
+                      <div>No se ingresó el medio de pago</div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label for="valor">Valor</label>
+                <input type="text" name="valor" class="form-control" id="valor" #valor="ngModel" [(ngModel)]="recompensa.valor"
+                [ngClass]="{ 'is-invalid': f.submitted && valor.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>No se ingresó el valor</div>
+                </div>
+              </div>
+
+              <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+              </div>
+
+          </form>
+      </div>
+  </div>
+  <br>
+</div>

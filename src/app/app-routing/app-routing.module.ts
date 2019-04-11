@@ -31,6 +31,7 @@ import {UsuarioListaComponent} from '../usuario/usuario-lista/usuario-lista.comp
 import {UsuarioDetalleComponent} from '../usuario/usuario-detalle/usuario-detalle.component';
 import { CalificacionCreateComponent } from '../calificacion/calificacion-create/calificacion-create.component';
 import { MascotaExtraviadaCreateComponent } from '../mascota-extraviada/mascota-extraviada-create/mascota-extraviada-create.component';
+import { RecompensaCreateComponent } from '../recompensa/recompensa-create/recompensa-create.component';
 
 const routes: Routes = [
     
@@ -122,6 +123,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: RecompensaListComponent
+            },
+            {
+              path: 'nuevo',
+              component: RecompensaCreateComponent
             },
             {
                 path: ':id',
