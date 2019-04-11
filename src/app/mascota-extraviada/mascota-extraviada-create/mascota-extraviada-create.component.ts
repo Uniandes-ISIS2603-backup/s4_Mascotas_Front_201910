@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {ToastrService} from 'ngx-toastr'
 import { MascotaExtraviadaService } from '../mascota-extraviada.service';
 import { MascotaExtraviada } from '../mascota-extraviada';
+import {NgForm} from '@angular/forms';
 
 
 @Component({
