@@ -23,7 +23,7 @@ export class RecompensaCreateComponent implements OnInit {
   /**
    * La recompensa nueva
    */
-  procesoMascotaExtraviada: Recompensa
+  recompensa: Recompensa
 
   /**
    * Output que informa al componente padre
@@ -39,32 +39,31 @@ export class RecompensaCreateComponent implements OnInit {
 
   /**
    * Emite una señal para informar al componente padre
-   * que el usuario ya no quiere crear un proceso
+   * que el usuario ya no quiere crear una recompensa
    */
   cancelCreation(): void{
     this.cancel.emit()
   }
 
   /**
-   * Función que crea un nuevo proceso
-   * de mascota extraviada
+   * Función que crea una nueva recompensa
    */
   createMascotaExtraviada(): Recompensa{
-    console.log(this.procesoMascotaExtraviada)
-    this.recompensaService.createMascotaExtraviada(this.procesoMascotaExtraviada)
-        .subscribe((p) => {
-          this.procesoMascotaExtraviada = p
+    console.log(this.recompensa)
+    this.recompensaService.createMascotaExtraviada(this.recompensa)
+        .subscribe((r) => {
+          this.recompensa = r
           this.create.emit()
-          this.troastrService.success("El proceso de mascota extraviada fue creado", "Creación del Proceso")
+          this.troastrService.success("La recompensa fue creada", "Creación de la recompensa")
         })
-    return this.procesoMascotaExtraviada
+    return this.recompensa
   }
 
   /**
    * Función de inicialización
    */
   ngOnInit() {
-    this.procesoMascotaExtraviada = new Recompensa()
+    this.recompensa = new Recompensa()
   }
 
 }
