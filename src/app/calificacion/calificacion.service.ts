@@ -21,10 +21,17 @@ export class CalificacionService {
    */
   constructor(private httpClient : HttpClient) { }
   /**
-   * retorna el observable de la mascota en adopcion con el id dado
+   * retorna el observable de la calificacion con el id dado
    * @param id del proceso
    */
   getCalificacionDetail (id : number) : Observable<Calificacion>{
     return this.httpClient.get<Calificacion>(API_URL + calificacion + '/' + id);
+  }
+  /**
+   * returna el observable de la calificacion creada
+   * @param c
+   */
+  createCalificacion(c : Calificacion) : Observable<Calificacion>{
+    return this.httpClient.post<Calificacion>(API_URL + calificacion, c);
   }
 }

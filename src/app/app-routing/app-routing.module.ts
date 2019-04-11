@@ -91,7 +91,7 @@ const routes: Routes = [
                     
                 ]
             },{
-                path: 'nueva',
+                path: 'nuevo',
                 component: MascotaAdopcionCreateComponent,
                 children:[
                     {

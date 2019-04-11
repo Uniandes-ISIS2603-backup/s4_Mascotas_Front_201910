@@ -17,6 +17,6 @@ import { MascotaAdopcionCreateComponent } from './mascota-adopcion-create/mascot
   ],
   declarations: [MascotaAdopcionListComponent, MascotaAdopcionDetailComponent, MascotaAdopcionCreateComponent],
   providers: [MascotaAdopcionService],
-  exports: [MascotaAdopcionListComponent, MascotaAdopcionDetailComponent]
+  exports: [MascotaAdopcionListComponent, MascotaAdopcionDetailComponent, MascotaAdopcionCreateComponent]
 })
 export class MascotaAdopcionModule { }
