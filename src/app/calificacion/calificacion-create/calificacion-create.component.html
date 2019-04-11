@@ -1,3 +1,34 @@
-<p>
-  calificacion-create works!
-</p>
+<div class="container-fluid">
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Califica tu Proceso</h4>
+            <br>
+            <form (ngSubmit)="createCalificacion()" #forma="ngForm">
+                <div class=" form-group">
+                    <label for="calificacion ">calificacion</label>
+                    <input [(ngModel)]="calificacion.calificacion" name="calificacion" type="text" class="form-control " placeholder="1-5">
+                </div>
+                <div class="form-group">
+                    <label for="Tipo">Comentario</label>
+                    <input [(ngModel)]="calificacion.comentario" name="comentario" type = "text" class="form-control" >
+                     </input>
+                </div>
+                
+                <div class="row text-right">
+                    <div class="col-md-9">
+
+                    </div>
+                    <div class="col-md-1">
+                        <button [disabled]="!forma.valid" type="submit" class="btn btn-success">Enviar</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button [routerLink]="['/mascotas-adopcion','list']" class="btn btn-danger">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>

@@ -1,3 +1,7 @@
+import { Calificacion } from "../calificacion/calificacion";
+import { Mascota } from "../mascota/mascota";
+import { Usuario } from "../usuario/usuario";
+
 export class MascotaEnAdopcion {
      /**
      * el estado de la mascota
@@ -17,5 +21,23 @@ export class MascotaEnAdopcion {
      fechaInicio: any;
      fechaFinal: any;
 
-     //faltan: calificacion , mascota, usuario, postulados, dueño
+     /**
+      * la calificacion asociada al proceso
+      */
+     calificacion: Calificacion;
+
+     /**
+      * la mascota del proceso
+      */
+     mascota : Mascota;
+     /**
+      * el dueño de la adopción
+      */
+     dueño : Usuario;
+
+     /**
+      * los usuarios postulados
+      */
+     postulados: Usuario[];
+     
 }

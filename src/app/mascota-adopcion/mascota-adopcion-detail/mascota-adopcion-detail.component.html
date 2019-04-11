@@ -1,3 +1,62 @@
-<p>
-  mascota-adopcion-detail works!
-</p>
+<div class="container-fluid">
+    <br>
+    <br>
+    <div class="card">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <!--<img class="img-responsive mw-100 col-md-6 " src="{{mascotaEnAdopcion.mascota.fotos}}">-->
+            </div>
+            <table class="table table-borderless col-md-5 text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Mascota</th>
+                        <th><button class="btn btn-default"routerLink="./mascotas/{{mascotaEnAdopcion.mascota.id}}" type="button" name="button">{{mascotaEnAdopcion.mascota.nombre}}</button></th>
+                    </tr>
+                </thead>
+                <tbody>                 
+                    
+                    <tr>
+                        <th>Razon de la Adopción</th>
+                        <td>{{mascotaEnAdopcion.razonAdopcion}}</td>
+                    </tr>
+                    <tr>
+                        <th>Pasado</th>
+                        <td>{{mascotaEnAdopcion.pasado}}</td>
+                    </tr>
+                    <tr>
+                        <th>En Adopción desde:</th>
+                        <td>{{mascotaEnAdopcion.fechaInicio}}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <br>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h5>Postulaciones</h5>
+            </div>
+            <div class="col-md-9" >
+                <button class="btn btn-success" type="button" name="button">¡Me quiero postular!</button>
+            </div>
+            <!-- falta lista de postulados-->>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h5>Calificación</h5>
+            </div>
+            <div class="col-md-9" >
+                <button class="btn btn-success" routerLink="/mascotas-adopcion/create-calificacion" type="button" name="button">Calificar Proceso</button>
+            </div>
+        </div>
+        
+        <div class="row">
+            
+            <div class="col-md-2">
+                <button class="btn btn-danger" routerLink="/mascotas-adopcion/list" type="button" name="volver">Volver</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
