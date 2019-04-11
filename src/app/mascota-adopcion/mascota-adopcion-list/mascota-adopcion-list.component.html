@@ -1,3 +1,46 @@
-<p>
-  mascota-adopcion-list works!
-</p>
+<div class="container-fluid">
+  <nav class="navbar navbar-dark bg-primary text-left rounded">
+      <a class="navbar-brand"><i class="fas fa-filter"></i>Filtrar por</a>
+      <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only"></span>Tipo de Mascota </button>
+          <!--<div class="dropdown-menu" aria-labelledby="dropdownMenu1">-->
+              <!--<button (click)="filtrarPorTipo('PERRO')" name="BtnPerro" class="dropdown-item" type="button"><i class="fas fa-dog"></i> Perro</button>-->
+              <!--<button (click)="filtrarPorTipo('GATO')" name="BtnGato" class="dropdown-item" type="button"><i class="fas fa-cat"></i>  Gato</button>-->
+          <!--</div>-->
+      </div>
+      <div class="btn-group dropleft">
+          <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="sr-only"></span> Estado </button>
+      </div>
+  </nav>
+
+  <div *ngIf="mascotasEnAdopcion.length>0" >
+      <div *ngFor="let proceso of mascotasEnAdopcion">
+         <div *ngIf = "mascotasEnAdopcion.adoptada">
+          <div class="card mb-2">
+              <!--<img class="card-img-top" src="{{proceso.mascota.fotos}}" alt="Card image cap">-->
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-12 text-center">
+                          <h4 class="card-title">{{proceso.mascota.nombre}}</h4>
+                      </div>
+                  </div>
+                  <div class="row text-center">
+                      
+                      <div class="col-md-6">
+                          <a class="btn btn-info" name="masInfo" routerLink="/mascotas-adopcion/{{proceso.id}}">Más información</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+    </div>
+
+  <br>
+  <br>
+  <h1 *ngIf="mascotasEnAdopcion.length == 0" class="text-center">Whoops... Parece que ningun proceso coincide con tus criterios de búsqueda</h1>
+  <br>
+  <br>
+</div>

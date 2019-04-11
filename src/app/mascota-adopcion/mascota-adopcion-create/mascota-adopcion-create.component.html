@@ -1,3 +1,41 @@
-<p>
-  mascota-adopcion-create works!
-</p>
+<div class="container-fluid">
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">¡Vas a hacer a alguien muy feliz!</h4>
+            <br>
+            <form (ngSubmit)="crearProceso()" #forma="ngForm">
+                <div class=" form-group">
+                    <label for="razónn">Escribe la razón de tu adopción</label>
+                    <input [(ngModel)]="proceso.razonAdopcion" name="razón" type="text" class="form-control ">
+                </div>
+                <div class="form-group">
+                    <label for="pasado">Escribe la historia de tu mascota</label>
+                    <input [(ngModel)]="proceso.pasado" name="pasado" class="form-control" type = "text">
+                </div>
+                <!--falta la fecha-->
+                <div class="form-group">
+                    <label for="mascota">Mascota</label>
+                    <button [routerLink]="['/mascotas','nueva']" class="btn btn-primary">Crea tu mascota</button>
+                    <!-- falta agregarla al proceso-->                       
+                    
+                </div>               
+               
+               
+                <div class="row text-right">
+                    <div class="col-md-9">
+
+                    </div>
+                    <div class="col-md-1">
+                        <button [disabled]="!forma.valid" type="submit" class="btn btn-success">Enviar</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button [routerLink]="['/mascotas-adopcion','list']" class="btn btn-danger">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
