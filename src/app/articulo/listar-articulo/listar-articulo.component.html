@@ -1,0 +1,8 @@
+<div *ngFor = "let articulo of articulos" class="jumbotron">
+    <h1 class="display-4">{{articulo.titulo}}</h1>
+    <p class="lead">{{articulo.tema}}</p>
+    <hr class="my-4">
+    <p>{{articulo.resumen}}</p>
+    <br>
+    <a class="btn btn-primary btn-lg" routerLink="/articulos/{{articulo.id}}" role="button">Ver más</a>
+</div>

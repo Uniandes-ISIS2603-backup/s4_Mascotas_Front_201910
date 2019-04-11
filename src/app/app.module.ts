@@ -17,6 +17,8 @@ import { RecompensaModule } from './recompensa/recompensa.module';
 import {MascotaModule} from './mascota/mascota.module';
 import { MascotaAdopcionModule } from './mascota-adopcion/mascota-adopcion.module';
 import { HomeComponent } from './home/home.component';
+import { ArticuloModule } from './articulo/articulo.module';
+import { EventoModule } from './evento/evento.module';
 import {MascotaEncontradaModule} from './mascota-encontrada/mascota-encontrada.module';
 import {CalificacionModule} from  './calificacion/calificacion.module';
 
@@ -47,6 +49,8 @@ import {UsuarioModule} from './usuario/usuario.module'
         MascotaModule,
         MascotaAdopcionModule,
         RecompensaModule,
+        ArticuloModule,
+        EventoModule,
         MascotaEncontradaModule,
         UsuarioModule,
         CalificacionModule

@@ -1,0 +1,11 @@
+<div class="card-deck">
+<div *ngFor = "let evento of eventos" class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{evento.imagen}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{evento.nombre}}</h5>
+      <p class="card-text">Fecha inicio: {{evento.fechaInicio}}</p>
+      <p class="card-text">Fecha fin: {{evento.fechaFin}}</p>
+      <a href="#" class="btn btn-primary">Más información</a>
+    </div>
+</div>
+</div>

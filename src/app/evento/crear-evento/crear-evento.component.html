@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <br>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Publica un evento</h4>
+                <br>
+                <form (ngSubmit)="crearEvento()" #forma="ngForm">
+                    <div class=" form-group">
+                        <label for="Nombre ">Nombre</label>
+                        <input [(ngModel)]="evento.nombre" name="nombre" type="text" class="form-control " placeholder="Nombre del evento">
+                    </div>
+                    <div class="form-group">
+                        <label for="Descripcion">Descripción</label>
+                        <textarea class="form-control" [(ngModel)]="evento.descripcion" id="descripcion" name="descripcion" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Asígnale una imagen al evento</label>
+                        <input [(ngModel)]="evento.imagen" type="file" id="imagen" name="imagen" class="form-control-file" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventoFechaIncio">Fecha de inicio del evento</label>
+                        <input class="form-control" id="eventoFechaI" name="eventoFechaI" [(ngModel)]="evento.fechaInicio"
+                        ngbDatepicker #da="ngbDatepicker" (click)="da.toggle()" #eventoFechaI="ngModel" >
+                    </div>
+                    <div class="form-group">
+                            <label for="eventoFechaFin">Fecha en la que termina el evento</label>
+                            <input class="form-control" id="eventoFechaF" name="eventoFechaF" [(ngModel)]="evento.fechaFin"
+                            ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #eventoFechaF="ngModel" >
+                    </div>     
+                    <div class="row text-right">
+                            <div class="col-md-9">
+                            </div>
+                            <div class="col-md-1">
+                                <button type="submit" class="btn btn-success">Enviar</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button [routerLink]="['/eventos','list']" class="btn btn-danger"  (click)="cancelCreation()">Cancelar</button>
+                            </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <br>
+    <br>
+</div>
