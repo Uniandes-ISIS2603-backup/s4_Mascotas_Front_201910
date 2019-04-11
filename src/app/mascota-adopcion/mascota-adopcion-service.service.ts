@@ -37,5 +37,13 @@ export class MascotaAdopcionService {
     return this.httpClient.get<MascotaEnAdopcion>(API_URL + procesos + '/' + id);
   }
 
+  /**
+   * retorna el observable de la mascota creada
+   * @param proceso 
+   */
+  createProcesoAdopcion(proceso : MascotaEnAdopcion ) : Observable<MascotaEnAdopcion>{
+    return this.httpClient.post<MascotaEnAdopcion>(API_URL + procesos, proceso);
+  }
+
   
 }

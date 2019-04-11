@@ -15,6 +15,12 @@ import { MascotaAdopcionListComponent } from '../mascota-adopcion/mascota-adopci
 import { MascotaAdopcionDetailComponent } from '../mascota-adopcion/mascota-adopcion-detail/mascota-adopcion-detail.component';
 import {HomeComponent} from '../home/home.component';
 import {MascotaCreateComponent} from '../mascota/mascota-create/mascota-create.component';
+import {ListarArticuloComponent} from '../articulo/listar-articulo/listar-articulo.component';
+import {ArticuloDetailComponent} from '../articulo/articulo-detail/articulo-detail.component';
+import {CrearArticuloComponent} from '../articulo/crear-articulo/crear-articulo.component';
+import {ListarEventoComponent} from '../evento/listar-evento/listar-evento.component';
+import {EventoDetailComponent} from '../evento/evento-detail/evento-detail.component';
+import { CrearEventoComponent } from '../evento/crear-evento/crear-evento.component';
 import {MascotaEncontradaListComponent} from '../mascota-encontrada/mascota-encontrada-list/mascota-encontrada-list.component';
 import {MascotaEncontradaDetailComponent} from '../mascota-encontrada/mascota-encontrada-detail/mascota-encontrada-detail.component';
 import {MascotaEncontradaCreateComponent} from '../mascota-encontrada/mascota-encontrada-create/mascota-encontrada-create.component';
@@ -24,6 +30,7 @@ import { MascotaAdopcionCreateComponent } from '../mascota-adopcion/mascota-adop
 import {UsuarioListaComponent} from '../usuario/usuario-lista/usuario-lista.component';
 import {UsuarioDetalleComponent} from '../usuario/usuario-detalle/usuario-detalle.component';
 import { CalificacionCreateComponent } from '../calificacion/calificacion-create/calificacion-create.component';
+import { MascotaExtraviadaCreateComponent } from '../mascota-extraviada/mascota-extraviada-create/mascota-extraviada-create.component';
 
 const routes: Routes = [
     
@@ -68,6 +75,10 @@ const routes: Routes = [
                 component: MascotaExtraviadaListComponent
             },
             {
+                path: 'nuevo',
+                component: MascotaExtraviadaCreateComponent
+            },
+            {
                 path: ':id',
                 component: MascotaExtraviadaDetailComponent
             }
@@ -91,7 +102,7 @@ const routes: Routes = [
                     
                 ]
             },{
-                path: 'nueva',
+                path: 'nuevo',
                 component: MascotaAdopcionCreateComponent,
                 children:[
                     {
@@ -138,6 +149,39 @@ const routes: Routes = [
         ]
     },
     {
+        path: 'articulos',
+        children: [
+            {
+                path: 'list',
+                component: ListarArticuloComponent
+            },
+            {
+                path : 'crear',
+                component: CrearArticuloComponent
+            },
+            {
+                path: ':id',
+                component: ArticuloDetailComponent
+            }
+        ]
+        
+    },{
+        path: 'eventos',
+        children:[
+            {
+                path:'list',
+                component: ListarEventoComponent
+            },
+            {
+                path : 'crear',
+                component: CrearEventoComponent
+            },
+            {
+                path: 'id',
+                component: EventoDetailComponent
+            }
+        ]
+    },{
         path : 'mascotas-encontradas',
         children : [
             {
@@ -168,6 +212,7 @@ const routes: Routes = [
         ]
 
     },
+
     {
         path: '**',
         redirectTo: 'home',

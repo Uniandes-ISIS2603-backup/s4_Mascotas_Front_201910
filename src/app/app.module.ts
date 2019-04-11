@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ToastrModule} from 'ngx-toastr';
@@ -17,6 +17,8 @@ import { RecompensaModule } from './recompensa/recompensa.module';
 import {MascotaModule} from './mascota/mascota.module';
 import { MascotaAdopcionModule } from './mascota-adopcion/mascota-adopcion.module';
 import { HomeComponent } from './home/home.component';
+import { ArticuloModule } from './articulo/articulo.module';
+import { EventoModule } from './evento/evento.module';
 import {MascotaEncontradaModule} from './mascota-encontrada/mascota-encontrada.module';
 import {CalificacionModule} from  './calificacion/calificacion.module';
 
@@ -34,6 +36,7 @@ import {UsuarioModule} from './usuario/usuario.module'
         ModalDialogModule.forRoot(),
         AuthModule,
         FormsModule,
+        ReactiveFormsModule,
         ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',
@@ -47,6 +50,8 @@ import {UsuarioModule} from './usuario/usuario.module'
         MascotaModule,
         MascotaAdopcionModule,
         RecompensaModule,
+        ArticuloModule,
+        EventoModule,
         MascotaEncontradaModule,
         UsuarioModule,
         CalificacionModule
