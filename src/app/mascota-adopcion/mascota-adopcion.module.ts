@@ -7,13 +7,14 @@ import { MascotaAdopcionListComponent } from './mascota-adopcion-list/mascota-ad
 import { MascotaAdopcionService } from './mascota-adopcion-service.service';
 import { MascotaAdopcionDetailComponent } from './mascota-adopcion-detail/mascota-adopcion-detail.component';
 import { MascotaAdopcionCreateComponent } from './mascota-adopcion-create/mascota-adopcion-create.component';
-
+import {AppRoutingModule} from '../app-routing/app-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   declarations: [MascotaAdopcionListComponent, MascotaAdopcionDetailComponent, MascotaAdopcionCreateComponent],
   providers: [MascotaAdopcionService],

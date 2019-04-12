@@ -86,13 +86,26 @@ const routes: Routes = [
 
         ]
         
-    },{
+    },
+    {
         path: 'mascotas-adopcion',
-        children:[
+        children:
+        [
             {
                 path:'list',
                 component: MascotaAdopcionListComponent
-            },{
+            },
+            {
+                path: 'nuevo',
+                component: MascotaAdopcionCreateComponent,
+                children:
+                [
+                {   path: 'nueva-mascota',
+                    component: MascotaCreateComponent
+                }
+                ]
+            },
+            {
                 path: ':id',
                 component: MascotaAdopcionDetailComponent,
                 children:[
@@ -100,22 +113,9 @@ const routes: Routes = [
                     path: 'create-calificacion',
                     component: CalificacionCreateComponent
                     }
-                    
-                ]
-            },{
-                path: 'nuevo',
-                component: MascotaAdopcionCreateComponent,
-                children:[
-                    {
-                    path: 'nueva-mascota',
-                    component: MascotaCreateComponent
-                    }
-                    
                 ]
             }
-
         ]
-
     },
     {
         path: 'recompensas',
@@ -217,7 +217,6 @@ const routes: Routes = [
         ]
 
     },
-
     {
         path: '**',
         redirectTo: 'home',
