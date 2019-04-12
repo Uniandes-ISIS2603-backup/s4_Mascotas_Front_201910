@@ -15,26 +15,31 @@
       </div>
   </nav>
 
-  <div *ngIf="mascotasEnAdopcion.length>0" >
+  <div *ngIf="mascotasEnAdopcion.length > 0" >
       <div *ngFor="let proceso of mascotasEnAdopcion">
-         <div *ngIf = "mascotasEnAdopcion.adoptada">
+        
           <div class="card mb-2">
               <!--<img class="card-img-top" src="{{proceso.mascota.fotos}}" alt="Card image cap">-->
               <div class="card-body">
                   <div class="row">
-                      <div class="col-md-12 text-center">
-                          <h4 class="card-title">{{proceso.mascota.nombre}}</h4>
+                      <div class="col-md-4 text-left">
+                          <h4 class="card-title">{{proceso.id}}</h4><!--debería ir el nombre de la mascota-->
                       </div>
                   </div>
-                  <div class="row text-center">
+                  <div class ="col-md-12 text-center">
+                      <p>{{proceso.pasado}}</p>
+                    
+                  </div>
+                  <div class="row text-right">
                       
-                      <div class="col-md-6">
+                      <div class="col-md-12 text-right">
                           <a class="btn btn-info" name="masInfo" routerLink="/mascotas-adopcion/{{proceso.id}}">Más información</a>
+                            
                       </div>
-                  </div>
+                    </div>
               </div>
           </div>
-        </div>
+        
     </div>
     </div>
 
