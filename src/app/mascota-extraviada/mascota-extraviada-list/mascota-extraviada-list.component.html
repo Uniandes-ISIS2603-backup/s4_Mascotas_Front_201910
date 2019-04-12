@@ -6,16 +6,7 @@
         </div>
     </nav>
 
-
-    <ul>
-        <li *ngFor="let mascotaExtraviada of mascotasExtraviadas">
-            <a href="/mascotas-extraviadas/{{mascotaExtraviada.id}}">
-      Lugar: {{mascotaExtraviada.ciudad}}/{{mascotaExtraviada.direccion}}
-    </a>
-        </li>
-    </ul>
-
-    <div class="card-columns" *ngFor="let mascotaExtraviada of mascotasExtraviadas">
+    <div class="card-columns col-md-12" *ngFor="let mascotaExtraviada of mascotasExtraviadas">
         <div class="card">
             <img class="card-img-top" src="..." alt="Card image cap">
             <div class="card-body">
