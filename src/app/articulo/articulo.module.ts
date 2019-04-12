@@ -10,12 +10,19 @@ import { CrearArticuloComponent } from './crear-articulo/crear-articulo.componen
 
 @NgModule({
   imports: [
-    CommonModule,  HttpClientModule, AppRoutingModule, FormsModule
+    CommonModule,  
+    HttpClientModule, 
+    AppRoutingModule, 
+    FormsModule
   ],
   bootstrap: [ListarArticuloComponent],
-  declarations: [ListarArticuloComponent, ArticuloDetailComponent, CrearArticuloComponent],
+  declarations: [ListarArticuloComponent, 
+                 ArticuloDetailComponent, 
+                 CrearArticuloComponent],
   providers: [ArticuloService],
-  exports: [ListarArticuloComponent, ArticuloDetailComponent, CrearArticuloComponent]
+  exports: [ListarArticuloComponent, 
+            ArticuloDetailComponent, 
+            CrearArticuloComponent]
 
 })
 

@@ -2,6 +2,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {ArticuloService} from '../articulo.service';
 import {ToastrService} from 'ngx-toastr';
 import { Articulo } from '../articulo';
+import { UsuarioService } from '../../usuario/usuario.service';
+import {Usuario} from '../../usuario/usuario';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-crear-articulo',
@@ -10,7 +13,8 @@ import { Articulo } from '../articulo';
 })
 export class CrearArticuloComponent implements OnInit {
 
-  constructor(private articuloService:ArticuloService, private toastrService: ToastrService)
+  constructor(private articuloService:ArticuloService, private toastrService: ToastrService, private usuarioService:UsuarioService, 
+              private router: Router)
   { }
 
   /**
@@ -18,6 +22,22 @@ export class CrearArticuloComponent implements OnInit {
    */
   articulo : Articulo;
 
+  /**
+   * Todos los usuarios 
+   */
+  usuarios : Usuario[];
+
+  /**
+    * Recupera la lista de todos los usuarios
+    */
+   getUsuarios(): void {
+    this.usuarioService.getUsuarios()
+        .subscribe(u => {
+            this.usuarios = u;
+        }, err => {
+            this.toastrService.error(err, 'Error');
+        });
+}
 
   /**
   * Output que le dice al componente que el usuario ha creado un nuevo articulo
@@ -36,6 +56,7 @@ export class CrearArticuloComponent implements OnInit {
           .subscribe((m)=>{
           this.articulo = m;
           this.create.emit();
+          this.router.navigate(['/articulos/' + this.articulo.id]);
           this.toastrService.success("El artículo ha sido creado", "Artículo Creado");
     });
       console.log(this.articulo);
@@ -50,5 +71,7 @@ export class CrearArticuloComponent implements OnInit {
   ngOnInit(): void 
   { 
       this.articulo = new Articulo();
+      this.articulo.autor = new Usuario();
+      this.getUsuarios();
   }
 }

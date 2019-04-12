@@ -3,6 +3,9 @@ import { Evento } from '../evento';
 import { EventoService } from '../evento.service';
 import {ToastrService} from 'ngx-toastr';
 import {DatePipe} from '@angular/common';
+import { UsuarioService } from '../../usuario/usuario.service';
+import {Usuario} from '../../usuario/usuario';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-crear-evento',
@@ -12,13 +15,36 @@ import {DatePipe} from '@angular/common';
 })
 export class CrearEventoComponent implements OnInit {
 
-  constructor(private dp: DatePipe, private eventoService:EventoService, private toastrService: ToastrService)
+  constructor(private dp: DatePipe, private eventoService:EventoService, private toastrService: ToastrService,
+              private usuarioService:UsuarioService, private router: Router)
   { }
 
   /**
    * Nuevo evento a crear
    */
   evento : Evento;
+
+  /**
+   * Imagen del evento 
+   */
+    imagen;
+
+  /**
+   * Todos los usuarios 
+   */
+  usuarios : Usuario[];
+
+  /**
+    * Recupera la lista de todos los usuarios
+    */
+   getUsuarios(): void {
+    this.usuarioService.getUsuarios()
+        .subscribe(u => {
+            this.usuarios = u;
+        }, err => {
+            this.toastrService.error(err, 'Error');
+        });
+}
 
 
   /**
@@ -49,6 +75,7 @@ export class CrearEventoComponent implements OnInit {
           .subscribe((m)=>{
           this.evento = m;
           this.create.emit();
+          this.router.navigate(['/eventos/' + this.evento.id]);
           this.toastrService.success("El evento ha sido creado", "Evento Creado");
          });
       return this.evento;
@@ -59,10 +86,35 @@ export class CrearEventoComponent implements OnInit {
       this.cancel.emit();
   }
 
+  changeListener($event) : void 
+  {
+      this.readThis($event.target);
+  }
   
+     /**
+     * Lee el archivo pasado por parámetro 
+     * @param inputValue 
+     */
+    readThis(inputValue: any): void 
+    {
+        var file:File = inputValue.files[0];
+        var myReader:FileReader = new FileReader();
+        
+        myReader.onloadend = (e) => 
+        {
+            this.imagen = myReader.result;
+            console.log(myReader.result);
+            this.evento.imagen = this.imagen;
+        }
+    
+        myReader.readAsDataURL(file);
+    }
+
   ngOnInit(): void 
   { 
       this.evento = new Evento();
+      this.evento.organizador = new Usuario();
+      this.getUsuarios();
   }
 
 }

@@ -2,11 +2,11 @@
     <br>
     <br>
     <div class="card">
-        <div class="row align-items-center">
-            <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
                 <!--<img class="img-responsive mw-100 col-md-6 " src="{{mascotaEnAdopcion.mascota.fotos}}">-->
             </div>
-            <table class="table table-borderless col-md-5 text-center">
+            <table class="table table-borderless col-md-12 text-center">
                 <thead class="thead-dark">
                     <tr>
                         <th>Mascota</th>
@@ -16,7 +16,7 @@
                 <tbody>                 
                     
                     <tr>
-                        <th>Razon de la Adopción</th>
+                        <th>Razón de la Adopción</th>
                         <td>{{mascotaEnAdopcion.razonAdopcion}}</td>
                     </tr>
                     <tr>
@@ -32,27 +32,29 @@
             </table>
             <br>
         </div>
+        <br>
+        <br>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-12 text-left">
                 <h5>Postulaciones</h5>
             </div>
-            <div class="col-md-9" >
+            <div class="col-md-12 text-center" >
                 <button class="btn btn-success" type="button" name="button">¡Me quiero postular!</button>
             </div>
             <!-- falta lista de postulados-->>
         </div>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-12 text-left">
                 <h5>Calificación</h5>
             </div>
-            <div class="col-md-9" >
-                <button class="btn btn-success" routerLink="/mascotas-adopcion/create-calificacion" type="button" name="button">Calificar Proceso</button>
+            <div class="col-md-12 text-center" >
+                <button class="btn btn-success" routerLink="/mascotas-adopcion/{{mascotaEnAdopcion.id}}/create-calificacion" type="button" name="button">Calificar Proceso</button>
             </div>
         </div>
         
         <div class="row">
             
-            <div class="col-md-2">
+            <div class="col-md-12 text-right">
                 <button class="btn btn-danger" routerLink="/mascotas-adopcion/list" type="button" name="volver">Volver</button>
             </div>
         </div>

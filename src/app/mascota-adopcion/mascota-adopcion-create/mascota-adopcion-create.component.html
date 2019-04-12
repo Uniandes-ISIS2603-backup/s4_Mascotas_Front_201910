@@ -6,18 +6,20 @@
             <br>
             <form (ngSubmit)="crearProceso()" #forma="ngForm">
                 <div class=" form-group">
-                    <label for="razónn">Escribe la razón de tu adopción</label>
-                    <input [(ngModel)]="proceso.razonAdopcion" name="razón" type="text" class="form-control ">
+                    <label for="razón">Escribe la razón de tu adopción</label>
+                    <textarea [(ngModel)]="proceso.razonAdopcion" name="razón" type="text" class="form-control " required></textarea>
                 </div>
+
                 <div class="form-group">
                     <label for="pasado">Escribe la historia de tu mascota</label>
-                    <input [(ngModel)]="proceso.pasado" name="pasado" class="form-control" type = "text">
+                    <textarea [(ngModel)]="proceso.pasado" name="pasado" class="form-control" type = "text" required></textarea>
                 </div>
+                
                 <!--falta la fecha-->
                 <div class="form-group">
-                    <label for="mascota">Mascota</label>
-                    <button [routerLink]="['/mascotas','nueva']" class="btn btn-primary">Crea tu mascota</button>
-                    <!-- falta agregarla al proceso-->                       
+                    
+                    <button [routerLink]="['/mascotas','nueva']" class="btn btn-success">Crea tu mascota</button>
+                                          
                     
                 </div>               
                
@@ -26,11 +28,9 @@
                     <div class="col-md-9">
 
                     </div>
-                    <div class="col-md-1">
-                        <button [disabled]="!forma.valid" type="submit" class="btn btn-success">Enviar</button>
-                    </div>
+                    
                     <div class="col-md-2">
-                        <button [routerLink]="['/mascotas-adopcion','list']" class="btn btn-danger">Cancelar</button>
+                        <button [routerLink]="['home']" class="btn btn-danger">Cancelar</button>
                     </div>
                 </div>
             </form>

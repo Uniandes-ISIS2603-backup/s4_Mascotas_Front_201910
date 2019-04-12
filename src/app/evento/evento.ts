@@ -1,3 +1,5 @@
+import { Usuario } from "../usuario/usuario";
+
 export class Evento {
 
     /**
@@ -29,5 +31,10 @@ export class Evento {
      * FechaFin del evento
      */
     fechaFin: any;
+
+    /**
+     * Organizador del evento
+     */
+    organizador: Usuario;
   
   } 
