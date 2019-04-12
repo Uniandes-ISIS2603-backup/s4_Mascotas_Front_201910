@@ -4,40 +4,41 @@ import { Usuario } from "../usuario/usuario";
 
 export class MascotaEnAdopcion {
      /**
+      * id del proceso
+      */
+     id: number;
+     /**
      * el estado de la mascota
      */
-     adoptada : boolean;
+     adoptada? : boolean;
     /**
      * el pasado de la mascota
      */
-     pasado : String;
+     pasado : string;
     /**
      * la razón por la cual se quiere poner en adopción la mascota
      */
-     razonAdopcion : String;
+     razonAdopcion : string;
      /**
       * fechas inicio y final del proceso
       */
      fechaInicio: any;
-     fechaFinal: any;
+     fechaFinal?: any;
 
      /**
       * la calificacion asociada al proceso
       */
-     calificacion: Calificacion;
+     calificacion?: Calificacion;
 
      /**
       * la mascota del proceso
       */
-     mascota : Mascota;
+     mascota? : Mascota;
      /**
       * el dueño de la adopción
       */
-     dueño : Usuario;
+     dueño? : Usuario;
 
-     /**
-      * los usuarios postulados
-      */
-     postulados: Usuario[];
+    
      
 }

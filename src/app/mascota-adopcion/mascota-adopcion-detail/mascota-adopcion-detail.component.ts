@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { MascotaAdopcionService } from '../mascota-adopcion-service.service';
 import { MascotaEnAdopcion } from '../mascota-adopcion';
+import { MascotaEnAdopcionDetail } from '../mascota-en-adopcion-detail';
 
 @Component({
   selector: 'app-mascota-adopcion-detail',
@@ -29,7 +30,7 @@ export class MascotaAdopcionDetailComponent implements OnInit {
   /**
    * el proceso de mascota en adopción
    */
-  mascotaEnAdopcion : MascotaEnAdopcion;
+  mascotaEnAdopcion : MascotaEnAdopcion;//necesita el detail
 
   /**
    * obtiene el proceso con el id dado

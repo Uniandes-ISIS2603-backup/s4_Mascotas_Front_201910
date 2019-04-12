@@ -26,7 +26,8 @@ export class MascotaAdopcionService {
    * en adopción
    */
   getMascotasEnAdopcion () : Observable<MascotaEnAdopcion[]>{
-    return this.httpClient.get<MascotaEnAdopcion[]>(API_URL + procesos);
+    
+    return this.httpClient.get<any[]>(API_URL + procesos);
   }
 
   /**

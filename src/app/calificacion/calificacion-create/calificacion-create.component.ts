@@ -39,6 +39,7 @@ export class CalificacionCreateComponent implements OnInit {
    */
   ngOnInit() {
     this.calificacion = new Calificacion;
+    this.createCalificacion();
   }
 
   /**
