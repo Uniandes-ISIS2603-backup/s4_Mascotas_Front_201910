@@ -3,12 +3,12 @@
 <br>
 <div class="card">
         <div class="card-body">
-<h1  class="card-title">{{articulo.titulo}}</h1>
+<h1  class="card-title"><b>{{articulo.titulo}}</b></h1>
 <p class="lead">{{articulo.tema}}</p>
-<p>{{articulo.resumen}}</p>
+<p class="lead">Por {{articulo.autor.nombre}}</p>
+<p class="lead">{{articulo.resumen}}</p>
 <hr class="my-4">
-<br>
-<p class="lead">{{articulo.contenido}}</p>
+<p>{{articulo.contenido}}</p>
 <br>
 <br>
 <a class="btn btn-primary btn-lg" href="/articulos/list" role="button">Volver</a>

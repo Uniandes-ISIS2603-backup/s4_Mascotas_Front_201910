@@ -26,6 +26,12 @@
                         <label for="Contenido">Contenido</label>
                         <textarea [(ngModel)]="articulo.contenido" class="form-control" name="contenido" id="contenido" rows="5"></textarea>
                     </div>
+                    <div class="form-group">
+                            <label for="autor">Autor del artículo</label>
+                            <select class="custom-select" name="autor" id="autor" [(ngModel)]="articulo.autor.id">
+                                <option [value]="usuario.id" *ngFor="let usuario of usuarios">{{usuario.nombre}}</option>
+                            </select>
+                    </div>
                     <div class="row text-right">
                         <div class="col-md-9">
                         </div>

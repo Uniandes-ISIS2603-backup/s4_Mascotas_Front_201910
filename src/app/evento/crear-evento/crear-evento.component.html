@@ -13,9 +13,16 @@
                         <label for="Descripcion">Descripción</label>
                         <textarea class="form-control" [(ngModel)]="evento.descripcion" id="descripcion" name="descripcion" rows="3"></textarea>
                     </div>
+
+                   <!----   <div class="form-group">
+                         <label for="">Asígnale una imagen al evento</label>
+                        <input type="file" id="imagen" name="imagen" class="form-control-file" accept="image/*" (change)="changeListener($event)">
+                      </div> -->
+                    
                     <div class="form-group">
-                        <label for="">Asígnale una imagen al evento</label>
-                        <input [(ngModel)]="evento.imagen" type="file" id="imagen" name="imagen" class="form-control-file" required>
+                            <label for="Imagen">Asígnale una imagen al evento</label>
+                            <input type="text" name="imagne" class="form-control" id="imagen" [(ngModel)]="evento.imagen" placeholder="Enlace de la imagen">
+                            
                     </div>
                     <div class="form-group">
                         <label for="eventoFechaIncio">Fecha de inicio del evento</label>
@@ -26,7 +33,13 @@
                             <label for="eventoFechaFin">Fecha en la que termina el evento</label>
                             <input class="form-control" id="eventoFechaF" name="eventoFechaF" [(ngModel)]="evento.fechaFin"
                             ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #eventoFechaF="ngModel" >
-                    </div>     
+                    </div> 
+                    <div class="form-group">
+                            <label for="organizador">Organizador del evento</label>
+                            <select class="custom-select" name="organizador" id="organizador" [(ngModel)]="evento.organizador.id">
+                                <option [value]="usuario.id" *ngFor="let usuario of usuarios">{{usuario.nombre}}</option>
+                            </select>
+                    </div>    
                     <div class="row text-right">
                             <div class="col-md-9">
                             </div>

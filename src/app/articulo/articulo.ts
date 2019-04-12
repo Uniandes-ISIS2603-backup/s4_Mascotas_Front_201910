@@ -1,3 +1,5 @@
+import { Usuario } from "../usuario/usuario";
+
 export class Articulo {
 
     /**
@@ -24,5 +26,9 @@ export class Articulo {
      * Contenido del articulo
      */
     contenido:string;
-  
+
+     /**
+     * Autor del articulo
+     */
+     autor:Usuario;
   }
