@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <br>
+    <div class="card">
+        <h4 class="card-title"> Cuentanos de ti</h4>
+    </div>
+    <br>
+    <form name="usuarioC" (ngSubmit)="crearUsuario()"   #f="ngForm">
+        <div class="form-group">
+            <label for=nombre>Nombre</label>
+            <input type="text" name="nombre" class="form-control" id="nombre" #nombre="ngModel"
+                [(ngModel)]=usuarioCreate.nombre>
+        </div>
+        <div class="form-group">
+            <label for=usuario>Nombre de Usuario</label>
+            <input type="text" name="usuario" class="form-control" id="usuario" #usuario="ngModel"
+                [(ngModel)]=usuarioCreate.usuario>
+        </div>
+
+        <div class="form-group">
+            <label for=usuario>Fecha de nachimiento</label>
+            <input type="text" name="daybirth" class="form-control" id="daybirth" #usuario="ngModel" placeholder="DD"
+                [(ngModel)]=usuarioCreate.daybirth>
+            <input type="text" name="monthbirth" class="form-control" id="monthbirth" #usuario="ngModel"
+                placeholder="MM" [(ngModel)]=usuarioCreate.monthbirth>
+            <input type="text" name="yearbirth" class="form-control" id="yearbirth" #usuario="ngModel"
+                placeholder="YYYY" [(ngModel)]=usuarioCreate.yearbirth>
+        </div>
+        <div class="form-group">
+            <label for=usuario>Correo</label>
+            <input type="text" name="correo" class="form-control" id="correo" #usuario="ngModel"
+                [(ngModel)]=usuarioCreate.correo>
+        </div>
+        <div class="form-group">
+            <label for=contrasenha>Contraseña</label>
+            <input type="password" name="contrasenha" class="form-control" id="contrasenha" #contrasenha="ngModel" 
+            [(ngModel)]=usuarioCreate.contrasenha>
+        </div>
+        <div class="form-group">
+                <label for="recibe">Recibe Notificaciones</label>
+              <select [(ngModel)]="usuarioCreate.recibeNotificaciones" name='recibe' class="form-control" id="recibeNotificaciones">
+                <option value = true>Si</option>
+                <option value = false>No</option>
+
+              </select>
+            </div>
+              <div class="form-group">
+                    <label for="telefono">Telefono</label>
+                  <input type="text" [(ngModel)]="usuarioCreate.telefono" name='telefono' class="form-control" id="telefono">
+
+           
+        </div>
+        <div class=" row form-inline justify-content-center align-self-center">
+            <button type="submit" class="btn btn-primary"[routerLink] ="['/usuario/list']" >Create</button>
+            <div class="divider"></div>
+            <button type="button" class="btn btn-danger" [routerLink] ="['/usuario/list']" (click)="cancelCreation()">Cancel</button>
+        </div>
+
+    </form>
+</div>

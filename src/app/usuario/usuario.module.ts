@@ -5,18 +5,20 @@ import { UsuarioDetalleComponent } from './usuario-detalle/usuario-detalle.compo
 import {UsuarioService} from './usuario.service';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
-
+import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    FormsModule
 
   ],
-  declarations: [UsuarioListaComponent, UsuarioDetalleComponent],
+  declarations: [UsuarioListaComponent, UsuarioDetalleComponent, CrearUsuarioComponent],
   providers:[UsuarioService],
-  exports:[UsuarioListaComponent,UsuarioDetalleComponent],
+  exports:[UsuarioListaComponent,UsuarioDetalleComponent,CrearUsuarioComponent],
   bootstrap: [UsuarioDetalleComponent]
   
 })

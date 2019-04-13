@@ -32,6 +32,7 @@ import {UsuarioDetalleComponent} from '../usuario/usuario-detalle/usuario-detall
 import { CalificacionCreateComponent } from '../calificacion/calificacion-create/calificacion-create.component';
 import { MascotaExtraviadaCreateComponent } from '../mascota-extraviada/mascota-extraviada-create/mascota-extraviada-create.component';
 import { RecompensaCreateComponent } from '../recompensa/recompensa-create/recompensa-create.component';
+import {CrearUsuarioComponent} from '../usuario/crear-usuario/crear-usuario.component';
 
 const routes: Routes = [
     
@@ -207,6 +208,10 @@ const routes: Routes = [
         path:'usuario',
         children:[
             {
+                path:'crear',
+                component:CrearUsuarioComponent 
+            },
+            {
                 path:'list',
                 component: UsuarioListaComponent
             },
@@ -214,6 +219,8 @@ const routes: Routes = [
                 path:':id',
                 component: UsuarioDetalleComponent
             }
+            
+        
         ]
 
     },

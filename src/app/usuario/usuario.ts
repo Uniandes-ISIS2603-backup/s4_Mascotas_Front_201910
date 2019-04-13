@@ -35,6 +35,16 @@ export class Usuario {
      */
     recibeNotificaciones: boolean;
 
+    /**
+     * 
+     */
+    usuarioRole:string;
+
+    daybirth:string;
+
+    monthbirth:string;
+
+    yearbirth:string;
 }   
 
 
