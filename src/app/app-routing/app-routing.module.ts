@@ -32,13 +32,10 @@ import {UsuarioDetalleComponent} from '../usuario/usuario-detalle/usuario-detall
 import { CalificacionCreateComponent } from '../calificacion/calificacion-create/calificacion-create.component';
 import { MascotaExtraviadaCreateComponent } from '../mascota-extraviada/mascota-extraviada-create/mascota-extraviada-create.component';
 import { RecompensaCreateComponent } from '../recompensa/recompensa-create/recompensa-create.component';
-<<<<<<< HEAD
 import {CrearUsuarioComponent} from '../usuario/crear-usuario/crear-usuario.component';
-=======
 import { EditarArticuloComponent } from '../articulo/editar-articulo/editar-articulo.component';
 import { CalificacionDetailComponent } from '../calificacion/calificacion-detail/calificacion-detail.component';
 import { EditarEventoComponent } from '../evento/editar-evento/editar-evento.component';
->>>>>>> b19d15ad59216afb704d30907e0572c7515f7074
 
 const routes: Routes = [
     
