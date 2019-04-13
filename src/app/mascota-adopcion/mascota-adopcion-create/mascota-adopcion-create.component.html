@@ -14,7 +14,13 @@
                     <label for="pasado">Escribe la historia de tu mascota</label>
                     <textarea [(ngModel)]="proceso.pasado" name="pasado" class="form-control" type = "text" required></textarea>
                 </div>
-                
+                  
+                <div class="col-md-12 text-center">
+                        <button [disabled]="!forma.valid" type="submit" class="btn btn-success">Enviar</button>
+                        <button [routerLink]="['home']" class="btn btn-danger">Cancelar</button>
+                </div>
+               
+                <br>
                 <!--falta la fecha-->
                 <div class="form-group">
                     
@@ -24,15 +30,7 @@
                 </div>               
                
                
-                <div class="row text-right">
-                    <div class="col-md-9">
-
-                    </div>
-                    
-                    <div class="col-md-2">
-                        <button [routerLink]="['home']" class="btn btn-danger">Cancelar</button>
-                    </div>
-                </div>
+                
             </form>
         </div>
     </div>
