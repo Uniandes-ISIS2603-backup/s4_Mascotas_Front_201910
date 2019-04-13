@@ -100,7 +100,7 @@ export class EditarEventoComponent implements OnInit {
 /**
     * Actualizar el evento
     */
-   updateArticulo(): void {
+   updateEvento(): void {
     let fechaI: Date = new Date(this.evento.fechaInicio.year, this.evento.fechaInicio.month - 1, this.evento.fechaInicio.day);
     let fechaF: Date = new Date(this.evento.fechaFin.year, this.evento.fechaFin.month - 1, this.evento.fechaFin.day);
 
