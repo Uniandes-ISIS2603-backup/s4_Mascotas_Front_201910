@@ -8,14 +8,15 @@ import { ListarEventoComponent } from './listar-evento/listar-evento.component';
 import { EventoDetailComponent } from './evento-detail/evento-detail.component';
 import { EventoService } from './evento.service';
 import { CrearEventoComponent } from './crear-evento/crear-evento.component';
+import { EditarEventoComponent } from './editar-evento/editar-evento.component';
 
 @NgModule({
   imports: [
     CommonModule, HttpClientModule, AppRoutingModule, FormsModule, NgbModule
   ],
-  declarations: [EventoDetailComponent, ListarEventoComponent, CrearEventoComponent],
+  declarations: [EventoDetailComponent, ListarEventoComponent, CrearEventoComponent, EditarEventoComponent],
   bootstrap: [ListarEventoComponent],
   providers: [EventoService],
-  exports: [ListarEventoComponent, EventoDetailComponent, CrearEventoComponent]
+  exports: [ListarEventoComponent, EventoDetailComponent, CrearEventoComponent, EditarEventoComponent]
 })
 export class EventoModule { }

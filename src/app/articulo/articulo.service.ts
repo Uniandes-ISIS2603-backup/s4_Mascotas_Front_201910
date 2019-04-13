@@ -44,8 +44,18 @@ export class ArticuloService {
   * @param articulo El articulo actualizado
   * @returns El articulo actualizado
   */
-    updateArticulo(articulo): Observable<Articulo> {
+    updateArticulo(articulo: Articulo): Observable<Articulo> {
         return this.http.put<Articulo>(API_URL + '/' + articulo.id, articulo);
     }
+
+
+    /**
+    * Elimina un articulo
+    * @param articuloId 
+    * @returns True si se elimino, false de lo contrario
+    */
+   deleteArticulo(articuloId: number): Observable<Articulo> {
+    return this.http.delete<Articulo>(API_URL + '/' + articuloId);
+}
 
 }

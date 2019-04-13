@@ -34,6 +34,7 @@ import { MascotaExtraviadaCreateComponent } from '../mascota-extraviada/mascota-
 import { RecompensaCreateComponent } from '../recompensa/recompensa-create/recompensa-create.component';
 import { EditarArticuloComponent } from '../articulo/editar-articulo/editar-articulo.component';
 import { CalificacionDetailComponent } from '../calificacion/calificacion-detail/calificacion-detail.component';
+import { EditarEventoComponent } from '../evento/editar-evento/editar-evento.component';
 
 const routes: Routes = [
     
@@ -196,6 +197,11 @@ const routes: Routes = [
             {
                 path: ':id',
                 component: EventoDetailComponent
+            }
+            ,
+            {
+                path: ':id/editar',
+                component: EditarEventoComponent
             }
         ]
     },{

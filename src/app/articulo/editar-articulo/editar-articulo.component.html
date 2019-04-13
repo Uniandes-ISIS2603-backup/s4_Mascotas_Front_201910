@@ -1,3 +1,33 @@
-<p>
-  editar-articulo works!
-</p>
+<div class="container-fluid">
+    <br>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Modifica tu artículo</h4>
+                <br>
+                <form  (ngSubmit)="updateArticulo()" #forma="ngForm" >
+                    <div class=" form-group">
+                        <label for="Titulo ">Título</label>
+                        <input [(ngModel)]="articulo.titulo" name="titulo" type="text" class="form-control " placeholder="Titulo del artículo">
+                    </div>
+                    <div class="form-group">
+                        <label for="Resumen">Resumen</label>
+                        <textarea [(ngModel)]="articulo.resumen" class="form-control" name="resumen" id="resumen" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="Contenido">Contenido</label>
+                        <textarea [(ngModel)]="articulo.contenido" class="form-control" name="contenido" id="contenido" rows="5"></textarea>
+                    </div>
+                    <div class="row text-right">
+                        <div class="col-md-9">
+                        </div>
+                        <div class="col-md-1">
+                            <button [disabled]="!forma.valid" type="submit" class="btn btn-success">Enviar</button>
+                        </div>
+                        <div class="col-md-2">
+                            <button [routerLink]="['/articulos','list']" class="btn btn-danger">Cancelar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+</div>
