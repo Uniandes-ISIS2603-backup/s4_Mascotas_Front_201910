@@ -2,21 +2,12 @@
     <br>
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Publica un artículo</h4>
+                <h4 class="card-title">Modifica tu artículo</h4>
                 <br>
-                <form  (ngSubmit)="crearArticulo()" #forma="ngForm" action="/articulos/list" method="post">
+                <form  (ngSubmit)="updateArticulo()" #forma="ngForm" >
                     <div class=" form-group">
                         <label for="Titulo ">Título</label>
                         <input [(ngModel)]="articulo.titulo" name="titulo" type="text" class="form-control " placeholder="Titulo del artículo">
-                    </div>
-                    <div class="form-group">
-                        <label for="Tema">Tema</label>
-                      <select [(ngModel)]="articulo.tema" name='temaArticulo' class="form-control" id="temaArticuloSelect">
-                        <option value = "CUIDADO">Cuidado de mascotas</option>
-                        <option value = "SALUD">Salud</option>
-                        <option value = "ENTRENAMIENTO">Entrenamiento</option>
-                        <option value = "TENENCIA">Tenencia responsable</option>
-                      </select>
                     </div>
                     <div class="form-group">
                         <label for="Resumen">Resumen</label>
@@ -25,12 +16,6 @@
                     <div class="form-group">
                         <label for="Contenido">Contenido</label>
                         <textarea [(ngModel)]="articulo.contenido" class="form-control" name="contenido" id="contenido" rows="5"></textarea>
-                    </div>
-                    <div class="form-group">
-                            <label for="autor">Autor del artículo</label>
-                            <select class="custom-select" name="autor" id="autor" [(ngModel)]="articulo.autor.id" >
-                                <option [value]="usuario.id" *ngFor="let usuario of usuarios">{{usuario.nombre}}</option>
-                            </select>
                     </div>
                     <div class="row text-right">
                         <div class="col-md-9">
@@ -45,6 +30,4 @@
                 </form>
             </div>
         </div>
-    <br>
-    <br>
 </div>

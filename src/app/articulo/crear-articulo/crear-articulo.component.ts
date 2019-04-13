@@ -13,9 +13,11 @@ import {Router} from '@angular/router';
 })
 export class CrearArticuloComponent implements OnInit {
 
-  constructor(private articuloService:ArticuloService, private toastrService: ToastrService, private usuarioService:UsuarioService, 
-              private router: Router)
-  { }
+  constructor(private articuloService:ArticuloService, 
+              private toastrService: ToastrService, 
+              private usuarioService:UsuarioService, 
+              private router: Router
+  )  {}
 
   /**
    * Nuevo articulo a crear
@@ -34,8 +36,6 @@ export class CrearArticuloComponent implements OnInit {
     this.usuarioService.getUsuarios()
         .subscribe(u => {
             this.usuarios = u;
-        }, err => {
-            this.toastrService.error(err, 'Error');
         });
 }
 
@@ -50,13 +50,13 @@ export class CrearArticuloComponent implements OnInit {
    */
   @Output() cancel = new EventEmitter();
 
+
   crearArticulo() : Articulo
   {
       this.articuloService.crearArticulo(this.articulo)
-          .subscribe((m)=>{
+          .subscribe((m) => {
           this.articulo = m;
           this.create.emit();
-          this.router.navigate(['/articulos/' + this.articulo.id]);
           this.toastrService.success("El artículo ha sido creado", "Artículo Creado");
     });
       console.log(this.articulo);

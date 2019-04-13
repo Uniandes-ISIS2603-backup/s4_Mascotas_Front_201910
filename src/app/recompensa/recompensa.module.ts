@@ -6,10 +6,11 @@ import { RecompensaService } from './recompensa.service';
 import { RecompensaCreateComponent } from './recompensa-create/recompensa-create.component';
 import { RecompensaEditComponent } from './recompensa-edit/recompensa-edit.component';
 import {FormsModule} from '@angular/forms';
+import {AppRoutingModule} from '../app-routing/app-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule, FormsModule
+    CommonModule, FormsModule, AppRoutingModule
   ],
   declarations: [RecompensaListComponent, RecompensaDetailComponent, RecompensaCreateComponent, RecompensaEditComponent],
   bootstrap: [RecompensaListComponent],

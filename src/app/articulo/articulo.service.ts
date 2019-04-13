@@ -34,10 +34,28 @@ export class ArticuloService {
     return this.http.get<Articulo>(`${API_URL}/${articuloId}`)
   }
 
-  crearArticulo(articulo:Articulo) : Observable<Articulo>
-  {
+  crearArticulo(articulo:Articulo) : Observable<Articulo>{
     console.log("articulo:--->", articulo);
     return this.http.post<Articulo>(API_URL, articulo)
   }
+
+ /**
+  * Actualiza un articulo
+  * @param articulo El articulo actualizado
+  * @returns El articulo actualizado
+  */
+    updateArticulo(articulo: Articulo): Observable<Articulo> {
+        return this.http.put<Articulo>(API_URL + '/' + articulo.id, articulo);
+    }
+
+
+    /**
+    * Elimina un articulo
+    * @param articuloId 
+    * @returns True si se elimino, false de lo contrario
+    */
+   deleteArticulo(articuloId: number): Observable<Articulo> {
+    return this.http.delete<Articulo>(API_URL + '/' + articuloId);
+}
 
 }

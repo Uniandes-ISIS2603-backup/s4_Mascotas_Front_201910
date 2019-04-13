@@ -7,22 +7,28 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
 import { ArticuloService } from '../articulo/articulo.service';
 import { CrearArticuloComponent } from './crear-articulo/crear-articulo.component';
+import { EditarArticuloComponent } from './editar-articulo/editar-articulo.component';
+import { UsuarioService } from '../usuario/usuario.service';
+import { UsuarioModule } from '../usuario/usuario.module';
 
 @NgModule({
   imports: [
     CommonModule,  
     HttpClientModule, 
     AppRoutingModule, 
-    FormsModule
+    FormsModule, 
+    UsuarioModule
   ],
   bootstrap: [ListarArticuloComponent],
   declarations: [ListarArticuloComponent, 
                  ArticuloDetailComponent, 
-                 CrearArticuloComponent],
-  providers: [ArticuloService],
+                 CrearArticuloComponent,
+                EditarArticuloComponent],
+  providers: [ArticuloService, UsuarioService],
   exports: [ListarArticuloComponent, 
             ArticuloDetailComponent, 
-            CrearArticuloComponent]
+            CrearArticuloComponent,
+            EditarArticuloComponent]
 
 })
 

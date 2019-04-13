@@ -4,7 +4,7 @@
         <h4 class="card-title"> Cuentanos de ti</h4>
     </div>
     <br>
-    <form name="usuarioC" (ngSubmit)="crearUsuario()"   #f="ngForm">
+    <form name="usuarioC" (ngSubmit)="crearUsuario()"  #f="ngForm">
         <div class="form-group">
             <label for=nombre>Nombre</label>
             <input type="text" name="nombre" class="form-control" id="nombre" #nombre="ngModel"
@@ -50,10 +50,11 @@
            
         </div>
         <div class=" row form-inline justify-content-center align-self-center">
-            <button type="submit" class="btn btn-primary"[routerLink] ="['/usuario/list']" >Create</button>
+            <button type="submit" class="btn btn-primary">Create</button>
             <div class="divider"></div>
             <button type="button" class="btn btn-danger" [routerLink] ="['/usuario/list']" (click)="cancelCreation()">Cancel</button>
         </div>
 
     </form>
 </div>
+

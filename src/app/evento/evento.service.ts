@@ -40,4 +40,22 @@ export class EventoService {
     return this.http.post<Evento>(API_URL, evento)
   }
 
+ /**
+  * Actualiza un evento
+  * @param evento El evento actualizado
+  * @returns El evento actualizado
+  */
+ updateEvento(evento: Evento): Observable<Evento> {
+  return this.http.put<Evento>(API_URL + '/' + evento.id, evento);
+}
+
+  /**
+    * Elimina un evento
+    * @param eventoId 
+    * @returns True si se elimino, false de lo contrario
+    */
+   deleteArticulo(eventoId: number): Observable<Evento> {
+    return this.http.delete<Evento>(API_URL + '/' + eventoId);
+}
+
 }
