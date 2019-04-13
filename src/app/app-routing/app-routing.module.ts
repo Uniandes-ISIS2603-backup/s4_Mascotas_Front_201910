@@ -33,6 +33,7 @@ import { CalificacionCreateComponent } from '../calificacion/calificacion-create
 import { MascotaExtraviadaCreateComponent } from '../mascota-extraviada/mascota-extraviada-create/mascota-extraviada-create.component';
 import { RecompensaCreateComponent } from '../recompensa/recompensa-create/recompensa-create.component';
 import { EditarArticuloComponent } from '../articulo/editar-articulo/editar-articulo.component';
+import { CalificacionDetailComponent } from '../calificacion/calificacion-detail/calificacion-detail.component';
 
 const routes: Routes = [
     
@@ -108,13 +109,19 @@ const routes: Routes = [
             },
             {
                 path: ':id',
-                component: MascotaAdopcionDetailComponent,
-                children:[
-                    {
-                    path: 'create-calificacion',
-                    component: CalificacionCreateComponent
-                    }
-                ]
+                component: MascotaAdopcionDetailComponent
+            }
+        ]
+    },
+    {
+        path: 'calificaciones',
+        children:[
+            {
+                path: 'create-calificacion',
+                component: CalificacionCreateComponent
+            },{
+                path: 'calificacion-detail',
+                component: CalificacionDetailComponent
             }
         ]
     },

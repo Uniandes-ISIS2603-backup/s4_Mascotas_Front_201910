@@ -39,17 +39,20 @@
                 <h5>Postulaciones</h5>
             </div>
             <div class="col-md-12 text-center" >
-                <button class="btn btn-success" type="button" name="button">¡Me quiero postular!</button>
-            </div>
-            <!-- falta lista de postulados-->>
+                <button class="btn btn-success" routerLink="/usuario/list" type="button" name="button">¡Me quiero postular!</button>
+            </div>           
         </div>
         <div class="row">
             <div class="col-md-12 text-left">
                 <h5>Calificación</h5>
             </div>
-            <div class="col-md-12 text-center" >
-                <button class="btn btn-success" routerLink="/mascotas-adopcion/{{mascotaEnAdopcion.id}}/create-calificacion" type="button" name="button">Calificar Proceso</button>
+            <div class="col-md-6 text-center" >
+                <button class="btn btn-success" routerLink="/calificaciones/create-calificacion" type="button" name="button">Calificar Proceso</button>
             </div>
+
+            <div class="col-md-8 text-right" >
+                    <button class="btn btn-success" routerLink="/calificaciones/calificacion-detail" type="button" name="button">Ver Calificacion</button>
+                </div>
         </div>
         
         <div class="row">
@@ -58,6 +61,7 @@
                 <button class="btn btn-danger" routerLink="/mascotas-adopcion/list" type="button" name="volver">Volver</button>
             </div>
         </div>
+        
     </div>
     <br>
     <br>

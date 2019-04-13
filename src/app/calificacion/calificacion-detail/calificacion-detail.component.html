@@ -1,23 +1,41 @@
-<div class="row">
-    <div class="col-sm">
+
+<div class="container-fluid">
+    <br>
+    <br>
+    <div class="card">
+        <div class="row">
+            <div class="col-md-12">            
+            </div>
+            <table class="table table-borderless col-md-12 text-center">
+                <thead >
+                    <tr>
+                        <th>Su calificación fue:</th>
+                        <th>Comentario:</th>
+                   </tr>
+                </thead>
+                <tbody>                 
+                    
+                    <tr>
+                        <td>{{calificacion.calificacion}}</td>
+                        <td>{{calificacion.Comentario}}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <br>
+        </div>
+        <br>
+        <br>
+        
+        <div class="row">
+            
+            <div class="col-md-12 text-right">
+                <button class="btn btn-danger" routerLink="/mascotas-adopcion/list" type="button" name="volver">Volver</button>
+            </div>
+        </div>
+        
     </div>
-    <div class="col-sm">
-      <div class="container-fluid">
-        <table class="table table-hover">
-          <thead class="thead-light">
-            <tr>						
-                <th scope="col">Calificación</th>
-                <th scope="col">Comentario</th>               
-              
-            </tr>
-          </thead>
-          <tr>
-            <td>{{calificacion.calificacion}}</td>
-            <td>{{calificacion.Comentario}}</td>
-          </tr>
-          
-        </table>
-      </div>
-    </div>
-    
-  </div>
+    <br>
+    <br>
+</div>
+

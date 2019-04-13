@@ -1,8 +1,8 @@
 <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="/mascotas-extraviadas/nuevo">Crer nuevo proceso <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="/recompensas/list">Recompensas</a>
+            <a class="nav-item nav-link" routerLink="/mascotas-extraviadas/nuevo">Crer nuevo proceso <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" routerLink="/recompensas/list">Recompensas</a>
         </div>
     </nav>
 
@@ -10,7 +10,7 @@
         <div class="card">
             <img class="card-img-top" src="..." alt="Card image cap">
             <div class="card-body">
-                <p class="card-text"><a href="/mascotas-extraviadas/{{mascotaExtraviada.id}}">
+                <p class="card-text"><a routerLink="/mascotas-extraviadas/{{mascotaExtraviada.id}}">
               Lugar: {{mascotaExtraviada.ciudad}}/{{mascotaExtraviada.direccion}}
             </a></p>
             </div>

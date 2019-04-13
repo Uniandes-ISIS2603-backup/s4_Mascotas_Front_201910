@@ -1,6 +1,6 @@
 <ul>
   <li *ngFor="let recompensa of recompensas">
-    <a href="/recompensas/{{recompensa.id}}">
+    <a routerLink="/recompensas/{{recompensa.id}}">
       Recompensa {{recompensa.id}}: {{recompensa.valor}}
     </a>
   </li>
