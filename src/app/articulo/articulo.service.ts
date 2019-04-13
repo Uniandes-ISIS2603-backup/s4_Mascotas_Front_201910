@@ -34,10 +34,18 @@ export class ArticuloService {
     return this.http.get<Articulo>(`${API_URL}/${articuloId}`)
   }
 
-  crearArticulo(articulo:Articulo) : Observable<Articulo>
-  {
+  crearArticulo(articulo:Articulo) : Observable<Articulo>{
     console.log("articulo:--->", articulo);
     return this.http.post<Articulo>(API_URL, articulo)
   }
+
+ /**
+  * Actualiza un articulo
+  * @param articulo El articulo actualizado
+  * @returns El articulo actualizado
+  */
+    updateArticulo(articulo): Observable<Articulo> {
+        return this.http.put<Articulo>(API_URL + '/' + articulo.id, articulo);
+    }
 
 }
