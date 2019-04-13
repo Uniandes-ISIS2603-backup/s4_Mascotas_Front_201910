@@ -5,6 +5,8 @@ import { MascotaAdopcionService } from '../mascota-adopcion-service.service';
 import { MascotaEnAdopcion } from '../mascota-adopcion';
 import { MascotaEnAdopcionDetail } from '../mascota-en-adopcion-detail';
 
+
+
 @Component({
   selector: 'app-mascota-adopcion-detail',
   templateUrl: './mascota-adopcion-detail.component.html',
@@ -39,5 +41,7 @@ export class MascotaAdopcionDetailComponent implements OnInit {
   getMascotaEnAdopcion(id : number) : void{
     this.service.getMascotaEnAdopcionDetail(id).subscribe(mascota => this.mascotaEnAdopcion = mascota);
   }
+
+
 
 }
