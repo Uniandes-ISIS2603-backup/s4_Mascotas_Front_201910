@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 .navbar-custom {
-    background-image: linear-gradient( to right, #7c2ae8, #00c4cc);
+    background-color : #422c20;
 }
 
 
@@ -9,14 +9,14 @@
 
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
-    color: rgba(255, 255, 255, .8);
+    color:#DFC75C;
 }
 
 
 /* change the link color */
 
 .navbar-custom .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, .5);
+    color: #f1cdb7;
 }
 
 
@@ -32,5 +32,10 @@
 }
 
 .fa-user {
-    color: #ffffff;
+    color: #DFC75C;
 }
+
+.href{
+    color:#f1cdb7;
+}
+

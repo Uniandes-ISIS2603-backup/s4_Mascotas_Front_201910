@@ -1,20 +1,28 @@
 .btn-custom {
-    background: #671dc8;
-    color: antiquewhite;
+    background: #f5cf97;
+    color: rgb(255, 255, 255);
     border-radius: 40px;
 }
+
+.btn {
+    outline: none;
+    border: 2px solid white;
+    box-sizing: none; 
+    background-color: transparent; 
+    color: rgb(255, 255, 255);
+ }
 
 .fas {
     color: #fffc03;
 }
 
 .btn-custom:hover {
-    background: #00c4cc;
+    background: #ffceda46;
     color: #343434;
 }
 
 .bg-img {
-    background-image: url('../../assets/Home.png');
+    background-image: url('../../assets/cafe.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
