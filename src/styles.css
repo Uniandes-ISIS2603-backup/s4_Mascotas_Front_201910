@@ -16,7 +16,7 @@
 /* change the link color */
 
 .navbar-custom .navbar-nav .nav-link {
-    color: #f1cdb7;
+    color: rgb(126, 112, 53);
 }
 
 
@@ -39,3 +39,16 @@
     color:#f1cdb7;
 }
 
+
+.btn-primary
+{
+background-color: #DFC75C;
+color:#FFF;
+border-color: #DFC75C;
+}
+ 
+.btn-primary:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default { 
+background-color:rgb(173, 156, 76);
+color:#FFF; 
+border-color:rgb(173, 156, 76);
+}
