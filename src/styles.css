@@ -43,12 +43,34 @@
 .btn-primary
 {
 background-color: #DFC75C;
-color:#FFF;
+color:rgb(0, 0, 0);
 border-color: #DFC75C;
 }
+
+.btn{
+    box-shadow: none ;
+    border: none ;
+}
  
-.btn-primary:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default { 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active { 
 background-color:rgb(173, 156, 76);
 color:#FFF; 
 border-color:rgb(173, 156, 76);
 }
+
+.btn:active, .btn:active, .btn:active:focus, .btn-primary:active:focus, .btn:hover {
+    background-color:rgb(173, 156, 76);
+    color:#FFF; 
+    border-color:rgb(173, 156, 76);
+}
+
+.show > .btn-primary:focus{
+    background-color:rgb(173, 156, 76) ;
+      box-shadow:none ;
+      border: none ;
+    
+    }
+    .btn-primary{
+      box-shadow: none ;
+      border: none ;
+    }
