@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <nav class="navbar navbar-dark  text-left rounded" style="background-color:  #DFC75C">
+    <nav class="navbar navbar-dark  text-left rounded" >
         <a class="navbar-brand"><i class="fas fa-filter"></i>Filtrar por</a>
         <div class="btn-group">
             <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -39,7 +39,7 @@
                             <h5 *ngIf="mascota.estado=='EXTRAVIADO'" class="card-text text-danger">{{mascota.estado}}</h5>
                         </div>
                         <div class="col-md-6">
-                            <a class="btn btn-info" name="masInfo" routerLink="/mascotas/{{mascota.id}}">Más información</a>
+                            <a class="btn btn-primary" name="masInfo" routerLink="/mascotas/{{mascota.id}}">Más información</a>
                         </div>
                     </div>
                 </div>
