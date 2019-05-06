@@ -1,3 +1,41 @@
-<p>
-  crear-clasificado works!
-</p>
+<div class="container-fluid">
+    <br>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Publica un clasificado</h4>
+                <br>
+                <form (ngSubmit)="crearClasificado()" #forma="ngForm">
+                    <div class=" form-group">
+                        <label for="Nombre ">Nombre</label>
+                        <input [(ngModel)]="clasificado.nombre" name="nombre" type="text" class="form-control " placeholder="Nombre del clasificado">
+                    </div>
+                    <div class="form-group">
+                        <label for="Contenido">Contenido</label>
+                        <textarea class="form-control" [(ngModel)]="clasificado.contenido" id="contenido" name="contenido" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="Enlace">Enlace para mayor información</label>
+                        <input [(ngModel)]="clasificado.enlace" name="enlace" type="text" class="form-control " placeholder="Enlace del clasificado">
+                    </div>
+                    <div class="form-group">
+                            <label for="autor">Autor del clasificado</label>
+                            <select class="custom-select" name="autor" id="autor" [(ngModel)]="clasificado.autor.id">
+                                <option [value]="usuario.id" *ngFor="let usuario of usuarios">{{usuario.nombre}}</option>
+                            </select>
+                    </div>    
+                    <div class="row text-right">
+                            <div class="col-md-9">
+                            </div>
+                            <div class="col-md-1">
+                                <button type="submit" class="btn btn-success">Enviar</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button [routerLink]="['/clasificados','list']" class="btn btn-danger"  (click)="cancelCreation()">Cancelar</button>
+                            </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <br>
+    <br>
+</div>
