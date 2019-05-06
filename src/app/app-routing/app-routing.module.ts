@@ -36,6 +36,9 @@ import {CrearUsuarioComponent} from '../usuario/crear-usuario/crear-usuario.comp
 import { EditarArticuloComponent } from '../articulo/editar-articulo/editar-articulo.component';
 import { CalificacionDetailComponent } from '../calificacion/calificacion-detail/calificacion-detail.component';
 import { EditarEventoComponent } from '../evento/editar-evento/editar-evento.component';
+import { ClasificadoDetailComponent } from '../clasificado/clasificado-detail/clasificado-detail.component';
+import { CrearClasificadoComponent } from '../clasificado/crear-clasificado/crear-clasificado.component';
+import { ListarClasificadoComponent } from '../clasificado/listar-clasificado/listar-clasificado.component';
 
 const routes: Routes = [
     
@@ -203,6 +206,22 @@ const routes: Routes = [
             {
                 path: ':id/editar',
                 component: EditarEventoComponent
+            }
+        ]
+    },{
+        path: 'clasificados',
+        children:[
+            {
+                path:'list',
+                component: ListarClasificadoComponent
+            },
+            {
+                path : 'crear',
+                component: CrearClasificadoComponent
+            },
+            {
+                path: ':id',
+                component: ClasificadoDetailComponent
             }
         ]
     },{

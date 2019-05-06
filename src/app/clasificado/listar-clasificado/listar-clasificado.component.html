@@ -1,0 +1,13 @@
+<div class="card-deck">
+    <div *ngFor="let clasificado of clasificados" class="card" style="width: 18rem;">
+       <!-- <img class="card-img-top" src="{{evento.imagen}}" alt="Card image cap"> -->
+        <div class="card-body">
+            <h3 class="card-title">{{clasificado.nombre}}</h3>
+            <br>
+            <p class="card-text">{{clasificado.contenido}}</p>
+            <p>...</p>
+            <br>
+            <a class="btn btn-primary btn-lg" href="/clasificados/{{clasificado.id}}" role="button" >Ver más</a>
+        </div>
+    </div>
+</div>
