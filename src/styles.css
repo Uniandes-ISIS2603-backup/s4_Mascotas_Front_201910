@@ -19,6 +19,9 @@
     color: rgb(126, 112, 53);
 }
 
+.navbar-dark{
+   background-color:  #DFC75C;
+}
 
 /* change the color of active or hovered links */
 
