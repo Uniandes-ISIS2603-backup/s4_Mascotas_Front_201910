@@ -33,4 +33,13 @@ export class ListarArticuloComponent implements OnInit {
     this.getArticulos();
   }
 
+   /**
+   * Filtra los articulos por tema
+   * @param tema 
+   */
+  filtrarPorTema(tema:string):void
+  {
+    this.articuloService.filtrarPorTema(tema).subscribe(ms=>{this.articulos=ms});
+  }
+
 }

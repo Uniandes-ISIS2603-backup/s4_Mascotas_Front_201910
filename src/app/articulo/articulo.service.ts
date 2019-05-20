@@ -58,4 +58,12 @@ export class ArticuloService {
     return this.http.delete<Articulo>(API_URL + '/' + articuloId);
 }
 
+  /**
+   * Filtra articulos por tema
+   */
+  filtrarPorTema(tema:string):Observable<Articulo[]>
+  {
+    return this.http.get<Articulo[]>(`${API_URL}/filtrar/${tema}`);
+  }
+
 }
