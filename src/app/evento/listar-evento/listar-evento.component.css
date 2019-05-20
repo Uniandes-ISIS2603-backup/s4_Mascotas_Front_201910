@@ -1,0 +1,12 @@
+.your-input, .your-button {
+    display: inline-block;
+    /* aligned to each other and not the .wrapper */
+    height: 100%;
+    /* already was inline by dephault - but just to be clear */
+    vertical-align: middle;
+  }
+
+  .your-input{
+      background-color: #DFC75C;
+      border: none;
+  }

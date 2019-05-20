@@ -60,4 +60,12 @@ export class EventoService {
     return this.http.delete<Evento>(API_URL + '/' + eventoId);
   }
 
+  /**
+   * Filtrar eventos por fecha de inico
+   */
+  filtrarPorFecha(fecha:string):Observable<Evento[]>
+  {
+    return this.http.get<Evento[]>(`${API_URL}/filtrar/${fecha}`);
+  }
+
 }

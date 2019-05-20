@@ -1,3 +1,24 @@
+<div class="container-fluid">
+<nav class="navbar navbar-dark  text-left rounded" style="background-color:  #DFC75C">
+    <div>
+         Hola
+    </div>
+
+    <div>
+        <button (click)="getEventos()" class="btn btn-primary" name="BtnLimpiar" type="button">Todos los eventos</button>
+    </div>
+
+    <div >
+            <button class="btn btn-primary your-input" (click)="d.toggle()" type="button">
+                    Fecha de inicio
+            </button> <input class="your-input" 
+                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (dateSelect) = "filtrarPorFecha($event)" >
+    </div>
+    <div>
+    </div>
+
+</nav>
+<br>
 <div class="card-deck">
     <div *ngFor="let evento of eventos" class="card" style="width: 18rem;">
         <img class="card-img-top" src="{{evento.imagen}}" alt="Card image cap">
@@ -10,4 +31,5 @@
             <a class="btn btn-primary btn-lg" href="/eventos/{{evento.id}}" role="button" >Ver más</a>
         </div>
     </div>
+</div>
 </div>
