@@ -25,7 +25,7 @@ export class BuscarService {
    *  @param nombre - El nombre del evento
    */
   buscarEventosNombre(nombre: string): Observable<Evento[]> {
-    return this.http.get<Evento[]>(API_URL + '/' + nombre);
+    return this.http.get<Evento[]>(API_URL + '/eventos/' + nombre);
   }
   
   /**
@@ -33,7 +33,7 @@ export class BuscarService {
    *  @param titulo - El titulo del articulo
    */
   buscarArticulosTitulo(titulo: string): Observable<Articulo[]> {
-    return this.http.get<Articulo[]>(API_URL + '/' + titulo);
+    return this.http.get<Articulo[]>(API_URL + '/articulos/' + titulo);
   }
 
 }
