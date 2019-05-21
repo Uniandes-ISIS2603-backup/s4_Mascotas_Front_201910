@@ -4,12 +4,14 @@ import {Observable} from "rxjs";
 
 import { environment } from '../../environments/environment';
 import {MascotaEnAdopcion} from './mascota-adopcion';
+import {Calificacion} from '../calificacion/calificacion';
 
 /**
  * constantes para definir la ruta
  */
 const API_URL = environment.apiURL;
 const procesos = '/procesosMascotaEnAdopcion';
+const calificaciones = '/calificaciones';
 
 @Injectable(//{ providedIn: 'root'}
 )
@@ -28,6 +30,14 @@ export class MascotaAdopcionService {
   getMascotasEnAdopcion () : Observable<MascotaEnAdopcion[]>{
     
     return this.httpClient.get<any[]>(API_URL + procesos);
+  }
+
+  /**
+   * retorna el observable que contiene la lista 
+   * de calificaciones de los buenos procesos de mascotas en adopcion
+   */
+  getCalificacionesProcesosEnAdopcion () : Observable<Calificacion[]>{
+    return this.httpClient.get<any[]>(API_URL + calificaciones);
   }
 
   /**
