@@ -68,4 +68,11 @@ export class EventoService {
     return this.http.get<Evento[]>(`${API_URL}/filtrar/${fecha}`);
   }
 
+   /**
+   * Buscar por nombre
+   */
+  buscarPorNombre(nombre:string):Observable<Evento[]>{
+    return this.http.get<Evento[]>(`${API_URL}/${nombre}`);
+  }
+
 }

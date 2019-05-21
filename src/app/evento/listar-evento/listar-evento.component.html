@@ -5,14 +5,14 @@
     </div>
 
     <div>
-        <button (click)="getEventos()" class="btn btn-primary" name="BtnLimpiar" type="button">Todos los eventos</button>
+        <button (click)="getEventos()" class="btn btn-primary your-button" name="BtnLimpiar" type="button">Todos los eventos</button>
     </div>
 
     <div >
             <button class="btn btn-primary your-input" (click)="d.toggle()" type="button">
-                    Fecha de inicio
+                    Filtrar por fecha de inicio
             </button> <input class="your-input" 
-                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (dateSelect) = "filtrarPorFecha($event)" >
+                   name="dp" size="10" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (dateSelect) = "filtrarPorFecha($event)" >
     </div>
     <div>
     </div>
