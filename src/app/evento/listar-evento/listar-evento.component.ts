@@ -49,4 +49,13 @@ export class ListarEventoComponent implements OnInit {
     this.eventoService.filtrarPorFecha(fecha).subscribe(ms=>{this.eventos=ms});
   }
 
+  /**
+   * Buscar por nombre
+   * @param nombre 
+   */
+  buscarPorNombre(nombre):void
+  {
+    this.eventoService.buscarPorNombre(nombre).subscribe(ms=>{this.eventos=ms});
+  }
+
 }

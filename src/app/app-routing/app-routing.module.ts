@@ -39,6 +39,7 @@ import { EditarEventoComponent } from '../evento/editar-evento/editar-evento.com
 import { ClasificadoDetailComponent } from '../clasificado/clasificado-detail/clasificado-detail.component';
 import { CrearClasificadoComponent } from '../clasificado/crear-clasificado/crear-clasificado.component';
 import { ListarClasificadoComponent } from '../clasificado/listar-clasificado/listar-clasificado.component';
+import { ListarBusquedaComponent } from '../buscar/listar-busqueda/listar-busqueda.component';
 
 const routes: Routes = [
     
@@ -222,6 +223,14 @@ const routes: Routes = [
             {
                 path: ':id',
                 component: ClasificadoDetailComponent
+            }
+        ]
+    },{
+        path: 'buscar',
+        children:[
+            {
+                path: ':busq',
+                component: ListarBusquedaComponent
             }
         ]
     },{

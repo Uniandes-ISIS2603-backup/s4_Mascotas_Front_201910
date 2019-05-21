@@ -1,0 +1,23 @@
+<div class="container-fluid">
+<div *ngFor = "let articulo of articulos" class="jumbotron">
+    <h4 class="display-4"><b>{{articulo.titulo}}</b></h4>
+    <p class="lead">{{articulo.tema}}</p>
+    <hr class="my-4">
+    <p>{{articulo.resumen}}</p>
+    <br>
+    <a class="btn btn-primary btn-lg" routerLink="/articulos/{{articulo.id}}" role="button">Ver más</a>
+</div>
+<div class="card-deck">
+    <div *ngFor="let evento of eventos" class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{evento.imagen}}" alt="Card image cap">
+        <div class="card-body">
+            <h3 class="card-title">{{evento.nombre}}</h3>
+            <br>
+            <p class="card-text">Fecha inicio: {{evento.fechaInicio}}</p>
+            <p class="card-text">Fecha fin: {{evento.fechaFin}}</p>
+            <br>
+            <a class="btn btn-primary btn-lg" href="/eventos/{{evento.id}}" role="button" >Ver más</a>
+        </div>
+    </div>
+</div>
+</div>

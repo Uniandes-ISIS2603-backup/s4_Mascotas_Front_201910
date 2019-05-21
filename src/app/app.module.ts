@@ -23,6 +23,7 @@ import {MascotaEncontradaModule} from './mascota-encontrada/mascota-encontrada.m
 import {CalificacionModule} from  './calificacion/calificacion.module';
 import {UsuarioModule} from './usuario/usuario.module'
 import { ClasificadoModule } from './clasificado/clasificado.module';
+import { BuscarModule } from './buscar/buscar.module';
 @NgModule({
     declarations: [
         AppComponent,
@@ -55,7 +56,8 @@ import { ClasificadoModule } from './clasificado/clasificado.module';
         MascotaEncontradaModule,
         UsuarioModule,
         CalificacionModule,
-        ClasificadoModule
+        ClasificadoModule,
+        BuscarModule
     ],
     bootstrap: [AppComponent],
     providers: [

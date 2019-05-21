@@ -30,9 +30,11 @@
             </li>
        </ul>
        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2 busq" type="search" placeholder="Buscar" aria-label="Search" >
-            <i class="fas fa-search" aria-hidden="true"></i>
-        </form>
+            <input class="form-control mr-sm-2 busq" type="search" placeholder="Buscar" aria-label="Search" [(ngModel)]='labus'>
+            <a class="btn-busq" routerLink="/buscar/{{labus}}" role="button">
+                <span class="fas fa-search " style="color: #DFC75C"></span>
+            </a> 
+       </form>
 
    </div>
 

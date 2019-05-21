@@ -39,7 +39,7 @@ footer {
 }
 
 .busq::placeholder{
-    color: white;
+    color: #DFC75C;
 }
 
 .busq{
@@ -47,5 +47,10 @@ footer {
     color: white;
     border: none;
     width:160px;
+}
+
+.btn-busq{
+    background-color: transparent;
+    color:#DFC75C;
 }
 
