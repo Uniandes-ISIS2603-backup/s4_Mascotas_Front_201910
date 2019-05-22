@@ -4,14 +4,22 @@
       <div class="btn-group">
           <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="sr-only"></span>Tipo de Mascota </button>
-          <!--<div class="dropdown-menu" aria-labelledby="dropdownMenu1">-->
-              <!--<button (click)="filtrarPorTipo('PERRO')" name="BtnPerro" class="dropdown-item" type="button"><i class="fas fa-dog"></i> Perro</button>-->
-              <!--<button (click)="filtrarPorTipo('GATO')" name="BtnGato" class="dropdown-item" type="button"><i class="fas fa-cat"></i>  Gato</button>-->
-          <!--</div>-->
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <button (click)="filtrarPorTipo('PERRO')" name="BtnPerro" class="dropdown-item" type="button"><i class="fas fa-dog"></i> Perro</button>
+              <button (click)="filtrarPorTipo('GATO')" name="BtnGato" class="dropdown-item" type="button"><i class="fas fa-cat"></i>  Gato</button>
+          </div>
       </div>
       <div class="btn-group dropleft">
           <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="sr-only"></span> Estado </button>
+                <span class="sr-only"></span> Estado 
+            </button>
+             <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <button (click)="getMascotasEnAdopcion()" name="BtnTodas" class="dropdown-item" type="button"> Todos los procesos</button>
+                    <button (click)="getMascotasSinAdoptar()" name="BtnTodas" class="dropdown-item" type="button"> Sin Adoptar</button>
+                    
+            </div>
+            
       </div>
   </nav>
 
