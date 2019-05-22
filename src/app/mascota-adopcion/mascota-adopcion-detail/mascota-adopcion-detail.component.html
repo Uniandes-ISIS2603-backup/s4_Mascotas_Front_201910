@@ -7,14 +7,18 @@
                 <!--<img class="img-responsive mw-100 col-md-6 " src="{{mascotaEnAdopcion.mascota.fotos}}">-->
             </div>
             <table class="table table-borderless col-md-12 text-center">
-                <thead class="thead-dark">
+               
+                <tbody> 
+                    <!--<th><button class="btn btn-default"routerLink="./mascotas/{{mascota.id}}" type="button" name="button">{{mascotaEnAdopcion.mascota.nombre}}</button></th>-->
+                   
                     <tr>
                         <th>Mascota</th>
-                        <!--<th><button class="btn btn-default"routerLink="./mascotas/{{mascota.id}}" type="button" name="button">{{mascotaEnAdopcion.mascota.nombre}}</button></th>-->
+                        <td>{{mascotaEnAdopcion.mascota.nombre}}</td>
                     </tr>
-                </thead>
-                <tbody>                 
-                    
+                    <tr>
+                        <th>Dueño</th>
+                        <td>{{mascotaEnAdopcion.duenio.nombre}}</td>
+                    </tr>
                     <tr>
                         <th>Razón de la Adopción</th>
                         <td>{{mascotaEnAdopcion.razonAdopcion}}</td>
@@ -30,6 +34,10 @@
                     
                 </tbody>
             </table>
+            <br>
+            <div class ="col-md-12 text-center">
+                <img class="card-img-top" src="{{proceso.mascota.fotos}}" alt="Card image cap">
+            </div>
             <br>
         </div>
         <br>

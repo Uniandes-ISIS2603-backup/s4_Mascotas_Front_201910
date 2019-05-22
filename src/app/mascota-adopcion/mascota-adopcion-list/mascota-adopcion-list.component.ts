@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import{ MascotaAdopcionService } from '../mascota-adopcion-service.service';
 import { MascotaEnAdopcion } from '../mascota-adopcion';
 import {Calificacion} from '../../calificacion/calificacion';
+import { Mascota} from '../../mascota/mascota';
 
 @Component({
   selector: 'app-mascota-adopcion-list',
@@ -28,6 +29,7 @@ export class MascotaAdopcionListComponent implements OnInit {
   constructor(private service : MascotaAdopcionService) {
     this.mascotasEnAdopcion = [];
     this.calificaciones = [];
+    
    }
 
   /**
@@ -48,7 +50,9 @@ export class MascotaAdopcionListComponent implements OnInit {
       console.log(this.mascotasEnAdopcion);
     });
   }
-  //getMascotaById(id) : String{}
+  getMascotaById(id: number) : void{
+
+  }
 
    
   /**
