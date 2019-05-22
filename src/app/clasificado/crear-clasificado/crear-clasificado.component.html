@@ -4,14 +4,19 @@
             <div class="card-body">
                 <h4 class="card-title">Publica un clasificado</h4>
                 <br>
+
+                
                 <form (ngSubmit)="crearClasificado()" #forma="ngForm">
                     <div class=" form-group">
                         <label for="Nombre ">Nombre</label>
-                        <input [(ngModel)]="clasificado.nombre" name="nombre" type="text" class="form-control " placeholder="Nombre del clasificado">
+                        <input [(ngModel)]="clasificado.nombre" name="nombre" type="text" class="form-control " placeholder="Nombre del clasificado" required>
+                        <div class="invalid-feedback">
+                                <div>El clasificado debe tener un nombre</div>
+                         </div>
                     </div>
                     <div class="form-group">
                         <label for="Contenido">Contenido</label>
-                        <textarea class="form-control" [(ngModel)]="clasificado.contenido" id="contenido" name="contenido" rows="5"></textarea>
+                        <textarea class="form-control" [(ngModel)]="clasificado.contenido" id="contenido" name="contenido" rows="5" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="Enlace">Enlace</label>
@@ -27,7 +32,7 @@
                             <div class="col-md-9">
                             </div>
                             <div class="col-md-1">
-                                <button type="submit" class="btn btn-success ">Enviar</button>
+                                <button type="submit"  [disabled]="!forma.valid" class="btn btn-success ">Enviar</button>
                             </div>
                             <div class="col-md-2">
                                 <button [routerLink]="['/clasificados','list']" class="btn btn-danger"  (click)="cancelCreation()">Cancelar</button>

@@ -7,11 +7,11 @@
                 <form (ngSubmit)="crearEvento()" #forma="ngForm">
                     <div class=" form-group">
                         <label for="Nombre ">Nombre</label>
-                        <input [(ngModel)]="evento.nombre" name="nombre" type="text" class="form-control " placeholder="Nombre del evento">
+                        <input [(ngModel)]="evento.nombre" name="nombre" type="text" class="form-control " placeholder="Nombre del evento" required>
                     </div>
                     <div class="form-group">
                         <label for="Descripcion">Descripción</label>
-                        <textarea class="form-control" [(ngModel)]="evento.descripcion" id="descripcion" name="descripcion" rows="3"></textarea>
+                        <textarea class="form-control" [(ngModel)]="evento.descripcion" type="text" id="descripcion" name="descripcion" rows="3" required></textarea>
                     </div>
 
                    <!----   <div class="form-group">
@@ -27,12 +27,12 @@
                     <div class="form-group">
                         <label for="eventoFechaIncio">Fecha de inicio del evento</label>
                         <input class="form-control" id="eventoFechaI" name="eventoFechaI" [(ngModel)]="evento.fechaInicio"
-                        ngbDatepicker #da="ngbDatepicker" (click)="da.toggle()" #eventoFechaI="ngModel" >
+                        ngbDatepicker #da="ngbDatepicker" (click)="da.toggle()" #eventoFechaI="ngModel" required>
                     </div>
                     <div class="form-group">
                             <label for="eventoFechaFin">Fecha en la que termina el evento</label>
                             <input class="form-control" id="eventoFechaF" name="eventoFechaF" [(ngModel)]="evento.fechaFin"
-                            ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #eventoFechaF="ngModel" >
+                            ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #eventoFechaF="ngModel" required>
                     </div> 
                     <div class="form-group">
                             <label for="organizador">Organizador del evento</label>
@@ -44,7 +44,7 @@
                             <div class="col-md-9">
                             </div>
                             <div class="col-md-1">
-                                <button type="submit" class="btn btn-success">Enviar</button>
+                                <button type="submit"  [disabled]="!forma.valid" class="btn btn-success">Enviar</button>
                             </div>
                             <div class="col-md-2">
                                 <button [routerLink]="['/eventos','list']" class="btn btn-danger"  (click)="cancelCreation()">Cancelar</button>

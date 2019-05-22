@@ -7,11 +7,11 @@
                 <form  (ngSubmit)="crearArticulo()" #forma="ngForm" action="/articulos/list" method="post">
                     <div class=" form-group">
                         <label for="Titulo ">Título</label>
-                        <input [(ngModel)]="articulo.titulo" name="titulo" type="text" class="form-control " placeholder="Titulo del artículo">
+                        <input [(ngModel)]="articulo.titulo" name="titulo" type="text" class="form-control " placeholder="Titulo del artículo" required>
                     </div>
                     <div class="form-group">
                         <label for="Tema">Tema</label>
-                      <select [(ngModel)]="articulo.tema" name='temaArticulo' class="form-control" id="temaArticuloSelect">
+                      <select [(ngModel)]="articulo.tema" name='temaArticulo' class="form-control" id="temaArticuloSelect" required>
                         <option value = "CUIDADO">Cuidado de mascotas</option>
                         <option value = "SALUD">Salud</option>
                         <option value = "ENTRENAMIENTO">Entrenamiento</option>
@@ -20,11 +20,11 @@
                     </div>
                     <div class="form-group">
                         <label for="Resumen">Resumen</label>
-                        <textarea [(ngModel)]="articulo.resumen" class="form-control" name="resumen" id="resumen" rows="3"></textarea>
+                        <textarea [(ngModel)]="articulo.resumen" class="form-control" name="resumen" id="resumen" rows="3" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="Contenido">Contenido</label>
-                        <textarea [(ngModel)]="articulo.contenido" class="form-control" name="contenido" id="contenido" rows="5"></textarea>
+                        <textarea [(ngModel)]="articulo.contenido" class="form-control" name="contenido" id="contenido" rows="5" required></textarea>
                     </div>
                     <div class="form-group">
                             <label for="autor">Autor del artículo</label>
@@ -36,7 +36,7 @@
                         <div class="col-md-9">
                         </div>
                         <div class="col-md-1">
-                            <button type="submit" class="btn btn-success">Enviar</button>
+                            <button type="submit"  [disabled]="!forma.valid" class="btn btn-success">Enviar</button>
                         </div>
                         <div class="col-md-2">
                             <button [routerLink]="['/articulos','list']" class="btn btn-danger"  (click)="cancelCreation()">Cancelar</button>
