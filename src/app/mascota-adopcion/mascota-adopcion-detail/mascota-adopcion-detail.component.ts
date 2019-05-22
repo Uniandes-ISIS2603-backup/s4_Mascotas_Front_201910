@@ -32,7 +32,7 @@ export class MascotaAdopcionDetailComponent implements OnInit {
   /**
    * el proceso de mascota en adopción
    */
-  mascotaEnAdopcion : MascotaEnAdopcion;//necesita el detail
+  mascotaEnAdopcion : MascotaEnAdopcion;
 
   /**
    * obtiene el proceso con el id dado

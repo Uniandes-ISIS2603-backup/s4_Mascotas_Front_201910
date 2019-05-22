@@ -126,7 +126,7 @@ const routes: Routes = [
                 path: 'create-calificacion',
                 component: CalificacionCreateComponent
             },{
-                path: 'calificacion-detail',
+                path: ':id',
                 component: CalificacionDetailComponent
             }
         ]

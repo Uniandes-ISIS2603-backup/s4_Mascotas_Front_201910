@@ -47,13 +47,17 @@
             <div class="col-md-12 text-left">
                 <h5>Calificación</h5>
             </div>
-            <div class="col-md-12 text-left" >
-                <button class="btn btn-success" routerLink="/calificaciones/create-calificacion" type="button" name="button">Calificar Proceso</button>
-            </div>
-
-            <div class="col-md-12 text-right" >
-                    <button class="btn btn-success" routerLink="/calificaciones/calificacion-detail" type="button" name="button">Ver Calificacion</button>
+            <div *ngIf ="!mascotaEnAdopcion.adoptada">
+                <div class="col-md-12 text-left" >
+                    <button class="btn btn-success" routerLink="/calificaciones/create-calificacion" type="button" name="button">Calificar Proceso</button>
                 </div>
+            </div> 
+            
+            <div *ngIf ="mascotaEnAdopcion.adoptada">
+                <div class="col-md-12 text-right" >
+                        <button class="btn btn-success" routerLink="/calificaciones/{{mascotaEnAdopcion.id}}" type="button" name="button">Ver Calificación</button>
+                </div>
+            </div>    
         </div>
         
         <div class="row">

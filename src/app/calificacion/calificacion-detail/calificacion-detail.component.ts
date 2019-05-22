@@ -23,9 +23,9 @@ export class CalificacionDetailComponent implements OnInit {
    * inicializes the component
    */
   ngOnInit() {
-    const calificacionId = parseInt(this.route.snapshot.paramMap.get('id'));
-    if(calificacionId != null){
-      this.getCalificacionDetail(calificacionId);
+    const procesoId = parseInt(this.route.snapshot.paramMap.get('id'));
+    if(procesoId != null){
+      this.getCalificacionByProceso(procesoId);
      
     }
 
@@ -41,9 +41,9 @@ export class CalificacionDetailComponent implements OnInit {
    * 
    * @param id 
    */
-  getCalificacionDetail(id:number): void {
+  getCalificacionByProceso(id:number): void {
     
-    this.service.getCalificacionDetail(id).subscribe(c => {
+    this.service.getCalificacionByProceso(id).subscribe(c => {
       this.calificacion = c
     });
   }
