@@ -19,11 +19,11 @@
       <div *ngFor="let proceso of mascotasEnAdopcion">
         
           <div class="card mb-2">
-              <!--<img class="card-img-top" src="{{proceso.mascota.fotos}}" alt="Card image cap">-->
+              <img class="card-img-top" src="{{proceso.mascota.fotos}}" alt="Card image cap">
               <div class="card-body">
                   <div class="row">
-                      <div class="col-md-4 text-left">
-                          <h4 class="card-title">{{proceso.id}}</h4><!--debería ir el nombre de la mascota-->
+                      <div class="col-md-12 text-center">
+                          <h4 class="card-title">{{proceso.mascota.nombre}}</h4><!--debería ir el nombre de la mascota-->
                       </div>
                   </div>
                   <div class ="col-md-12 text-center">

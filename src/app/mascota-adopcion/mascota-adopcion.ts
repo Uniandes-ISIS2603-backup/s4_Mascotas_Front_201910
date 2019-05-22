@@ -33,11 +33,11 @@ export class MascotaEnAdopcion {
      /**
       * la mascota del proceso
       */
-     mascota? : Mascota;
+     mascota : Mascota;
      /**
       * el dueño de la adopción
       */
-     dueño? : Usuario;
+     duenio : Usuario;
 
     
      
