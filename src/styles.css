@@ -76,3 +76,10 @@ border-color:rgb(173, 156, 76);
       box-shadow: none ;
       border: none ;
     }
+
+#toast-container > div {
+    opacity: 1 ;
+    color: white;
+    background-color:#422c20;
+}
+

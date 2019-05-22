@@ -7,20 +7,18 @@
 
                 
                 <form (ngSubmit)="crearClasificado()" #forma="ngForm">
-                    <div class=" form-group">
+                    <div class=" form-group has-error has-feedback">
                         <label for="Nombre ">Nombre</label>
-                        <input [(ngModel)]="clasificado.nombre" name="nombre" type="text" class="form-control " placeholder="Nombre del clasificado" required>
-                        <div class="invalid-feedback">
-                                <div>El clasificado debe tener un nombre</div>
-                         </div>
+                        <input [(ngModel)]="clasificado.nombre" name="nombre" type="text" class="form-control "  required>
                     </div>
+
                     <div class="form-group">
                         <label for="Contenido">Contenido</label>
                         <textarea class="form-control" [(ngModel)]="clasificado.contenido" id="contenido" name="contenido" rows="5" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="Enlace">Enlace</label>
-                        <input [(ngModel)]="clasificado.enlace" name="enlace" type="text" class="form-control " placeholder="Enlace del clasificado">
+                        <input [(ngModel)]="clasificado.enlace" name="enlace" type="text" class="form-control " placeholder="Página para obtener mayor información sobre el clasificado">
                     </div>
                     <div class="form-group">
                             <label for="autor">Autor del clasificado</label>

@@ -7,7 +7,7 @@
                 <form (ngSubmit)="crearEvento()" #forma="ngForm">
                     <div class=" form-group">
                         <label for="Nombre ">Nombre</label>
-                        <input [(ngModel)]="evento.nombre" name="nombre" type="text" class="form-control " placeholder="Nombre del evento" required>
+                        <input [(ngModel)]="evento.nombre" name="nombre" type="text" class="form-control "  required>
                     </div>
                     <div class="form-group">
                         <label for="Descripcion">Descripción</label>
@@ -21,7 +21,7 @@
                     
                     <div class="form-group">
                             <label for="Imagen">Asígnale una imagen al evento</label>
-                            <input type="text" name="imagne" class="form-control" id="imagen" [(ngModel)]="evento.imagen" placeholder="Enlace de la imagen">
+                            <input type="text" name="imagne" class="form-control" id="imagen" [(ngModel)]="evento.imagen" placeholder="E.g. http://www.realnews24.com/wp-content/uploads/2017/12/hiking-buddies-1.jpeg">
                             
                     </div>
                     <div class="form-group">
