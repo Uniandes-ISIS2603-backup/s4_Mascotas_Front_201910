@@ -70,7 +70,7 @@ export class CrearClasificadoComponent implements OnInit {
   cancelCreation() : void
   {
       this.cancel.emit();
-      this.toastrService.warning('No se creó el clasificado', 'Crear Clasificado');
+      this.toastrService.warning('No se creó el clasificado', 'Creación Cancelada');
   }
 
   changeListener($clasificado) : void 
