@@ -10,7 +10,7 @@ export class MascotaEnAdopcion {
      /**
      * el estado de la mascota
      */
-     adoptada? : boolean;
+     adoptada : boolean;
     /**
      * el pasado de la mascota
      */

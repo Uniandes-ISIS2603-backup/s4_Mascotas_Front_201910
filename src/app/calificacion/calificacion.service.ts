@@ -34,4 +34,7 @@ export class CalificacionService {
   createCalificacion(c : Calificacion) : Observable<Calificacion>{
     return this.httpClient.post<Calificacion>(API_URL + calificacion, c);
   }
+  getCalificacionByProceso(id:number) : Observable<Calificacion>{
+    return this.httpClient.get<Calificacion>(API_URL + calificacion + "/proceso/" + id);
+  }
 }
