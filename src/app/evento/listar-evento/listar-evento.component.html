@@ -1,7 +1,10 @@
 <div class="container-fluid">
 <nav class="navbar navbar-dark  text-left rounded" style="background-color:  #DFC75C">
-    <div>
-         Hola
+        
+    <div class="flex-row" *ngxPermissionsOnly="['CLIENT', 'ADMIN']">
+            <div class="form-inline">
+                <a class="btn your-input" routerLink="/eventos/crear" role="button">Publicar evento</a>
+            </div>
     </div>
 
     <div>

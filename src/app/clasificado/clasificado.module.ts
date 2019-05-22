@@ -8,10 +8,12 @@ import { CrearClasificadoComponent } from './crear-clasificado/crear-clasificado
 import { ClasificadoDetailComponent } from './clasificado-detail/clasificado-detail.component';
 import { ListarClasificadoComponent } from './listar-clasificado/listar-clasificado.component';
 import { ClasificadoService } from './clasificado.service';
+import  {NgxPermissionsModule} from 'ngx-permissions';
 
 @NgModule({
   imports: [
-    CommonModule, HttpClientModule, AppRoutingModule, FormsModule, NgbModule
+    CommonModule, HttpClientModule, AppRoutingModule, FormsModule, NgbModule,
+    NgxPermissionsModule.forRoot()
   ],
   declarations: [CrearClasificadoComponent, ClasificadoDetailComponent, ListarClasificadoComponent],
   bootstrap: [ListarClasificadoComponent],

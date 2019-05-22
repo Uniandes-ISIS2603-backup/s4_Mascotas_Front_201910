@@ -1,9 +1,12 @@
 <div class="container-fluid">
        
     <nav class="navbar navbar-dark  text-left rounded" style="background-color:  #DFC75C">
-            <div>
-                Hola
+
+        <div class="flex-row" *ngxPermissionsOnly="['CLIENT', 'ADMIN']">
+            <div class="form-inline">
+                <a class="btn your-input" routerLink="/articulos/crear" role="button">Publicar artículo</a>
             </div>
+        </div>
 
         <div>
             <button (click)="getArticulos()" class="btn btn-primary your-input" name="BtnLimpiar" type="button">Limpiar filtro</button>

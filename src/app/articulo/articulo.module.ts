@@ -10,6 +10,7 @@ import { CrearArticuloComponent } from './crear-articulo/crear-articulo.componen
 import { EditarArticuloComponent } from './editar-articulo/editar-articulo.component';
 import { UsuarioService } from '../usuario/usuario.service';
 import { UsuarioModule } from '../usuario/usuario.module';
+import  {NgxPermissionsModule} from 'ngx-permissions';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { UsuarioModule } from '../usuario/usuario.module';
     HttpClientModule, 
     AppRoutingModule, 
     FormsModule, 
-    UsuarioModule
+    UsuarioModule,
+    NgxPermissionsModule.forRoot()
   ],
   bootstrap: [ListarArticuloComponent],
   declarations: [ListarArticuloComponent, 

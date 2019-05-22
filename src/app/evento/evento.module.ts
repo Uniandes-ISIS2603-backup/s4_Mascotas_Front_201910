@@ -9,10 +9,12 @@ import { EventoDetailComponent } from './evento-detail/evento-detail.component';
 import { EventoService } from './evento.service';
 import { CrearEventoComponent } from './crear-evento/crear-evento.component';
 import { EditarEventoComponent } from './editar-evento/editar-evento.component';
+import  {NgxPermissionsModule} from 'ngx-permissions';
 
 @NgModule({
   imports: [
-    CommonModule, HttpClientModule, AppRoutingModule, FormsModule, NgbModule
+    CommonModule, HttpClientModule, AppRoutingModule, FormsModule, NgbModule,
+    NgxPermissionsModule.forRoot()
   ],
   declarations: [EventoDetailComponent, ListarEventoComponent, CrearEventoComponent, EditarEventoComponent],
   bootstrap: [ListarEventoComponent],
