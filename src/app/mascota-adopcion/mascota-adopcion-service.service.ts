@@ -56,5 +56,19 @@ export class MascotaAdopcionService {
     return this.httpClient.post<MascotaEnAdopcion>(API_URL + procesos, proceso);
   }
 
+  /**
+   * retorna las mascotas que están sin adoptar
+   */
+  getMascotasSinAdoptar() : Observable<MascotaEnAdopcion[]>{
+    return this.httpClient.get<MascotaEnAdopcion[]>(API_URL + procesos + "/sinAdoptar");
+  }
+
+  /**
+   * retorna las mascotas filtradas por tipo- perro o gato
+   * @param tipo 
+   */
+  getProcesosPorTipo(tipo: String) : Observable<MascotaEnAdopcion[]>{
+    return this.httpClient.get<MascotaEnAdopcion[]>(API_URL + procesos + "/filtrar/" + tipo);
+  }
   
 }

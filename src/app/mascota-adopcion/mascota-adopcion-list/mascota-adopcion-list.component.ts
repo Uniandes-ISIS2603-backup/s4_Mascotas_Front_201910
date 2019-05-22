@@ -36,7 +36,7 @@ export class MascotaAdopcionListComponent implements OnInit {
    * inicializa el componente
    */
   ngOnInit() {
-    this.getMascotasEnAdopcion();
+    this.getMascotasSinAdoptar();
     this.getCalificaciones();
   }
 
@@ -50,8 +50,17 @@ export class MascotaAdopcionListComponent implements OnInit {
       console.log(this.mascotasEnAdopcion);
     });
   }
-  getMascotaById(id: number) : void{
+  
+  /**
+   * mete a la lista todos los proceso de mascota en adopción que no se hayan terminado
+   */
+  getMascotasSinAdoptar() : void {
 
+    
+    this.service.getMascotasSinAdoptar().subscribe(mascota => {
+      this.mascotasEnAdopcion = mascota;
+      console.log(this.mascotasEnAdopcion);
+    });
   }
 
    
@@ -63,6 +72,13 @@ export class MascotaAdopcionListComponent implements OnInit {
     this.service.getCalificacionesProcesosEnAdopcion().subscribe(actual => {
       this.calificaciones = actual;
 
+    });
+  }
+
+  filtrarPorTipo(tipo:String) : void {
+    this.service.getProcesosPorTipo(tipo).subscribe(mascota => {
+      this.mascotasEnAdopcion = mascota;
+      console.log(this.mascotasEnAdopcion);
     });
   }
 }
