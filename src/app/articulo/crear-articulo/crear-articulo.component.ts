@@ -36,7 +36,9 @@ export class CrearArticuloComponent implements OnInit {
     this.usuarioService.getUsuarios()
         .subscribe(u => {
             this.usuarios = u;
-        });
+        }, err => {
+          this.toastrService.error(err, 'Error');
+      });
 }
 
   /**
@@ -57,6 +59,7 @@ export class CrearArticuloComponent implements OnInit {
           .subscribe((m) => {
           this.articulo = m;
           this.create.emit();
+          this.router.navigate(['/articulos/' + this.articulo.id]);
           this.toastrService.success("El artículo ha sido creado", "Artículo Creado");
     });
       console.log(this.articulo);
