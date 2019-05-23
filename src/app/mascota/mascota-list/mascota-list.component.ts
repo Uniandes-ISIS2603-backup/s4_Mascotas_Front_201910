@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MascotaService } from '../mascota.service';
 import { Mascota } from '../mascota';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-mascota-list',
@@ -14,7 +15,10 @@ export class MascotaListComponent implements OnInit
    * Constructor
    * @param mascotaService 
    */
-  constructor(private mascotaService:MascotaService){}
+  constructor(
+    private mascotaService:MascotaService,
+    private toastrService: ToastrService
+    ){}
   /**
    * Lista de mascotas a desplegar
    */
@@ -73,7 +77,11 @@ export class MascotaListComponent implements OnInit
    */
   filtrarPorEstado(estado:string):void
   {
-    this.mascotaService.filtrarPorEstado(estado).subscribe(ms=>{this.mascotas=ms});
+    this.mascotaService.filtrarPorEstado(estado).subscribe(ms=>{
+      this.mascotas=ms
+    }, err => {
+      this.toastrService.error(err, "Error");
+  });
   }
 
   /**
@@ -82,7 +90,8 @@ export class MascotaListComponent implements OnInit
    */
   filtrarPorTipo(tipo:string):void
   {
-    this.mascotaService.filtrarPorTipo(tipo).subscribe(ms=>{this.mascotas=ms});
+    this.mascotaService.filtrarPorTipo(tipo).subscribe(ms=>{this.mascotas=ms},err => {
+      this.toastrService.error(err, "Error");});
   }
 
 }

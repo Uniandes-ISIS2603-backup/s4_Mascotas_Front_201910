@@ -56,6 +56,7 @@ export class MascotaCreateComponent implements OnInit
     cancelCreation() : void
     {
         this.cancel.emit();
+        this.toastrService.success("Cancelado", "Cancelar");
     }
 
     changeListener($event) : void 

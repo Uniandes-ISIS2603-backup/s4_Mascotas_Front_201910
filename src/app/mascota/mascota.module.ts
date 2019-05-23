@@ -10,10 +10,11 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
 import {FormsModule} from '@angular/forms';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
     imports: [
-      CommonModule, HttpClientModule, AppRoutingModule, FormsModule, CarouselModule.forRoot(), NgbModule
+      CommonModule, HttpClientModule, AppRoutingModule, FormsModule, CarouselModule.forRoot(), NgbModule, ToastrModule.forRoot()
     ],
     declarations: [MascotaDetailComponent, MascotaCreateComponent, MascotaListComponent],
     bootstrap: [MascotaListComponent],
