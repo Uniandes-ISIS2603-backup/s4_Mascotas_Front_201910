@@ -1,3 +1,6 @@
+import{Mascota} from "../mascota/mascota";
+import{Usuario} from "../usuario/usuario";
+
 export class MascotaEncontrada
 {
     id:number;
@@ -9,5 +12,9 @@ export class MascotaEncontrada
     estado:string;
 
     ubicacion:string;
+
+    mascota:Mascota;
+
+    usuario:Usuario;
 
 }

@@ -44,6 +44,7 @@
         "tipo",
         "toastr",
         "ubicacion",
+        "usuario",
         "volver"
     ]
 }
