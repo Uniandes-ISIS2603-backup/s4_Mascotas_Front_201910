@@ -38,8 +38,8 @@ export class AuthService {
 
     setClientRole (): void {
         this.roleService.flushRoles();
-        this.roleService.addRole('CLIENT', ['leave_review']);
-        localStorage.setItem('role', 'CLIENT');
+        this.roleService.addRole('NORMAL', ['leave_review']);
+        localStorage.setItem('role', 'NORMAL');
     }
 
     setAdministratorRole (): void {

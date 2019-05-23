@@ -7,19 +7,22 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
 import {FormsModule} from '@angular/forms';
+import { UsuarioLoginComponent } from './usuario-login/usuario-login.component';
+import  {NgxPermissionsModule} from 'ngx-permissions';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
     AppRoutingModule, 
-    FormsModule
+    FormsModule,
+    NgxPermissionsModule.forRoot()
 
   ],
-  declarations: [UsuarioListaComponent, UsuarioDetalleComponent, CrearUsuarioComponent],
+  declarations: [UsuarioListaComponent, UsuarioDetalleComponent, CrearUsuarioComponent, UsuarioLoginComponent],
   providers:[UsuarioService],
   exports:[UsuarioListaComponent,UsuarioDetalleComponent,CrearUsuarioComponent],
-  bootstrap: [UsuarioDetalleComponent]
+  bootstrap: [UsuarioDetalleComponent,UsuarioLoginComponent]
   
 })
 export class UsuarioModule { }

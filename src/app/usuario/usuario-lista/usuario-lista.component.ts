@@ -20,7 +20,7 @@ export class UsuarioListaComponent implements OnInit {
   /**
    * 
    */
-  usuarios:Usuario[];
+  usuarios:Usuario[]; 
    
   getUsuarios(): void{
     this.usuarioService.getUsuarios().subscribe(

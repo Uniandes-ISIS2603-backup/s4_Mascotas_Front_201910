@@ -40,6 +40,7 @@ import { ClasificadoDetailComponent } from '../clasificado/clasificado-detail/cl
 import { CrearClasificadoComponent } from '../clasificado/crear-clasificado/crear-clasificado.component';
 import { ListarClasificadoComponent } from '../clasificado/listar-clasificado/listar-clasificado.component';
 import { ListarBusquedaComponent } from '../buscar/listar-busqueda/listar-busqueda.component';
+import { UsuarioLoginComponent } from '../usuario/usuario-login/usuario-login.component';
 
 const routes: Routes = [
     
@@ -48,7 +49,7 @@ const routes: Routes = [
         children: [
             {
                 path: 'login',
-                component: AuthLoginComponent,
+                component: UsuarioLoginComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
@@ -58,7 +59,7 @@ const routes: Routes = [
             },
             {
                 path: ':sign-up',
-                component: AuthSignUpComponent,
+                component: CrearUsuarioComponent,
                 canActivate: [NgxPermissionsGuard],
                 data: {
                     permissions: {
@@ -74,7 +75,7 @@ const routes: Routes = [
     },
     {
         path : 'login',
-        component : AuthLoginComponent
+        component : UsuarioLoginComponent
     },
     {
         path: 'mascotas-extraviadas',
