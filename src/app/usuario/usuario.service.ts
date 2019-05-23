@@ -49,7 +49,12 @@ export class UsuarioService {
     return this.http.post<Usuario>(API_URL, usuario);
   }
 
-
+  /**
+   * Eliminar Usuario
+   */
+  eliminarUsuario(id:number): void{
+      this.http.delete(`${API_URL}/${id}`);
+  }
   start(): void {
     this.permissionsService.flushPermissions();
     this.roleService.flushRoles();

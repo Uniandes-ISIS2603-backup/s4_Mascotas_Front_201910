@@ -1,5 +1,3 @@
-
-
 <div class="page-header header-filter" data-parallax="true"
   style="background-image:url('https://media.istockphoto.com/vectors/seamless-pattern-with-animal-paw-prints-cute-pet-paws-background-vector-id1053430158');">
 </div>
@@ -10,18 +8,20 @@
         <div class="col-md-6 ml-auto mr-auto">
           <div class="profile">
             <div class="avatar">
-              <img src={{usuarioDetalle.rutaImagen}} alt="Circle Image" class="img-raised rounded-circle img-fluid" width=300>
+              <img src={{usuarioDetalle.rutaImagen}} alt="Circle Image" class="img-raised rounded-circle img-fluid"
+                width=300>
             </div>
             <div class="name">
               <h3 class="title">{{usuarioDetalle.nombre}}</h3>
               <h5>{{usuarioDetalle.usuario}}</h5>
-                          </div>
-                          
+            </div>
+
           </div>
         </div>
       </div>
       
       <div class="row">
+<<<<<<< HEAD
           <div class="col-md-6 ml-auto mr-auto">
             <div class="profile-tabs">
               <ul class="nav nav-pills form-inline justify-content-center align-self-center" role="tablist">
@@ -35,33 +35,65 @@
                           <button routerLink="/clasificados/crear"  type="button" class="btn btn-primary">Publicar Clasificado</button>
                         
                         </div>
+=======
+        <div class="col-md-6 ml-auto mr-auto">
+          <div class="profile-tabs">
+            <ul class="nav nav-pills form-inline justify-content-center align-self-center" role="tablist">
+              <div class="flex-row" *ngxPermissionsOnly="['NORMAL', 'ADMIN']">
+                <div class="form-inline">
+                  <button routerLink="/eventos/crear" type="submit" class="btn btn-primary">Publicar Evento</button>
+
+                </div>
+>>>>>>> 54148dfa29af298bb1f524beb134ba6816cd99ba
               </div>
-  
-             
-              </ul>
+              <br>
+              <div class="flex-row" *ngxPermissionsOnly="['NORMAL', 'ADMIN']">
+                <div class="form-inline">
+                  <button class="btn btn-primary" routerLink="/articulos/crear" type="submit">Publicar artículo</button>
+                </div>
+              </div>
+              <div class="flex-row" *ngxPermissionsOnly="['ADMIN']">
+                  <div class="form-inline">
+                    <button class="btn btn-primary" routerLink="/usuario/list" type="submit">Ver todos los usuarios</button>
+                  </div>
+                </div>
+
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <div>
+        <h5>Mis Eventos</h5>
+        <div class="container-fluid">
+
+          <br>
+          <div class="card-deck">
+            <div *ngFor="let evento of usuarioDetalle.eventos" class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{evento.imagen}}" alt="Card image cap">
+              <div class="card-body">
+                <h3 class="card-title">{{evento.nombre}}</h3>
+                <br>
+                <p class="card-text">Fecha inicio: {{evento.fechaInicio}}</p>
+                <p class="card-text">Fecha fin: {{evento.fechaFin}}</p>
+                <br>
+                <a class="btn btn-primary btn-lg" href="/eventos/{{evento.id}}" role="button">Ver más</a>
+              </div>
             </div>
           </div>
         </div>
-        
-
-      <div>
-
-        <div class="container-fluid">
-          
-          <br>
-          <div class="card-deck">
-              <div *ngFor="let evento of usuarioDetalle.eventos" class="card" style="width: 18rem;">
-                  <img class="card-img-top" src="{{evento.imagen}}" alt="Card image cap">
-                  <div class="card-body">
-                      <h3 class="card-title">{{evento.nombre}}</h3>
-                      <br>
-                      <p class="card-text">Fecha inicio: {{evento.fechaInicio}}</p>
-                      <p class="card-text">Fecha fin: {{evento.fechaFin}}</p>
-                      <br>
-                      <a class="btn btn-primary btn-lg" href="/eventos/{{evento.id}}" role="button" >Ver más</a>
-                  </div>
-              </div>
-          </div>
-          </div>
       </div>
- 
+
+
+
+      <div *ngFor="let articulo of usuarioDetalle.articulos" class="jumbotron">
+        <h4 class="display-4"><b>{{articulo.titulo}}</b></h4>
+        <p class="lead">{{articulo.tema}}</p>
+        <hr class="my-4">
+        <p>{{articulo.resumen}}</p>
+        <br>
+        <a class="btn btn-primary btn-lg" routerLink="/articulos/{{articulo.id}}" role="button">Ver más</a>
+      </div>
+      <br>
