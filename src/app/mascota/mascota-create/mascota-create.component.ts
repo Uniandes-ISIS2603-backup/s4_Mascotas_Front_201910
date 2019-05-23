@@ -10,6 +10,7 @@ import { Mascota } from '../mascota';
 import {NgForm} from '@angular/forms';
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
+import { MascotaExtraviadaService } from '../../mascota-extraviada/mascota-extraviada.service';
 
 @Component({
     selector: 'app-mascota-create',
@@ -18,8 +19,17 @@ import {debounceTime} from 'rxjs/operators';
 })
 export class MascotaCreateComponent implements OnInit 
 {
-    constructor(private route:ActivatedRoute, private mascotaService:MascotaService, private toastrService: ToastrService)
-    { }
+    constructor(private route:ActivatedRoute, 
+        private mascotaService:MascotaService,
+        private mascotaExtraviadaService: MascotaExtraviadaService,
+        private toastrService: ToastrService,
+    ){ 
+        this.route.queryParams.subscribe(
+            params => {
+                this.mascotaExtraviadaId = Number(params['mascotaExtraviadaId'])
+            }
+        )
+    }
 
     /**
      * Nueva mascota a crear
@@ -30,6 +40,11 @@ export class MascotaCreateComponent implements OnInit
      * Imagen de la mascota
      */
     imagen;
+
+    /**
+     * id del proceso de mascota extraviada
+     */
+    mascotaExtraviadaId: number
 
     /**
     * Output que le dice al componente que el usuario ha creado una nueva mascota
@@ -44,11 +59,23 @@ export class MascotaCreateComponent implements OnInit
 
     crearMascota() : Mascota
     {
-        this.mascotaService.crearMascota(this.mascota).subscribe((m)=>{
-            this.mascota = m;
-            this.create.emit();
-            this.toastrService.success("La mascota ha sido creada", "Mascota Creada");
-        });
+        if(this.mascotaExtraviadaId){
+            this.mascotaExtraviadaService.createMascota(this.mascotaExtraviadaId, this.mascota)
+                .subscribe(
+                    m => {
+                        this.mascota = m;
+                        this.create.emit();
+                        this.toastrService.success("La mascota ha sido creada", "Mascota Creada");
+                    }
+                )
+        }else{
+            this.mascotaService.crearMascota(this.mascota).subscribe((m)=>{
+                this.mascota = m;
+                this.create.emit();
+                this.toastrService.success("La mascota ha sido creada", "Mascota Creada");
+            });
+
+        }
         console.log(this.mascota);
         return this.mascota;
     }

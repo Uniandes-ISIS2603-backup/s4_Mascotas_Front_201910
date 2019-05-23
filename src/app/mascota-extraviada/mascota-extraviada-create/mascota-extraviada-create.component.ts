@@ -3,6 +3,7 @@ import {ToastrService} from 'ngx-toastr'
 import { MascotaExtraviadaService } from '../mascota-extraviada.service';
 import { MascotaExtraviada } from '../mascota-extraviada';
 import {NgForm} from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class MascotaExtraviadaCreateComponent implements OnInit {
    */
   constructor(
     private procesoService: MascotaExtraviadaService,
-    private troastrService: ToastrService
+    private troastrService: ToastrService,
+    private router: Router
   ) { }
 
   /**
@@ -58,6 +60,9 @@ export class MascotaExtraviadaCreateComponent implements OnInit {
           this.procesoMascotaExtraviada = p
           this.create.emit()
           this.troastrService.success("El proceso de mascota extraviada fue creado", "Creación del Proceso")
+          this.router.navigate(['/mascotas/nueva'], { queryParams: {
+            mascotaExtraviadaId: this.procesoMascotaExtraviada.id
+          }})
         })
     console.log(this.procesoMascotaExtraviada)
     return this.procesoMascotaExtraviada

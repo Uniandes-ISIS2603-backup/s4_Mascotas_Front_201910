@@ -15,7 +15,7 @@ export class MascotaEncontradaCreateComponent implements OnInit
     /**
    * Constructor del componente
    * @param route 
-   * @param mascotaExtraviadaService 
+   * @param mascotaEncontradaService 
    */
   constructor(
     private route: ActivatedRoute,
@@ -44,16 +44,16 @@ export class MascotaEncontradaCreateComponent implements OnInit
      */
     @Output() cancel = new EventEmitter();
 
-    //crearMascota() : MascotaEncontrada
-    //{
-     //   this.mascotaEncontradaService.crearMascota(this.mascotaEncontrada).subscribe((m)=>{
-      //      this.mascotaEncontrada = m;
-      //      this.create.emit();
-      //      this.toastrService.success("La mascota ha sido creada", "Mascota Creada");
-      //  });
-      //  console.log(this.mascotaEncontrada);
-      //  return this.mascotaEncontrada;
-   // }
+    crearMascota() : MascotaEncontrada
+    {
+        this.mascotaEncontradaService.crearMascota(this.mascotaEncontrada).subscribe((m)=>{
+            this.mascotaEncontrada = m;
+            this.create.emit();
+            this.toastrService.success("La mascota ha sido creada", "Mascota Creada");
+      });
+        console.log(this.mascotaEncontrada);
+        return this.mascotaEncontrada;
+    }
 
     cancelCreation() : void
     {
