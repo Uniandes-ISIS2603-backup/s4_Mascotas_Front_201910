@@ -35,7 +35,7 @@
               <div class="row form-inline justify-content-center align-self-center">
                   <button type="submit" class="btn btn-primary">Create</button>
                   <div class="divider"></div>
-                  <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                  <button class="btn btn-danger" (click)="cancelCreation()" [routerLink]="['/mascotas-extraviadas/list']" type="button">Cancel</button>
               </div>
             </form>
         </div>
