@@ -1,4 +1,5 @@
 import { Recompensa } from "../recompensa/recompensa";
+import { Mascota } from "../mascota/mascota";
 
 /**
  * Los estados que puede tener el atributo estado
@@ -40,5 +41,10 @@ export class MascotaExtraviada{
      * Representa la recompensa opcional que le puede añadir el creador del proceso
      */
     recompensa: Recompensa
+
+    /**
+     * La mascota asociada al proceso
+     */
+    mascota: Mascota
 
 }

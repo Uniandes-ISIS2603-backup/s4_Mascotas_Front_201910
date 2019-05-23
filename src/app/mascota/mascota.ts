@@ -1,3 +1,5 @@
+import { MascotaExtraviada } from "../mascota-extraviada/mascota-extraviada";
+
 export class Mascota 
 {
 
@@ -40,5 +42,10 @@ export class Mascota
      * Identificador del proceso asociado a la mascota
      */
     procesoId:number;
+
+    /**
+     * (opcional) El proceso de mascota asociado
+     */
+    procesoMascotaExtraviada: MascotaExtraviada
 
 }
