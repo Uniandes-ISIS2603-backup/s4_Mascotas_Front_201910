@@ -20,6 +20,7 @@
         </div>
       </div>
       <div class="row">
+       
         <div class="col-md-6 ml-auto mr-auto">
           <div class="profile-tabs">
             <ul class="nav nav-pills form-inline justify-content-center align-self-center" role="tablist">
@@ -80,3 +81,29 @@
         <a class="btn btn-primary btn-lg" routerLink="/articulos/{{articulo.id}}" role="button">Ver más</a>
       </div>
       <br>
+      <h5>Mis Procesos Mascota en Adopcion</h5>
+      <div *ngFor="let proceso of usuario.procesosMascotaAdopcion">
+        
+          <div class="card mb-2">
+              <img class="card-img-top" src="{{proceso.mascota.fotos}}" alt="Card image cap">
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-12 text-center">
+                          <h4 class="card-title">{{proceso.mascota.nombre}}</h4><!--debería ir el nombre de la mascota-->
+                      </div>
+                  </div>
+                  <div class ="col-md-12 text-center">
+                      <p>{{proceso.pasado}}</p>
+                    
+                  </div>
+                  <div class="row text-right">
+                      
+                      <div class="col-md-12 text-right">
+                          <a class="btn btn-primary" name="masInfo" routerLink="/mascotas-adopcion/{{proceso.id}}">Más información</a>
+                            
+                      </div>
+                    </div>
+              </div>
+          </div>
+        
+    </div>

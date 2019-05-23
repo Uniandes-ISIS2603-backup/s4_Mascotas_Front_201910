@@ -31,14 +31,7 @@ export class UsuarioListaComponent implements OnInit {
   }
 
 
-  deleteUsuario(id:number):void{
-    try {
-    this.usuarioService.eliminarUsuario(id);
-    } catch (error) {
-      this.toastrService.error(error)
-      
-    }
-  }
+
   ngOnInit() {
     this.getUsuarios();
   }
