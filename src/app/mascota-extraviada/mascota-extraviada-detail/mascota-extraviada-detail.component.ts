@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MascotaExtraviadaService } from '../mascota-extraviada.service';
 import { MascotaExtraviada, estado as mascotaExtraviadaEstado} from '../mascota-extraviada';
 
@@ -17,13 +17,21 @@ export class MascotaExtraviadaDetailComponent implements OnInit {
    */
   constructor(
     private route: ActivatedRoute,
-    private mascotaExtraviadaService: MascotaExtraviadaService
+    private mascotaExtraviadaService: MascotaExtraviadaService,
+    private router: Router
   ) { }
 
   /**
    * El proceso de mascota extraviada
    */
   mascotaExtraviada: MascotaExtraviada
+
+
+  callCreate(): void{
+    this.router.navigate(['/recompensas/nuevo'], { queryParams: {
+      mascotaExtraviadaId: this.mascotaExtraviada.id
+    }})
+  }
 
   /**
    * Obtiene el proceso de mascota extraviada asociado al id

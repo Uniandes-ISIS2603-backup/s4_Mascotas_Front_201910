@@ -6,13 +6,19 @@
         </div>
     </nav>
 
-    <div class="card-columns col-md-12" *ngFor="let mascotaExtraviada of mascotasExtraviadas">
-        <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <p class="card-text"><a routerLink="/mascotas-extraviadas/{{mascotaExtraviada.id}}">
-              Lugar: {{mascotaExtraviada.ciudad}}/{{mascotaExtraviada.direccion}}
-            </a></p>
+    <div class="row">
+        <div class="card-columns col-md-4" *ngFor="let mascotaExtraviada of mascotasExtraviadas">
+            <div class="card">
+                <img *ngIf="mascotaExtraviada.mascota"
+                    class="card-img-top" src="{{mascotaExtraviada.mascota.fotos[0]}}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><a routerLink="/mascotas-extraviadas/{{mascotaExtraviada.id}}">
+                        
+                        Mascota: {{ mascotaExtraviada.mascota && mascotaExtraviada.mascota.nombre }}
+                        Raza: {{ mascotaExtraviada.mascota && mascotaExtraviada.mascota.raza }}
+                        Lugar: {{mascotaExtraviada.ciudad}}/{{mascotaExtraviada.direccion}}
+                </a></p>
+                </div>
             </div>
         </div>
     </div>

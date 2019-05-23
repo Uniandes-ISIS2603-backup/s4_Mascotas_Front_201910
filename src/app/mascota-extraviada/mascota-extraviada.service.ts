@@ -74,7 +74,7 @@ export class MascotaExtraviadaService {
    * @param recompensa - La recompensa creada
    */
   createRecompensa(procesoId, recompensa): Observable<Recompensa>{
-    return this.http.put<Recompensa>(`${API_URL}/${procesoId}/${RECOMPENSA_URL}`, recompensa)
+    return this.http.post<Recompensa>(`${API_URL}/${procesoId}${RECOMPENSA_URL}`, recompensa)
   }
 
   /**
@@ -83,7 +83,7 @@ export class MascotaExtraviadaService {
    * @param mascota - La mascota creada
    */
   createMascota(procesoId, mascota): Observable<Mascota>{
-    return this.http.put<Mascota>(`${API_URL}/${procesoId}/${MASCOTA_URL}`, mascota)
+    return this.http.post<Mascota>(`${API_URL}/${procesoId}${MASCOTA_URL}`, mascota)
   }
 
   /**
