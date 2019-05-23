@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import { environment } from '../../environments/environment';
 import {MascotaEnAdopcion} from './mascota-adopcion';
 import {Calificacion} from '../calificacion/calificacion';
+import {Usuario} from '../usuario/usuario';
 
 /**
  * constantes para definir la ruta
@@ -69,6 +70,10 @@ export class MascotaAdopcionService {
    */
   getProcesosPorTipo(tipo: String) : Observable<MascotaEnAdopcion[]>{
     return this.httpClient.get<MascotaEnAdopcion[]>(API_URL + procesos + "/filtrar/" + tipo);
+  }
+
+  getPostuladosByProceso(id:number) :Observable<Usuario[]>{
+    return this.httpClient.get<Usuario[]>(API_URL + procesos + "/postulados/" + id);
   }
   
 }

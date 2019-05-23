@@ -46,31 +46,39 @@
         </div>
         <br>
         <br>
-        <div class="row">
-            <div class="col-md-12 text-left">
-                <h5>Postulaciones</h5>
-            </div>
-            <div class="col-md-12 text-left" >
-                <button class="btn btn-success" routerLink="/usuario/list" type="button" name="button">¡Me quiero postular!</button>
-            </div>           
+        
+        <div class="col-md-12 text-center" >
+            <h5>Postulaciones</h5>
+        </div>
+        <div *ngFor="let postulado of postulados" >
+                <div class="col-md-12 text-center">
+                    <p>Carolina Tobón {{postulado.correo}} {{postulado.telefono}}</p>
+                </div> 
+                                
         </div>
         <br>
-        <div class="row">
-            <div class="col-md-12 text-left">
-                <h5>Calificación</h5>
-            </div>
-            <div *ngIf ="!mascotaEnAdopcion.adoptada">
-                <div class="col-md-12 text-left" >
-                    <button class="btn btn-success" routerLink="/calificaciones/create-calificacion" type="button" name="button">Calificar Proceso</button>
-                </div>
-            </div> 
-            
-            <div *ngIf ="mascotaEnAdopcion.adoptada">
-                <div class="col-md-12 text-right" >
-                        <button class="btn btn-success" routerLink="/calificaciones/{{mascotaEnAdopcion.id}}" type="button" name="button">Ver Calificación</button>
-                </div>
-            </div>    
+        
+        <div class="flex-row" >
+            <button class="btn btn-primary" routerLink="/mascotas-adopcion/list" type="button" name="button">¡Me quiero postular!</button>
+        </div>           
+        
+        <br>
+        
+        <div class="col-md-12 text-left" >
+            <h5>Calificación</h5>
         </div>
+        <div *ngIf ="!mascotaEnAdopcion.adoptada">
+            <div class="col-md-12 text-left" >
+                <button class="btn btn-primary" routerLink="/calificaciones/create-calificacion" type="button" name="button">Calificar Proceso</button>
+            </div>
+        </div> 
+        
+        <div *ngIf ="mascotaEnAdopcion.adoptada">
+            <div class="col-md-12 text-right" >
+                    <button class="btn btn-primary" routerLink="/calificaciones/{{mascotaEnAdopcion.id}}" type="button" name="button">Ver Calificación</button>
+            </div>
+        </div>    
+       
         
         <div class="row">
             
