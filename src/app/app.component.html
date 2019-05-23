@@ -30,7 +30,7 @@
         </div>
   </a>
   <a class="navbar-item "*ngxPermissionsOnly="['NORMAL', 'ADMIN']">
-        <div class="nav-link" [routerLink]="[`/usuario/{{localStorage.getItem(''idUsr'')}}`]" routerLinkActive="active">
+        <div class="nav-link" (click)="usuarAc()" routerLinkActive="active">
            <p>Mi Perfil</p>
         </div>
   </a>
