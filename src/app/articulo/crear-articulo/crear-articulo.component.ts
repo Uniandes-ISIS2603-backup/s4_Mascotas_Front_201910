@@ -75,6 +75,7 @@ export class CrearArticuloComponent implements OnInit {
   cancelCreation() : void
   {
       this.cancel.emit();
+      this.toastrService.warning('No se creó el artículo', 'Creación Cancelada');
   }
 
   /**

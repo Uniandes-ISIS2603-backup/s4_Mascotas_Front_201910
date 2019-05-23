@@ -1,6 +1,7 @@
 
 <div class="page-wrap">
 <nav class="navbar navbar-expand-lg navbar-custom ">
+
     <a class="navbar-brand" href="#">
         <div class="form-inline">
             <h2 class="mainTitle">HELPET</h2>
@@ -8,32 +9,48 @@
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-    <a class="navbar-item ">
-        <div class="nav-link" [routerLink]="['/mascotas/list']" routerLinkActive="active">
-            <p>Mascotas</p>
-        </div>
-    </a>
-    <a class="navbar-item ">
-        <div class="nav-link" [routerLink]="['/articulos/list']" routerLinkActive="active">
-            <p>Artículos</p>
-        </div>
-    </a>
-    <a class="navbar-item ">
-        <div class="nav-link" [routerLink]="['/eventos/list']" routerLinkActive="active">
-            <p>Eventos</p>
-        </div>
-    </a>
-    <a class="navbar-item ">
-        <div class="nav-link" [routerLink]="['/clasificados/list']" routerLinkActive="active">
-           <p>Clasificados</p>
-        </div>
-  </a>
-  <a class="navbar-item "*ngxPermissionsOnly="['NORMAL', 'ADMIN']">
-        <div class="nav-link" (click)="usuarAc()" routerLinkActive="active">
-           <p>Mi Perfil</p>
-        </div>
-  </a>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <a class="navbar-item ">
+                      <div class="nav-link" [routerLink]="['/mascotas/list']" routerLinkActive="active">
+                          Mascotas
+                      </div>
+            </a>
+
+             <a class="navbar-item ">
+                    <div class="nav-link" [routerLink]="['/articulos/list']" routerLinkActive="active">
+                          Artículos
+                   </div>
+             </a>
+
+             <a class="navbar-item ">
+                  <div class="nav-link" [routerLink]="['/eventos/list']" routerLinkActive="active">
+                      Eventos
+                 </div>
+              </a>
+
+              <a class="navbar-item ">
+                    <div class="nav-link" [routerLink]="['/clasificados/list']" routerLinkActive="active">
+                    Clasificados
+                      </div>
+             </a>
+
+             <a class="navbar-item "*ngxPermissionsOnly="['NORMAL', 'ADMIN']">
+                     <div class="nav-link" (click)="usuarAc()" routerLinkActive="active">
+                     Mi Perfil
+                      </div>
+            </a>
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2 busq" type="search" placeholder="Buscar" aria-label="Search" name="busq" [(ngModel)]='busq'>
+                <a class="btn-busq" routerLink="/buscar/{{busq}}" role="button">
+                    <span class="fas fa-search " style="color: #DFC75C"></span>
+                </a> 
+         </form>
+    </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="navbar-nav mr-auto mt-0">
@@ -43,20 +60,22 @@
             <div class="flex-row" *ngxPermissionsOnly="['GUEST']">
                 <div class="form-inline">
                     <li class="right-space"><a id="signup-navbar-item" [routerLink]="['/usuario/crear']"><span class="fa fa-user"></span>
-                                Sign Up</a></li>
-                    <li><a id="login-navbar-item" routerLink="/auth/login"><span class="fa fa-sign-in"></span>Login</a></li>
+                                Registarse</a></li>
+                    <li><a id="login-navbar-item" routerLink="/auth/login"><span class="fa fa-sign-in"></span>Iniciar sesión</a></li>
                 </div>
             </div>
             
             <div class="flex-row" *ngxPermissionsOnly="['NORMAL', 'ADMIN']">
                 <div class="form-inline">
-                    <li><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Logout</a></li>
+                    <li><a id="logout-navbar-item" (click)="logout()" href="#"><span class="fa fa-sign-out"></span>Cerrar sesión</a></li>
                 </div>
             </div>
         </div>
     </div>
+
 </nav>
 </div>
+
 <div>
     <router-outlet></router-outlet>
 </div>

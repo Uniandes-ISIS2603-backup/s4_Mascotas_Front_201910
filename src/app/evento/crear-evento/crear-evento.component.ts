@@ -87,6 +87,7 @@ export class CrearEventoComponent implements OnInit {
   cancelCreation() : void
   {
       this.cancel.emit();
+      this.toastrService.warning('No se creó el evento', 'Creación Cancelada');
   }
 
   changeListener($event) : void 
