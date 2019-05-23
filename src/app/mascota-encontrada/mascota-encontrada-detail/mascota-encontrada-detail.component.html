@@ -1,1 +1,38 @@
-<p>mascota-encontrada-detail works!</p>
+<div class = "container-fluid">
+        <br>
+        <br>
+    <div class = "card" *ngIf="mascotaEncontrada">
+        <div class = "row">
+            <table class="table table-borderless col-md-12 text-center">
+                <tbody>
+                    <tr>
+                        <th>
+                            Mascota
+                        </th>
+                        <th>
+                            {{mascotaEncontrada.mascota.nombre}}
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Dueño</th>
+                        <th>{{mascotaEncontrada.usuario.nombre}}</th>
+                    </tr>
+                    <tr>
+                        <th>Estado del proceso</th>
+                        <th>
+                             {{mascotaEncontrada.estado}}
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ubicación</th>
+                        <th> {{mascotaEncontrada.ubicacion}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
+
+  

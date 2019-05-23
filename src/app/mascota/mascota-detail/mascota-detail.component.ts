@@ -37,7 +37,8 @@ import {MascotaService } from '../mascota.service';
     getMascotaDetail(id: number): void{
       this.mascotaService.getMascotaDetail(id)
           .subscribe(m => {
-            this.mascotaDetail = m
+            this.mascotaDetail = m;
+            this.getPath();
           });
     }
 
