@@ -19,91 +19,90 @@
           </div>
         </div>
       </div>
-      <div class="row">
-       
-        <div class="col-md-6 ml-auto mr-auto">
-          <div class="profile-tabs">
-            <ul class="nav nav-pills form-inline justify-content-center align-self-center" role="tablist">
-              <div class="flex-row" *ngxPermissionsOnly="['NORMAL', 'ADMIN']">
-                <div class="form-inline">
-                  <button routerLink="/eventos/crear" type="submit" class="btn btn-primary">Publicar Evento</button>
+      <div class="row"></div>
+      <div class="col-md-6 ml-auto mr-auto">
+        <div class="profile-tabs">
+          <ul class="nav nav-pills form-inline justify-content-center align-self-center" role="tablist">
+            <div class="flex-row" *ngxPermissionsOnly="['NORMAL', 'ADMIN']">
+              <div class="form-inline">
+                <button routerLink="/eventos/crear" type="submit" class="btn btn-primary">Publicar Evento</button>
 
-                </div>
               </div>
+            </div>
+            <br>
+            <div class="flex-row" *ngxPermissionsOnly="['NORMAL', 'ADMIN']">
+              <div class="form-inline">
+                <button class="btn btn-primary" routerLink="/articulos/crear" type="submit">Publicar artículo</button>
+              </div>
+            </div>
+            <div class="flex-row" *ngxPermissionsOnly="['ADMIN']">
+              <div class="form-inline">
+                <button class="btn btn-primary" routerLink="/usuario/list" type="submit">Ver todos los usuarios</button>
+              </div>
+            </div>
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div>
+      <h5>Mis Eventos</h5>
+      <div class="container-fluid">
+
+        <br>
+        <div class="card-deck">
+          <div *ngFor="let evento of usuarioDetalle.eventos" class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{evento.imagen}}" alt="Card image cap">
+            <div class="card-body">
+              <h3 class="card-title">{{evento.nombre}}</h3>
               <br>
-              <div class="flex-row" *ngxPermissionsOnly="['NORMAL', 'ADMIN']">
-                <div class="form-inline">
-                  <button class="btn btn-primary" routerLink="/articulos/crear" type="submit">Publicar artículo</button>
-                </div>
-              </div>
-              <div class="flex-row" *ngxPermissionsOnly="['ADMIN']">
-                  <div class="form-inline">
-                    <button class="btn btn-primary" routerLink="/usuario/list" type="submit">Ver todos los usuarios</button>
-                  </div>
-                </div>
-
-
-            </ul>
+              <p class="card-text">Fecha inicio: {{evento.fechaInicio}}</p>
+              <p class="card-text">Fecha fin: {{evento.fechaFin}}</p>
+              <br>
+              <a class="btn btn-primary btn-lg" href="/eventos/{{evento.id}}" role="button">Ver más</a>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
+    <div *ngFor="let articulo of usuarioDetalle.articulos" class="jumbotron">
+      <h4 class="display-4"><b>{{articulo.titulo}}</b></h4>
+      <p class="lead">{{articulo.tema}}</p>
+      <hr class="my-4">
+      <p>{{articulo.resumen}}</p>
+      <br>
+      <a class="btn btn-primary btn-lg" routerLink="/articulos/{{articulo.id}}" role="button">Ver más</a>
+    </div>
+    <br>
+    <h5>Mis Procesos Mascota en Adopcion</h5>
+    <div *ngFor="let proceso of usuario.procesosMascotaAdopcion">
 
-      <div>
-        <h5>Mis Eventos</h5>
-        <div class="container-fluid">
+      <div class="card mb-2">
+        <img class="card-img-top" src="{{proceso.mascota.fotos}}" alt="Card image cap">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h4 class="card-title">{{proceso.mascota.nombre}}</h4>
+              <!--debería ir el nombre de la mascota-->
+            </div>
+          </div>
+          <div class="col-md-12 text-center">
+            <p>{{proceso.pasado}}</p>
 
-          <br>
-          <div class="card-deck">
-            <div *ngFor="let evento of usuarioDetalle.eventos" class="card" style="width: 18rem;">
-              <img class="card-img-top" src="{{evento.imagen}}" alt="Card image cap">
-              <div class="card-body">
-                <h3 class="card-title">{{evento.nombre}}</h3>
-                <br>
-                <p class="card-text">Fecha inicio: {{evento.fechaInicio}}</p>
-                <p class="card-text">Fecha fin: {{evento.fechaFin}}</p>
-                <br>
-                <a class="btn btn-primary btn-lg" href="/eventos/{{evento.id}}" role="button">Ver más</a>
-              </div>
+          </div>
+          <div class="row text-right">
+
+            <div class="col-md-12 text-right">
+              <a class="btn btn-primary" name="masInfo" routerLink="/mascotas-adopcion/{{proceso.id}}">Más
+                información</a>
+
             </div>
           </div>
         </div>
       </div>
 
-
-
-      <div *ngFor="let articulo of usuarioDetalle.articulos" class="jumbotron">
-        <h4 class="display-4"><b>{{articulo.titulo}}</b></h4>
-        <p class="lead">{{articulo.tema}}</p>
-        <hr class="my-4">
-        <p>{{articulo.resumen}}</p>
-        <br>
-        <a class="btn btn-primary btn-lg" routerLink="/articulos/{{articulo.id}}" role="button">Ver más</a>
-      </div>
-      <br>
-      <h5>Mis Procesos Mascota en Adopcion</h5>
-      <div *ngFor="let proceso of usuario.procesosMascotaAdopcion">
-        
-          <div class="card mb-2">
-              <img class="card-img-top" src="{{proceso.mascota.fotos}}" alt="Card image cap">
-              <div class="card-body">
-                  <div class="row">
-                      <div class="col-md-12 text-center">
-                          <h4 class="card-title">{{proceso.mascota.nombre}}</h4><!--debería ir el nombre de la mascota-->
-                      </div>
-                  </div>
-                  <div class ="col-md-12 text-center">
-                      <p>{{proceso.pasado}}</p>
-                    
-                  </div>
-                  <div class="row text-right">
-                      
-                      <div class="col-md-12 text-right">
-                          <a class="btn btn-primary" name="masInfo" routerLink="/mascotas-adopcion/{{proceso.id}}">Más información</a>
-                            
-                      </div>
-                    </div>
-              </div>
-          </div>
-        
     </div>

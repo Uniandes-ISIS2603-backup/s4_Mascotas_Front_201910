@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UsuarioService} from '../usuario.service';
 import {Usuario} from '../usuario';
 import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-usuario-detalle',
   templateUrl: './usuario-detalle.component.html',
@@ -11,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class UsuarioDetalleComponent implements OnInit {
 
-  constructor(private toastrService: ToastrService,private route:ActivatedRoute,private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private route:ActivatedRoute,private usuarioService: UsuarioService) { }
 
   usuarioDetalle:Usuario;
 
@@ -27,7 +26,6 @@ export class UsuarioDetalleComponent implements OnInit {
   }
 
 
- 
 
 
   ngOnInit() {
