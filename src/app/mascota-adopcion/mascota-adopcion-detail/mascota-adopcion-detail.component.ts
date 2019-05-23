@@ -5,10 +5,7 @@ import { MascotaAdopcionService } from '../mascota-adopcion-service.service';
 import { MascotaEnAdopcion } from '../mascota-adopcion';
 import { MascotaEnAdopcionDetail } from '../mascota-en-adopcion-detail';
 import { Usuario } from '../../usuario/usuario';
-<<<<<<< HEAD
-=======
 //import { create } from 'domain';
->>>>>>> 171b916e9c6527887a7b1b57fa4ce3e18b84b9b1
 
 
 
