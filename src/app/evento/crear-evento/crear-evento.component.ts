@@ -81,6 +81,9 @@ export class CrearEventoComponent implements OnInit {
       return this.evento;
   }
 
+  /**
+   * Método que cancela creación
+   */
   cancelCreation() : void
   {
       this.cancel.emit();
@@ -110,6 +113,9 @@ export class CrearEventoComponent implements OnInit {
         myReader.readAsDataURL(file);
     }
 
+/**
+* Método que inicializa el componente
+*/
   ngOnInit(): void 
   { 
       this.evento = new Evento();

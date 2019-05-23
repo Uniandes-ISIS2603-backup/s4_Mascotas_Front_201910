@@ -29,6 +29,9 @@ export class ListarArticuloComponent implements OnInit {
     this.articuloService.getArticulos().subscribe(a => {this.articulos = a});
   }
 
+  /**
+   * Método que inicializa el componente
+   */
   ngOnInit() {
     this.getArticulos();
   }

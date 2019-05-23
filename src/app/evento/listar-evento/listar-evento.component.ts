@@ -32,6 +32,9 @@ export class ListarEventoComponent implements OnInit {
 
   }
 
+  /**
+   * Método que inicializa el componente
+   */
   ngOnInit() {
     this.getEventos()
   }

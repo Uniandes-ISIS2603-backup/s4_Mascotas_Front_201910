@@ -115,6 +115,9 @@ export class EditarEventoComponent implements OnInit {
         });
 }
  
+/**
+* Método que inicializa el componente
+*/
   ngOnInit() {
     this.evento_id = +this.route.snapshot.paramMap.get('id');
     this.getEvento();

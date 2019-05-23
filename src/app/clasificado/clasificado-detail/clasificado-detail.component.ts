@@ -35,7 +35,10 @@ export class ClasificadoDetailComponent implements OnInit {
           this.clasificado = m
         });
   }
-
+  
+/**
+* Método que inicializa el componente
+*/
   ngOnInit() {
     const clasificadoId = parseInt(this.route.snapshot.paramMap.get('id'))
     if(clasificadoId){

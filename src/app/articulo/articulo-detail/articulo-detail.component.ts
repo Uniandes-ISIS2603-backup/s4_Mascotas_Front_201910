@@ -36,6 +36,9 @@ export class ArticuloDetailComponent implements OnInit {
         });
   }
 
+  /**
+* Método que inicializa el componente
+*/
   ngOnInit() {
     const articuloId = parseInt(this.route.snapshot.paramMap.get('id'))
     if(articuloId){

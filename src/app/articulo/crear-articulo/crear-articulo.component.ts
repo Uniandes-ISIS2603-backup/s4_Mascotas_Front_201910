@@ -53,6 +53,9 @@ export class CrearArticuloComponent implements OnInit {
   @Output() cancel = new EventEmitter();
 
 
+  /**
+   * Método para creación
+   */
   crearArticulo() : Articulo
   {
       this.articuloService.crearArticulo(this.articulo)
@@ -66,11 +69,17 @@ export class CrearArticuloComponent implements OnInit {
       return this.articulo;
   }
 
+  /**
+   * Método que cancela creación
+   */
   cancelCreation() : void
   {
       this.cancel.emit();
   }
 
+  /**
+   * Método que inicializa el componente
+   */
   ngOnInit(): void 
   { 
       this.articulo = new Articulo();

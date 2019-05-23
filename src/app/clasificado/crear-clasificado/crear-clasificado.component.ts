@@ -66,7 +66,9 @@ export class CrearClasificadoComponent implements OnInit {
       return this.clasificado;
   }
 
-
+  /**
+   * Método que cancela creación
+   */
   cancelCreation() : void
   {
       this.cancel.emit();
@@ -89,7 +91,10 @@ export class CrearClasificadoComponent implements OnInit {
     
         myReader.readAsDataURL(file);
     }
-
+    
+  /**
+   * Método que inicializa el componente
+   */
   ngOnInit() {
     this.clasificado = new Clasificado();
     this.clasificado.autor = new Usuario();

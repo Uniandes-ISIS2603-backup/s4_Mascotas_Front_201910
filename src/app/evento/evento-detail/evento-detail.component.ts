@@ -36,6 +36,9 @@ export class EventoDetailComponent implements OnInit {
         });
   }
 
+  /**
+* Método que inicializa el componente
+*/
   ngOnInit() {
     const eventoId = parseInt(this.route.snapshot.paramMap.get('id'))
     if(eventoId){

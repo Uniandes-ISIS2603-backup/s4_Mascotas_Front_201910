@@ -10,5 +10,12 @@
       <a class="btn btn-primary btn-lg" href="/eventos/list" role="button">Volver</a>
       <br>
       <br>
+      <div class="flex-row" *ngxPermissionsOnly="['ADMIN']">
+          <div class="form-inline"></div>
+              <a class="btn btn-primary btn-lg" routerLink="/eventos/{{evento.id}}/editar" role="button">Editar</a>
+         </div>
+      </div>
+      <br>
+      <br>
     </div>
 </div>

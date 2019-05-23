@@ -12,6 +12,13 @@
 <br>
 <br>
 <a class="btn btn-primary btn-lg" href="/articulos/list" role="button">Volver</a>
+<br>
+<br>
+<div class="flex-row" *ngxPermissionsOnly="['ADMIN']">
+         <div class="form-inline">
+             <a class="btn btn-primary btn-lg" routerLink="/articulos/{{articulo.id}}/editar" role="button">Editar</a>
+        </div>
+</div>
 </div>
 <br>
 </div>

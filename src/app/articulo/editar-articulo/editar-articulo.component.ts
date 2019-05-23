@@ -92,6 +92,9 @@ export class EditarArticuloComponent implements OnInit {
         });
 }
 
+/**
+* Método que inicializa el componente
+*/
   ngOnInit() {
     this.articulo_id = +this.route.snapshot.paramMap.get('id');
     this.getArticulo();
