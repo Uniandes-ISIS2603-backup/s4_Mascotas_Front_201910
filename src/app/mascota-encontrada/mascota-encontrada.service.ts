@@ -32,4 +32,9 @@ export class MascotaEncontradaService
       return this.http.get<MascotaEncontrada>(`${API_URL}/${id}`)
   }
 
+  crearMascota(mascotaEncontrada:MascotaEncontrada):Observable<MascotaEncontrada>
+  {
+      return this.http.post<MascotaEncontrada>(API_URL, mascotaEncontrada);
+  }
+
 }

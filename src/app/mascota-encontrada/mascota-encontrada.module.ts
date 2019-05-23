@@ -4,10 +4,11 @@ import { MascotaEncontradaListComponent } from './mascota-encontrada-list/mascot
 import { MascotaEncontradaDetailComponent } from './mascota-encontrada-detail/mascota-encontrada-detail.component';
 import { MascotaEncontradaService } from './mascota-encontrada.service';
 import {MascotaEncontradaCreateComponent} from './mascota-encontrada-create/mascota-encontrada-create.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule, FormsModule
   ],
   declarations: [MascotaEncontradaListComponent, MascotaEncontradaDetailComponent, MascotaEncontradaCreateComponent],
   bootstrap: [MascotaEncontradaListComponent],

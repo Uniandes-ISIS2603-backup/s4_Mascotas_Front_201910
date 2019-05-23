@@ -159,7 +159,13 @@ const routes: Routes = [
             },
             {
                 path : 'nueva',
-                component: MascotaCreateComponent
+                component: MascotaCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['CLIENT','ADMIN']
+                    }
+                }
             },
             {
                 path: ':id',
@@ -242,7 +248,13 @@ const routes: Routes = [
             },
             {
                 path: 'nuevo',
-                component : MascotaEncontradaCreateComponent
+                component : MascotaEncontradaCreateComponent,
+           //     canActivate: [NgxPermissionsGuard],
+            //    data: {
+            //        permissions: {
+            //            only: ['CLIENT','ADMIN']
+           //         }
+           //     }
             },
             {
                 path : ':id',
