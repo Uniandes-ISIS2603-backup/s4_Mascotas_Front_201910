@@ -27,6 +27,7 @@ export class MascotaCreateComponent implements OnInit
         this.route.queryParams.subscribe(
             params => {
                 this.mascotaExtraviadaId = Number(params['mascotaExtraviadaId'])
+                console.log(this.mascotaExtraviadaId)
             }
         )
     }

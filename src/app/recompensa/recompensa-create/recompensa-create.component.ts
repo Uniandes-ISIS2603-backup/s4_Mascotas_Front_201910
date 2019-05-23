@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Recompensa } from '../recompensa';
 import { RecompensaService } from '../recompensa.service';
 import { ToastrService } from 'ngx-toastr';
+import { ActivatedRoute } from '@angular/router';
+import { MascotaExtraviadaService } from '../../mascota-extraviada/mascota-extraviada.service';
 
 @Component({
   selector: 'app-recompensa-create',
@@ -16,9 +18,23 @@ export class RecompensaCreateComponent implements OnInit {
    * @param troastrService - Elemento para mostrar mensajes al usuario
    */
   constructor(
+    private route:ActivatedRoute,
+    private mascotaExtraviadaService: MascotaExtraviadaService,
     private recompensaService: RecompensaService,
     private troastrService: ToastrService
-  ) { }
+  ) { 
+    this.route.queryParams.subscribe(
+      params => {
+          this.mascotaExtraviadaId = Number(params['mascotaExtraviadaId'])
+          console.log(this.mascotaExtraviadaId)
+      }
+  )
+  }
+
+  /**
+   * id del proceso de mascota extraviada
+   */
+  mascotaExtraviadaId: number
 
   /**
    * La recompensa nueva
@@ -49,14 +65,26 @@ export class RecompensaCreateComponent implements OnInit {
    * Función que crea una nueva recompensa
    */
   createRecompensa(): Recompensa{
-    console.log(this.recompensa)
-    this.recompensaService.createRecompensa(this.recompensa)
-        .subscribe((r) => {
-          this.recompensa = r
-          this.create.emit()
-          this.troastrService.success("La recompensa fue creada", "Creación de la recompensa")
-        })
-    return this.recompensa
+    if(this.mascotaExtraviadaId){
+      this.mascotaExtraviadaService.createRecompensa(this.mascotaExtraviadaId, this.recompensa)
+          .subscribe(
+            r => {
+              this.recompensa = r
+              this.create.emit();
+              this.troastrService.success("La mascota ha sido creada", "Mascota Creada");
+            }
+          )
+    }else{
+
+      console.log(this.recompensa)
+      this.recompensaService.createRecompensa(this.recompensa)
+          .subscribe((r) => {
+            this.recompensa = r
+            this.create.emit()
+            this.troastrService.success("La recompensa fue creada", "Creación de la recompensa")
+          })
+      return this.recompensa
+    }
   }
 
   /**
