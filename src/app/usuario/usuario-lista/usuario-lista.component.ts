@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UsuarioService} from '../usuario.service';
 import {Usuario} from '../usuario';
+import {ToastrService} from 'ngx-toastr';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class UsuarioListaComponent implements OnInit {
    * Constructor de la clase usuario lista
    * @param usuarioService - parametro que tiene los servicios del back
    */
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService,private toastrService: ToastrService) { }
 
 
   /**
@@ -30,7 +31,14 @@ export class UsuarioListaComponent implements OnInit {
   }
 
 
-
+  deleteUsuario(id:number):void{
+    try {
+    this.usuarioService.eliminarUsuario(id);
+    } catch (error) {
+      this.toastrService.error(error)
+      
+    }
+  }
   ngOnInit() {
     this.getUsuarios();
   }

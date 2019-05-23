@@ -86,6 +86,10 @@ export class Usuario {
      * Lista procesos mascotas extraviadas
      */
     procesosMascotaExtraviada?:MascotaExtraviada[];
+
+    /**
+     * 
+     */
 }   
 
 
