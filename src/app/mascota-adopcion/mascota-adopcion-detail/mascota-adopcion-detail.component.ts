@@ -4,8 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MascotaAdopcionService } from '../mascota-adopcion-service.service';
 import { MascotaEnAdopcion } from '../mascota-adopcion';
 import { MascotaEnAdopcionDetail } from '../mascota-en-adopcion-detail';
-import { Usuario } from 'src/app/usuario/usuario';
-import { create } from 'domain';
+import { Usuario } from '../../usuario/usuario';
 
 
 
