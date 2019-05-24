@@ -23,3 +23,23 @@ p {
     max-width: 100%;
     width: auto;
 }
+
+.table .thead  {
+ 
+    background-color: #422c20;
+    color: white;
+   
+  }
+
+
+
+.btn-danger:hover { 
+    background-color: rgb(163, 77, 73);
+    color:#FFF; 
+    border-color:rgb(163, 77, 73);
+}
+
+.btn-danger{
+    background-color: #BF5A55;
+    border: none;
+}

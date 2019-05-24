@@ -11,6 +11,7 @@ import {NgForm} from '@angular/forms';
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
 import { MascotaExtraviadaService } from '../../mascota-extraviada/mascota-extraviada.service';
+import {Router} from '@angular/router'
 
 @Component({
     selector: 'app-mascota-create',
@@ -23,6 +24,7 @@ export class MascotaCreateComponent implements OnInit
         private mascotaService:MascotaService,
         private mascotaExtraviadaService: MascotaExtraviadaService,
         private toastrService: ToastrService,
+        private router: Router
     ){ 
         this.route.queryParams.subscribe(
             params => {
@@ -66,6 +68,7 @@ export class MascotaCreateComponent implements OnInit
                     m => {
                         this.mascota = m;
                         this.create.emit();
+                        this.router.navigate(['/mascotas/' + this.mascota.id]);
                         this.toastrService.success("La mascota ha sido creada", "Mascota Creada");
                     }
                 )
